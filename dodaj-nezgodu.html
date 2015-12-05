@@ -63,23 +63,52 @@
   <section id="container">
 
 		<div class="row">
-	  		<div class="col-md-8" id="map">
+      <div class="row">
+      <div class="col-md-8" id="map">
+          <div class="row">
 
-        </div>
+              <div class="col-md-6" style="padding-top:25%; text-align:center;">
+                  <blockquote style="padding-bottom:1em;">
+                      <p style="padding-bottom:20px;"> Ukupno prijavljenih nezgoda:</p>
+                      <h3 style="padding-left:0.5em;"><span class="label label-success" style="zoom:3.5;">55</span></h3>
+                  </blockquote>
+              </div>
+
+              <div class="col-md-6" style="padding-top:25%; text-align:center;">
+                  <blockquote style="padding-bottom:1em;">
+                      <p style="padding-bottom:20px;"> Ukupno prijavljenih nezgoda:</p>
+                          <h3 style="padding-left:0.5em;"><span class="label label-success" style="zoom:3.5;">2</span></h3>
+
+                  </blockquote>
+              </div>
+
+
+          </div>
+      </div>
 
 		<div class="col-md-4" id="form-putanja">
-		<form role="form" >
+		<form role="form">
+
 		    <div class="form-group">
 		      <label for="email">Email:</label>
-		      <input type="text" style="width:45%" class="form-control" id="location" name="location" placeholder="Email">
+		      <input type="text" style="width:60%" class="form-control" id="location" name="location" placeholder="Email">
 		    </div>
+
 		    <div class="form-group">
 		      <label for="pwd">Adresa:</label>
-		      <input type="text" style="width:45%" class="form-control" id="location" name="location" placeholder="Adresa">
-          <ul id="results">
-
-          </ul>
+		      <input type="text" style="width:60%" class="form-control" id="location" name="location" placeholder="Adresa">
 		    </div>
+
+        <div class="form-group">
+		      <label for="pwd">Problem:</label>
+		      <textarea type="text" style="width:60%; height:150px;" class="form-control" id="location" name="location" placeholder="Problem"></textarea>
+		    </div>
+
+        <div class="form-group">
+		      <label for="pwd">Rešenje:</label>
+		      <textarea type="text" style="width:60%; height:150px;" class="form-control" id="location" name="location" placeholder="Rešenje"></textarea>
+		    </div>
+
 		    <button type="submit" class="btn btn-success">Potvrdi</button>
   		</form>
 		</div>

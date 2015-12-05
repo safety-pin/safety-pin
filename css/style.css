@@ -74,8 +74,9 @@ height: 100%;
 #form-putanja{
   padding-left: 2%;
   padding-top: 1%;
-  background-color: black;
-  padding-bottom: 1%
+  background-color: rgba(0, 0, 0, 0.77);
+  padding-bottom: 1%;
+  height: 100%;
 }
 
 ul#results{
@@ -84,3 +85,7 @@ ul#results{
 }
 
 ul#results li {}
+
+label {
+  color: white;
+}
