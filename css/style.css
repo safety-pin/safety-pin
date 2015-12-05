@@ -73,5 +73,7 @@ height: 100%;
 
 #form-putanja{
   padding-left: 2%;
-  padding-top: 2%;
+  padding-top: 1%;
+  background-color: black;
+  padding-bottom: 1%
 }
