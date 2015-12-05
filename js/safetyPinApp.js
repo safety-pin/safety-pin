@@ -246,7 +246,7 @@ angular.module('safetyPinApp', [])
         }, {
           "age": "10",
           "beforeNoon": -$scope.newData.hourStatistics[10].numberOfAccidents,
-          "afterNoon": $scope.newData.hourStatistics[22].numbe17fAccidents
+          "afterNoon": $scope.newData.hourStatistics[22].numberOfAccidents
         }, {
           "age": "9",
           "beforeNoon": -$scope.newData.hourStatistics[9].numberOfAccidents,
