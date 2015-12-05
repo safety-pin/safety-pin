@@ -19,7 +19,7 @@
     <script src="dependencies/js/bootstrap.min.js"></script>
 
     <script src="dependencies/js/map.js"></script>
-
+	<script src="js/prijava-nezgode.js"></script>
 
 </head>
 
@@ -94,25 +94,25 @@
 
 		    <div class="form-group">
 		      <label for="email">Email:</label>
-		      <input type="text" style="width:60%" class="form-control" id="location" name="location" placeholder="Email">
+		      <input type="email" style="width:60%" class="form-control" id="mejl" name="mejl" placeholder="Email">
 		    </div>
 
 		    <div class="form-group">
 		      <label for="pwd">Adresa:</label>
-		      <input type="text" style="width:60%" class="form-control" id="location" name="location" placeholder="Adresa">
+		      <input type="text" style="width:60%" class="form-control" id="adr" name="adresa" placeholder="Adresa">
 		    </div>
 
         <div class="form-group">
 		      <label for="pwd">Problem:</label>
-		      <textarea type="text" style="width:60%; height:150px;" class="form-control" id="location" name="location" placeholder="Problem"></textarea>
+		      <textarea type="text" style="width:60%; height:150px;" class="form-control" id="problem" name="problem" placeholder="Problem"></textarea>
 		    </div>
 
         <div class="form-group">
 		      <label for="pwd">Rešenje:</label>
-		      <textarea type="text" style="width:60%; height:150px;" class="form-control" id="location" name="location" placeholder="Rešenje"></textarea>
+		      <textarea type="text" style="width:60%; height:150px;" class="form-control" id="resenje" name="resenje" placeholder="Rešenje"></textarea>
 		    </div>
 
-		    <button type="submit" class="btn btn-success">Potvrdi</button>
+		    <button class="btn btn-success" onclick="salji()">Potvrdi </button>
   		</form>
 		</div>
 
