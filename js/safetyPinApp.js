@@ -16,25 +16,18 @@ angular.module('safetyPinApp', [])
   $http.get("http://10.120.192.2:8081/open-data/api/statistics/all").success(function(response) {
       $scope.newData = response;
 
-      $scope.year2013 = $scope.newData.yearStatistics[0].year;
-      $scope.year2014 = $scope.newData.yearStatistics[1].year;
-      $scope.year2015 = $scope.newData.yearStatistics[2].year;
-      $scope.numberOfAccidentsPerYear2013 = $scope.newData.yearStatistics[0].numberOfAccidents;
-      $scope.numberOfAccidentsPerYear2014 = $scope.newData.yearStatistics[1].numberOfAccidents;
-      $scope.numberOfAccidentsPerYear2015 = $scope.newData.yearStatistics[2].numberOfAccidents;
-
       $scope.chartYear = AmCharts.makeChart("chartYear", {
         "type": "serial",
         "theme": "light",
         "dataProvider": [ {
-          "year": $scope.year2013,
-          "accidents": $scope.numberOfAccidentsPerYear2013
+          "year": $scope.newData.yearStatistics[0].year,
+          "accidents": $scope.newData.yearStatistics[0].numberOfAccidents
         }, {
-          "year": $scope.year2014,
-          "accidents": $scope.numberOfAccidentsPerYear2014
+          "year": $scope.newData.yearStatistics[1].year,
+          "accidents": $scope.newData.yearStatistics[1].numberOfAccidents
         }, {
-          "year": $scope.year2015,
-          "accidents": $scope.numberOfAccidentsPerYear2015
+          "year": $scope.newData.yearStatistics[2].year,
+          "accidents": $scope.newData.yearStatistics[2].numberOfAccidents
         }],
         "valueAxes": [ {
           "gridColor": "#FFFFFF",
@@ -67,58 +60,45 @@ angular.module('safetyPinApp', [])
         }
       });
 
-      $scope.numberOfAccidentsPerMonth1 = $scope.newData.monthStatistics[0].numberOfAccidents;
-      $scope.numberOfAccidentsPerMonth2 = $scope.newData.monthStatistics[1].numberOfAccidents;
-      $scope.numberOfAccidentsPerMonth3 = $scope.newData.monthStatistics[2].numberOfAccidents;
-      $scope.numberOfAccidentsPerMonth4 = $scope.newData.monthStatistics[3].numberOfAccidents;
-      $scope.numberOfAccidentsPerMonth5 = $scope.newData.monthStatistics[4].numberOfAccidents;
-      $scope.numberOfAccidentsPerMonth6 = $scope.newData.monthStatistics[5].numberOfAccidents;
-      $scope.numberOfAccidentsPerMonth7 = $scope.newData.monthStatistics[6].numberOfAccidents;
-      $scope.numberOfAccidentsPerMonth8 = $scope.newData.monthStatistics[7].numberOfAccidents;
-      $scope.numberOfAccidentsPerMonth9 = $scope.newData.monthStatistics[8].numberOfAccidents;
-      $scope.numberOfAccidentsPerMonth10 = $scope.newData.monthStatistics[9].numberOfAccidents;
-      $scope.numberOfAccidentsPerMonth11 = $scope.newData.monthStatistics[10].numberOfAccidents;
-      $scope.numberOfAccidentsPerMonth12 = $scope.newData.monthStatistics[11].numberOfAccidents;
-
       $scope.chartMonth = AmCharts.makeChart( "chartMonth", {
           "type": "serial",
           "theme": "light",
           "dataProvider": [ {
             "month": "Jan",
-            "accidents": $scope.numberOfAccidentsPerMonth1
+            "accidents": $scope.newData.monthStatistics[0].numberOfAccidents
           }, {
             "month": "Feb",
-            "accidents": $scope.numberOfAccidentsPerMonth2
+            "accidents": $scope.newData.monthStatistics[1].numberOfAccidents
           }, {
             "month": "Mart",
-            "accidents": $scope.numberOfAccidentsPerMonth3
+            "accidents": $scope.newData.monthStatistics[2].numberOfAccidents
           }, {
             "month": "April",
-            "accidents": $scope.numberOfAccidentsPerMonth4
+            "accidents": $scope.newData.monthStatistics[3].numberOfAccidents
           }, {
             "month": "Maj",
-            "accidents": $scope.numberOfAccidentsPerMonth5
+            "accidents": $scope.newData.monthStatistics[4].numberOfAccidents
           }, {
             "month": "Jun",
-            "accidents": $scope.numberOfAccidentsPerMonth6
+            "accidents": $scope.newData.monthStatistics[5].numberOfAccidents
           }, {
             "month": "Jul",
-            "accidents": $scope.numberOfAccidentsPerMonth7
+            "accidents": $scope.newData.monthStatistics[6].numberOfAccidents
           }, {
             "month": "Avg",
-            "accidents": $scope.numberOfAccidentsPerMonth8
+            "accidents": $scope.newData.monthStatistics[7].numberOfAccidents
           }, {
             "month": "Sep",
-            "accidents": $scope.numberOfAccidentsPerMonth9
+            "accidents": $scope.newData.monthStatistics[8].numberOfAccidents
           }, {
             "month": "Okt",
-            "accidents": $scope.numberOfAccidentsPerMonth10
+            "accidents": $scope.newData.monthStatistics[9].numberOfAccidents
           }, {
             "month": "Nov",
-            "accidents": $scope.numberOfAccidentsPerMonth11
+            "accidents": $scope.newData.monthStatistics[10].numberOfAccidents
           }, {
             "month": "Dec",
-            "accidents": $scope.numberOfAccidentsPerMonth12
+            "accidents": $scope.newData.monthStatistics[11].numberOfAccidents
           }],
           "valueAxes": [ {
             "gridColor": "#FFFFFF",
@@ -151,26 +131,21 @@ angular.module('safetyPinApp', [])
           }
       });
 
-      $scope.numberOfAccidentsPerQuartal1 = $scope.newData.quarterStatistics[0].numberOfAccidents;
-      $scope.numberOfAccidentsPerQuartal2 = $scope.newData.quarterStatistics[1].numberOfAccidents;
-      $scope.numberOfAccidentsPerQuartal3 = $scope.newData.quarterStatistics[2].numberOfAccidents;
-      $scope.numberOfAccidentsPerQuartal4 = $scope.newData.quarterStatistics[3].numberOfAccidents;
-
       $scope.chartMonth = AmCharts.makeChart( "chartQuartal", {
           "type": "serial",
           "theme": "light",
           "dataProvider": [ {
             "quartal": "I kvartal",
-            "accidents": $scope.numberOfAccidentsPerQuartal1
+            "accidents": $scope.newData.quarterStatistics[0].numberOfAccidents
           }, {
             "quartal": "II kvartal",
-            "accidents": $scope.numberOfAccidentsPerQuartal2
+            "accidents": $scope.newData.quarterStatistics[1].numberOfAccidents
           }, {
             "quartal": "III kvartal",
-            "accidents": $scope.numberOfAccidentsPerQuartal3
+            "accidents": $scope.newData.quarterStatistics[2].numberOfAccidents
           }, {
             "quartal": "IV kvartal",
-            "accidents": $scope.numberOfAccidentsPerQuartal4
+            "accidents": $scope.newData.quarterStatistics[3].numberOfAccidents
           }],
           "valueAxes": [ {
             "gridColor": "#FFFFFF",
@@ -203,38 +178,30 @@ angular.module('safetyPinApp', [])
           }
       });
 
-      $scope.numberOfAccidentsPerDay1 = $scope.newData.dayStatistics[0].numberOfAccidents;
-      $scope.numberOfAccidentsPerDay2 = $scope.newData.dayStatistics[1].numberOfAccidents;
-      $scope.numberOfAccidentsPerDay3 = $scope.newData.dayStatistics[2].numberOfAccidents;
-      $scope.numberOfAccidentsPerDay4 = $scope.newData.dayStatistics[3].numberOfAccidents;
-      $scope.numberOfAccidentsPerDay5 = $scope.newData.dayStatistics[4].numberOfAccidents;
-      $scope.numberOfAccidentsPerDay6 = $scope.newData.dayStatistics[5].numberOfAccidents;
-      $scope.numberOfAccidentsPerDay7 = $scope.newData.dayStatistics[6].numberOfAccidents;
-
       $scope.chartMonth = AmCharts.makeChart( "chartDay", {
           "type": "serial",
           "theme": "light",
           "dataProvider": [{
             "day": "Ponedeljak",
-            "accidents": $scope.numberOfAccidentsPerDay1
+            "accidents": $scope.newData.dayStatistics[0].numberOfAccidents
           }, {
             "day": "Utorak",
-            "accidents": $scope.numberOfAccidentsPerDay2
+            "accidents": $scope.newData.dayStatistics[1].numberOfAccidents
           }, {
-            "day": "Srijeda",
-            "accidents": $scope.numberOfAccidentsPerDay3
+            "day": "Sreda",
+            "accidents": $scope.newData.dayStatistics[2].numberOfAccidents
           }, {
             "day": "Cetvrtak",
-            "accidents": $scope.numberOfAccidentsPerDay4
+            "accidents": $scope.newData.dayStatistics[3].numberOfAccidents
           }, {
             "day": "Petak",
-            "accidents": $scope.numberOfAccidentsPerDay5
+            "accidents": $scope.newData.dayStatistics[4].numberOfAccidents
           }, {
             "day": "Subota",
-            "accidents": $scope.numberOfAccidentsPerDay6
+            "accidents": $scope.newData.dayStatistics[5].numberOfAccidents
           }, {
             "day": "Nedelja",
-            "accidents": $scope.numberOfAccidentsPerDay7
+            "accidents": $scope.newData.dayStatistics[6].numberOfAccidents
           }],
           "valueAxes": [ {
             "gridColor": "#FFFFFF",
@@ -267,31 +234,6 @@ angular.module('safetyPinApp', [])
           }
       });
 
-      $scope.numberOfAccidentsPerHour0 = $scope.newData.hourStatistics[0].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour1 = $scope.newData.hourStatistics[1].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour2 = $scope.newData.hourStatistics[2].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour3 = $scope.newData.hourStatistics[3].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour4 = $scope.newData.hourStatistics[4].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour5 = $scope.newData.hourStatistics[5].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour6 = $scope.newData.hourStatistics[6].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour7 = $scope.newData.hourStatistics[7].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour8 = $scope.newData.hourStatistics[8].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour9 = $scope.newData.hourStatistics[9].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour10 = $scope.newData.hourStatistics[10].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour11 = $scope.newData.hourStatistics[11].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour12 = 0;
-      $scope.numberOfAccidentsPerHour13 = $scope.newData.hourStatistics[12].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour14 = $scope.newData.hourStatistics[13].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour15 = $scope.newData.hourStatistics[14].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour16 = $scope.newData.hourStatistics[15].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour17 = $scope.newData.hourStatistics[16].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour18 = $scope.newData.hourStatistics[17].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour19 = $scope.newData.hourStatistics[18].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour20 = $scope.newData.hourStatistics[19].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour21 = $scope.newData.hourStatistics[20].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour22 = $scope.newData.hourStatistics[21].numberOfAccidents;
-      $scope.numberOfAccidentsPerHour23 = $scope.newData.hourStatistics[22].numberOfAccidents;
-
       $scope.chartMonth = AmCharts.makeChart( "chartHour", {
         "type": "serial",
         "theme": "light",
@@ -299,52 +241,52 @@ angular.module('safetyPinApp', [])
         "marginBottom": 50,
         "dataProvider": [{
           "age": "11",
-          "beforeNoon": -$scope.numberOfAccidentsPerHour11,
-          "afterNoon": $scope.numberOfAccidentsPerHour23
+          "beforeNoon": -$scope.newData.hourStatistics[11].numberOfAccidents,
+          "afterNoon": $scope.newData.hourStatistics[23].numberOfAccidents
         }, {
           "age": "10",
-          "beforeNoon": -$scope.numberOfAccidentsPerHour10,
-          "afterNoon": $scope.numberOfAccidentsPerHour22
+          "beforeNoon": -$scope.newData.hourStatistics[10].numberOfAccidents,
+          "afterNoon": $scope.newData.hourStatistics[22].numbe17fAccidents
         }, {
           "age": "9",
-          "beforeNoon": -$scope.numberOfAccidentsPerHour9,
-          "afterNoon": $scope.numberOfAccidentsPerHour21
+          "beforeNoon": -$scope.newData.hourStatistics[9].numberOfAccidents,
+          "afterNoon": $scope.newData.hourStatistics[21].numberOfAccidents
         }, {
           "age": "8",
-          "beforeNoon": -$scope.numberOfAccidentsPerHour8,
-          "afterNoon": $scope.numberOfAccidentsPerHour20
+          "beforeNoon": -$scope.newData.hourStatistics[8].numberOfAccidents,
+          "afterNoon": $scope.newData.hourStatistics[20].numberOfAccidents
         }, {
           "age": "7",
-          "beforeNoon": -$scope.numberOfAccidentsPerHour7,
-          "afterNoon": $scope.numberOfAccidentsPerHour19
+          "beforeNoon": -$scope.newData.hourStatistics[7].numberOfAccidents,
+          "afterNoon": $scope.newData.hourStatistics[19].numberOfAccidents
         }, {
           "age": "6",
-          "beforeNoon": -$scope.numberOfAccidentsPerHour6,
-          "afterNoon": $scope.numberOfAccidentsPerHour18
+          "beforeNoon": -$scope.newData.hourStatistics[6].numberOfAccidents,
+          "afterNoon": $scope.newData.hourStatistics[18].numberOfAccidents
         }, {
           "age": "5",
-          "beforeNoon": -$scope.numberOfAccidentsPerHour5,
-          "afterNoon": $scope.numberOfAccidentsPerHour17
+          "beforeNoon": -$scope.newData.hourStatistics[5].numberOfAccidents,
+          "afterNoon": $scope.newData.hourStatistics[17].numberOfAccidents
         }, {
           "age": "4",
-          "beforeNoon": -$scope.numberOfAccidentsPerHour4,
-          "afterNoon": $scope.numberOfAccidentsPerHour16
+          "beforeNoon": -$scope.newData.hourStatistics[4].numberOfAccidents,
+          "afterNoon": $scope.newData.hourStatistics[16].numberOfAccidents
         }, {
           "age": "3",
-          "beforeNoon": -$scope.numberOfAccidentsPerHour3,
-          "afterNoon": $scope.numberOfAccidentsPerHour15
+          "beforeNoon": -$scope.newData.hourStatistics[3].numberOfAccidents,
+          "afterNoon": $scope.newData.hourStatistics[15].numberOfAccidents
         }, {
           "age": "2",
-          "beforeNoon": -$scope.numberOfAccidentsPerHour2,
-          "afterNoon": $scope.numberOfAccidentsPerHour14
+          "beforeNoon": -$scope.newData.hourStatistics[2].numberOfAccidents,
+          "afterNoon": $scope.newData.hourStatistics[14].numberOfAccidents
         }, {
           "age": "1",
-          "beforeNoon": -$scope.numberOfAccidentsPerHour1,
-          "afterNoon": $scope.numberOfAccidentsPerHour13
+          "beforeNoon": -$scope.newData.hourStatistics[1].numberOfAccidents,
+          "afterNoon": $scope.newData.hourStatistics[13].numberOfAccidents
         }, {
           "age": "0",
-          "beforeNoon": -$scope.numberOfAccidentsPerHour0,
-          "afterNoon": $scope.numberOfAccidentsPerHour12
+          "beforeNoon": -$scope.newData.hourStatistics[0].numberOfAccidents,
+          "afterNoon": $scope.newData.hourStatistics[12].numberOfAccidents
         }],
         "startDuration": 1,
         "graphs": [{
@@ -385,9 +327,6 @@ angular.module('safetyPinApp', [])
         "valueAxes": [{
           "gridAlpha": 0,
           "ignoreAxisWidth": true,
-          // "labelFunction": function(value) {
-          //   return Math.abs(value) + '%';
-          // },
           "guides": [{
             "value": 0,
             "lineAlpha": 0.2
@@ -419,22 +358,18 @@ angular.module('safetyPinApp', [])
         }
       });
 
-      $scope.numberOfAccidentsPerType1 = $scope.newData.typeStatistics[0].numberOfAccidents;
-      $scope.numberOfAccidentsPerType2 = $scope.newData.typeStatistics[1].numberOfAccidents;
-      $scope.numberOfAccidentsPerType3 = $scope.newData.typeStatistics[2].numberOfAccidents;
-
       $scope.chartMonth = AmCharts.makeChart( "chartType", {
         "type": "pie",
         "theme": "light",
         "dataProvider": [ {
           "title": "Materijalna šteta",
-          "value": $scope.numberOfAccidentsPerType1
+          "value": $scope.newData.typeStatistics[0].numberOfAccidents
         }, {
           "title": "Povređeni",
-          "value": $scope.numberOfAccidentsPerType2
+          "value": $scope.newData.typeStatistics[1].numberOfAccidents
         }, {
           "title": "Poginuli",
-          "value": $scope.numberOfAccidentsPerType3
+          "value": $scope.newData.typeStatistics[2].numberOfAccidents
         }],
         "titleField": "title",
         "valueField": "value",
@@ -447,23 +382,19 @@ angular.module('safetyPinApp', [])
           "enabled": true
         }
       });
-
-      $scope.numberOfAccidentsPerWeather1 = $scope.newData.weatherStatistics[0].numberOfAccidents;
-      $scope.numberOfAccidentsPerWeather2 = $scope.newData.weatherStatistics[1].numberOfAccidents;
-      $scope.numberOfAccidentsPerWeather3 = $scope.newData.weatherStatistics[2].numberOfAccidents;
 
       $scope.chartMonth = AmCharts.makeChart( "chartWeather", {
         "type": "pie",
         "theme": "light",
         "dataProvider": [ {
           "title": "Kiša",
-          "value": $scope.numberOfAccidentsPerWeather1
+          "value": $scope.newData.weatherStatistics[0].numberOfAccidents
         }, {
           "title": "Sneg",
-          "value": $scope.numberOfAccidentsPerWeather2
+          "value": $scope.newData.weatherStatistics[1].numberOfAccidents
         }, {
           "title": "Bez padavina",
-          "value": $scope.numberOfAccidentsPerWeather3
+          "value": $scope.newData.weatherStatistics[2].numberOfAccidents
         }],
         "titleField": "title",
         "valueField": "value",
@@ -477,38 +408,30 @@ angular.module('safetyPinApp', [])
         }
       });
 
-      $scope.numberOfAccidentsPerSummaryType1 = $scope.newData.summaryTypeStatistics[0].numberOfAccidents;
-      $scope.numberOfAccidentsPerSummaryType2 = $scope.newData.summaryTypeStatistics[1].numberOfAccidents;
-      $scope.numberOfAccidentsPerSummaryType3 = $scope.newData.summaryTypeStatistics[2].numberOfAccidents;
-      $scope.numberOfAccidentsPerSummaryType4 = $scope.newData.summaryTypeStatistics[3].numberOfAccidents;
-      $scope.numberOfAccidentsPerSummaryType5 = $scope.newData.summaryTypeStatistics[4].numberOfAccidents;
-      $scope.numberOfAccidentsPerSummaryType6 = $scope.newData.summaryTypeStatistics[5].numberOfAccidents;
-      $scope.numberOfAccidentsPerSummaryType7 = $scope.newData.summaryTypeStatistics[6].numberOfAccidents;
-
       $scope.chartMonth = AmCharts.makeChart( "chartSummaryType", {
           "type": "serial",
           "theme": "light",
           "dataProvider": [{
             "day": "Vedro",
-            "accidents": $scope.numberOfAccidentsPerSummaryType1
+            "accidents": $scope.newData.summaryTypeStatistics[0].numberOfAccidents
           }, {
             "day": "Mestimično oblačno",
-            "accidents": $scope.numberOfAccidentsPerSummaryType2
+            "accidents": $scope.newData.summaryTypeStatistics[1].numberOfAccidents
           }, {
             "day": "Pretežno oblačno",
-            "accidents": $scope.numberOfAccidentsPerSummaryType3
+            "accidents": $scope.newData.summaryTypeStatistics[2].numberOfAccidents
           }, {
             "day": "Oblačno",
-            "accidents": $scope.numberOfAccidentsPerSummaryType4
+            "accidents": $scope.newData.summaryTypeStatistics[3].numberOfAccidents
           }, {
             "day": "Maglovito",
-            "accidents": $scope.numberOfAccidentsPerSummaryType5
+            "accidents": $scope.newData.summaryTypeStatistics[4].numberOfAccidents
           }, {
             "day": "Vetrovito",
-            "accidents": $scope.numberOfAccidentsPerSummaryType6
+            "accidents": $scope.newData.summaryTypeStatistics[5].numberOfAccidents
           }, {
             "day": "Nepoznato",
-            "accidents": $scope.numberOfAccidentsPerSummaryType7
+            "accidents": $scope.newData.summaryTypeStatistics[6].numberOfAccidents
           }],
           "valueAxes": [ {
             "gridColor": "#FFFFFF",
@@ -545,34 +468,27 @@ angular.module('safetyPinApp', [])
   $http.get("http://10.120.192.2:8081/open-data/api/statistics/temperature?tempStep=10&min=-20&max=40").success(function(response) {
       $scope.newData = response;
 
-      $scope.numberOfAccidentsPerTemperature1 = $scope.newData[0].count;
-      $scope.numberOfAccidentsPerTemperature2 = $scope.newData[1].count;
-      $scope.numberOfAccidentsPerTemperature3 = $scope.newData[2].count;
-      $scope.numberOfAccidentsPerTemperature4 = $scope.newData[3].count;
-      $scope.numberOfAccidentsPerTemperature5 = $scope.newData[4].count;
-      $scope.numberOfAccidentsPerTemperature6 = $scope.newData[5].count;
-
       $scope.chartMonth = AmCharts.makeChart( "chartTemperature", {
           "type": "serial",
           "theme": "light",
           "dataProvider": [{
             "day": "-20 do -10",
-            "accidents": $scope.numberOfAccidentsPerTemperature1
+            "accidents": $scope.newData[0].count
           }, {
             "day": "-10 do 0",
-            "accidents": $scope.numberOfAccidentsPerTemperature2
+            "accidents": $scope.newData[1].count
           }, {
             "day": "0 do 10",
-            "accidents": $scope.numberOfAccidentsPerTemperature3
+            "accidents": $scope.newData[2].count
           }, {
             "day": "10 do 20",
-            "accidents": $scope.numberOfAccidentsPerTemperature4
+            "accidents": $scope.newData[3].count
           }, {
             "day": "20 do 30",
-            "accidents": $scope.numberOfAccidentsPerTemperature5
+            "accidents": $scope.newData[4].count
           }, {
             "day": "30 do 40",
-            "accidents": $scope.numberOfAccidentsPerTemperature6
+            "accidents": $scope.newData[5].count
           }],
           "valueAxes": [ {
             "gridColor": "#FFFFFF",
