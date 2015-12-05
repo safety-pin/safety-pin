@@ -1,0 +1,424 @@
+{
+  "docs": [
+    {
+      "id": "api",
+      "title": "GET accidents",
+      "description": "Returns list of all accidents.",
+      "url": "http://localhost:8081/open-data/api",
+      "info": [
+        "JSON",
+        "NO",
+        "NO"
+      ],
+      "params": [
+        {
+          "name": "limit",
+          "req": "Optional",
+          "desc": "Specifies maximum number of accidents to return in a single request. ",
+          "example": 30,
+          "default": 10
+        },
+        {
+          "name": "page",
+          "req": "Optional",
+          "desc": "Used for result pagination; specifies a page to be returned. It should be combined with a number of accidents returned on the page that is specified by the limit parameter.",
+          "example": 2,
+          "default": 1
+        },
+        {
+          "name": "from",
+          "req": "Optional",
+          "desc": "Specifies the date from which accidents are meant to be returned.",
+          "example": "2015-01-01-12:00",
+          "default": "empty string"
+        },
+        {
+          "name": "to",
+          "req": "Optional",
+          "desc": "Specifies the date to which accidents are meant to be returned.",
+          "example": "2015-01-01-12:00",
+          "default": "empty string"
+        }
+      ],
+      "request": "http://localhost:8081/open-data/api?page=2&limit=2",
+      "result": "[{\"id\":1102153,\"x\":44.8197708,\"y\":20.4561157,\"date\":\"2015-09-08 10:00:00.0\",\"dayOfWeek\":\"Wednesday\",\"temperature\":30.0,\"prepicitation\":\"sunny\",\"summary\":\"Clear\",\"type\":1},{\"id\":1102341,\"x\":44.7911072,\"y\":20.4978237,\"date\":\"2015-09-05 02:00:00.0\",\"dayOfWeek\":\"Sunday\",\"temperature\":13.46,\"prepicitation\":\"sunny\",\"summary\":\"Clear\",\"type\":1}]"
+    },
+    {
+      "id": "accidentId",
+      "title": "GET api/:id",
+      "description": "Returns details for the specific accident.",
+      "url": "http://localhost:8081/open-data/api/:id",
+      "info": [
+        "JSON",
+        "NO",
+        "NO"
+      ],
+      "params": [
+        {
+          "name": "id",
+          "req": "Required",
+          "desc": "The id of the requested accident.",
+          "example": 123,
+          "default": "/"
+        }
+      ],
+      "request": "http://localhost:8081/open-data/api/1234",
+      "result": "{\"id\":1234,\"x\":44.8197708,\"y\":20.4561157,\"date\":\"2015-09-08 10:00:00.0\",\"dayOfWeek\":\"Wednesday\",\"temperature\":30.0,\"prepicitation\":\"sunny\",\"summary\":\"Clear\",\"type\":1}"
+    },
+    {
+      "id": "circle",
+      "title": "GET /api/circle",
+      "description": "Returns accident in the specific radius for the given center (lat, lng).",
+      "url": "http://localhost:8081/open-data/api/circle",
+      "info": [
+        "JSON",
+        "NO",
+        "NO"
+      ],
+      "params": [
+        {
+          "name": "limit",
+          "req": "Optional",
+          "desc": "Specifies maximum number of accidents to return in a single request. ",
+          "example": 30,
+          "default": 10
+        },
+        {
+          "name": "page",
+          "req": "Optional",
+          "desc": "Used for result pagination; specifies a page to be returned. It should be combined with a number of accidents returned on the page that is specified by the limit parameter.",
+          "example": 2,
+          "default": 1
+        },
+        {
+          "name": "from",
+          "req": "Optional",
+          "desc": "Specifies the date from which accidents are meant to be returned.",
+          "example": "2015-01-01-12:00",
+          "default": "empty string"
+        },
+        {
+          "name": "to",
+          "req": "Optional",
+          "desc": "Specifies the date to which accidents are meant to be returned.",
+          "example": "2015-01-01-12:00",
+          "default": "empty string"
+        },
+        {
+          "name": "r",
+          "req": "required",
+          "desc": "Radius of a circle in meters.",
+          "example": "200",
+          "default": "1000"
+        },
+        {
+          "name": "lat",
+          "req": "required",
+          "desc": "Latitude of the radius center.",
+          "example": "40.2223",
+          "default": "/"
+        },
+        {
+          "name": "lng",
+          "req": "required",
+          "desc": "Longitude of the radius center.",
+          "example": "40.2223",
+          "default": "/"
+        },
+        {
+          "name": "analyze",
+          "req": "optional",
+          "desc": "If true, it will consider from hour, to hour, weather summary and day of week into consideration in calculations.",
+          "example": "true",
+          "default": "/false"
+        },
+        {
+          "name": "d",
+          "req": "optional",
+          "desc": "Day of week, represents a value from 0 to 6 (Monday to Sunday).",
+          "example": "1",
+          "default": "/"
+        },
+        {
+          "name": "fromh",
+          "req": "optional",
+          "desc": "Start hour in analysis, from 0 to 23. For example, 3 is the fourth hour in a day.",
+          "example": "3",
+          "default": "/"
+        },
+        {
+          "name": "toh",
+          "req": "optional",
+          "desc": "End hour in analysis, from 0 to 23. For example, 3 is the fourth hour in a day.",
+          "example": "3",
+          "default": "/"
+        },
+        {
+          "name": "summary",
+          "req": "optional",
+          "desc": "Weather summary for analysis.",
+          "example": "Clear",
+          "default": "/"
+        }
+      ],
+      "request": "http://localhost:8081/open-data/api/circle?r=100&lat=40.1234&lng=22.2345",
+      "result": "[{\"id\":1101580,\"x\":44.7618713,\"y\":20.5264339,\"date\":\"2015-09-08 16:00:00.0\",\"dayOfWeek\":\"Wednesday\",\"temperature\":18.75,\"prepicitation\":\"sunny\",\"summary\":\"Clear\",\"type\":2},{\"id\":1098383,\"x\":44.7615051,\"y\":20.5271454,\"date\":\"2015-08-04 16:10:00.0\",\"dayOfWeek\":\"Wednesday\",\"temperature\":3.17000008,\"prepicitation\":\"rain\",\"summary\":\"Partly Cloudy\",\"type\":2},{\"id\":1098386,\"x\":44.7615051,\"y\":20.5271454,\"date\":\"2015-08-04 10:45:00.0\",\"dayOfWeek\":\"Wednesday\",\"temperature\":9.46000004,\"prepicitation\":\"rain\",\"summary\":\"Mostly Cloudy\",\"type\":1},{\"id\":1096642,\"x\":44.7615356,\"y\":20.5271072,\"date\":\"2015-07-25 22:45:00.0\",\"dayOfWeek\":\"Sunday\",\"temperature\":19.8999996,\"prepicitation\":\"rain\",\"summary\":\"Partly Cloudy\",\"type\":2}]"
+    },
+    {
+      "id": "path",
+      "title": "POST /api/path",
+      "description": "Returns array of accidents that are on the given path as POST parameter in array of lat lng coordinates.",
+      "url": "http://localhost:8081/open-data/api/circle/path",
+      "info": [
+        "JSON",
+        "NO",
+        "NO"
+      ],
+      "params": [
+        {
+          "name": "path",
+          "req": "Required",
+          "desc": "POST parameter, represents point of a path.",
+          "example": "[{44.1234, 20.1234},{44.4321, 20.4321}]",
+          "default": "/"
+        }
+      ],
+      "request": "http://localhost:8081/open-data/api/circle/path",
+      "result": "[{\"meta\":{\"href\":\"http://api.otvoreniparlament.rs/v1/parties/111\"},\"id\":111,\"title\":\"Party tittle\",\"members\":\"http://api.otvoreniparlament.rs/v1/parties/111/members\"}]"
+    },
+    {
+      "id": "year",
+      "title": "GET /api/statistics/year",
+      "description": "Returns number of accidents by every year.",
+      "url": "http://localhost:8081/open-data/api/statistics/year",
+      "info": [
+        "JSON",
+        "NO",
+        "NO"
+      ],
+      "params": [
+        {
+          "name": "/",
+          "req": "/",
+          "desc": "The is no parameter for the specific endpoint",
+          "example": "/",
+          "default": "/"
+        }
+      ],
+      "request": "http://localhost:8081/open-data/api/statistics/year",
+      "result": "[{\"year\":2013,\"numberOfAccidents\":1},{\"year\":2014,\"numberOfAccidents\":5},{\"year\":2015,\"numberOfAccidents\":12865}]"
+    },
+    {
+      "id": "quarter",
+      "title": "GET /api/statistics/quarter",
+      "description": "Returns number of accidents by every quarter.",
+      "url": "http://localhost:8081/open-data/api/statistics/quarter",
+      "info": [
+        "JSON",
+        "NO",
+        "NO"
+      ],
+      "params": [
+        {
+          "name": "/",
+          "req": "/",
+          "desc": "The is no parameter for the specific endpoint",
+          "example": "/",
+          "default": "/"
+        }
+      ],
+      "request": "http://localhost:8081/open-data/api/statistics/quarter",
+      "result": "[{\"quarter\":1,\"numberOfAccidents\":3274},{\"quarter\":2,\"numberOfAccidents\":3466},{\"quarter\":3,\"numberOfAccidents\":3534},{\"quarter\":4,\"numberOfAccidents\":2597}]"
+    },
+    {
+      "id": "month",
+      "title": "GET /api/statistics/month",
+      "description": "Returns number of accidents by every month.",
+      "url": "http://localhost:8081/open-data/api/statistics/month",
+      "info": [
+        "JSON",
+        "NO",
+        "NO"
+      ],
+      "params": [
+        {
+          "name": "/",
+          "req": "/",
+          "desc": "The is no parameter for the specific endpoint",
+          "example": "/",
+          "default": "/"
+        }
+      ],
+      "request": "http://localhost:8081/open-data/api/statistics/month",
+      "result": "[{\"monthNumber\":1,\"monthName\":\"January\",\"numberOfAccidents\":1042},{\"monthNumber\":2,\"monthName\":\"February\",\"numberOfAccidents\":1064},{\"monthNumber\":3,\"monthName\":\"March\",\"numberOfAccidents\":1168},{\"monthNumber\":4,\"monthName\":\"April\",\"numberOfAccidents\":1101},{\"monthNumber\":5,\"monthName\":\"May\",\"numberOfAccidents\":1207},{\"monthNumber\":6,\"monthName\":\"June\",\"numberOfAccidents\":1158},{\"monthNumber\":7,\"monthName\":\"July\",\"numberOfAccidents\":1105},{\"monthNumber\":8,\"monthName\":\"August\",\"numberOfAccidents\":1120},{\"monthNumber\":9,\"monthName\":\"September\",\"numberOfAccidents\":1309},{\"monthNumber\":10,\"monthName\":\"October\",\"numberOfAccidents\":1418},{\"monthNumber\":11,\"monthName\":\"November\",\"numberOfAccidents\":1178},{\"monthNumber\":12,\"monthName\":\"December\",\"numberOfAccidents\":1}]"
+    },
+    {
+      "id": "day",
+      "title": "GET /api/statistics/day",
+      "description": "Returns number of accidents by every day of week.",
+      "url": "http://localhost:8081/open-data/api/statistics/day",
+      "info": [
+        "JSON",
+        "NO",
+        "NO"
+      ],
+      "params": [
+        {
+          "name": "/",
+          "req": "/",
+          "desc": "The is no parameter for the specific endpoint",
+          "example": "/",
+          "default": "/"
+        }
+      ],
+      "request": "http://localhost:8081/open-data/api/statistics/day",
+      "result": "[{\"dayOfWeekNumber\":1,\"dayOfWeek\":\"Monday\",\"numberOfAccidents\":1281},{\"dayOfWeekNumber\":2,\"dayOfWeek\":\"Tuesday\",\"numberOfAccidents\":1971},{\"dayOfWeekNumber\":3,\"dayOfWeek\":\"Wednesday\",\"numberOfAccidents\":1937},{\"dayOfWeekNumber\":4,\"dayOfWeek\":\"Thursday\",\"numberOfAccidents\":1884},{\"dayOfWeekNumber\":5,\"dayOfWeek\":\"Friday\",\"numberOfAccidents\":2028},{\"dayOfWeekNumber\":6,\"dayOfWeek\":\"Saturday\",\"numberOfAccidents\":2118},{\"dayOfWeekNumber\":7,\"dayOfWeek\":\"Sunday\",\"numberOfAccidents\":1652}]"
+    },
+    {
+      "id": "hour",
+      "title": "GET /api/statistics/hour",
+      "description": "Returns number of accidents by every hour.",
+      "url": "http://localhost:8081/open-data/api/statistics/hour",
+      "info": [
+        "JSON",
+        "NO",
+        "NO"
+      ],
+      "params": [
+        {
+          "name": "/",
+          "req": "/",
+          "desc": "The is no parameter for the specific endpoint",
+          "example": "/",
+          "default": "/"
+        }
+      ],
+      "request": "http://localhost:8081/open-data/api/statistics/hour",
+      "result": "[{\"hour\":0,\"numberOfAccidents\":226},{\"hour\":1,\"numberOfAccidents\":156},{\"hour\":2,\"numberOfAccidents\":116},{\"hour\":3,\"numberOfAccidents\":94},{\"hour\":4,\"numberOfAccidents\":99},{\"hour\":5,\"numberOfAccidents\":102},{\"hour\":6,\"numberOfAccidents\":241},{\"hour\":7,\"numberOfAccidents\":609},{\"hour\":8,\"numberOfAccidents\":747},{\"hour\":9,\"numberOfAccidents\":686},{\"hour\":10,\"numberOfAccidents\":716},{\"hour\":11,\"numberOfAccidents\":830},{\"hour\":12,\"numberOfAccidents\":892},{\"hour\":13,\"numberOfAccidents\":871},{\"hour\":14,\"numberOfAccidents\":880},{\"hour\":15,\"numberOfAccidents\":851},{\"hour\":16,\"numberOfAccidents\":917},{\"hour\":17,\"numberOfAccidents\":854},{\"hour\":18,\"numberOfAccidents\":712},{\"hour\":19,\"numberOfAccidents\":662},{\"hour\":20,\"numberOfAccidents\":487},{\"hour\":21,\"numberOfAccidents\":448},{\"hour\":22,\"numberOfAccidents\":387},{\"hour\":23,\"numberOfAccidents\":288}]"
+    },
+    {
+      "id": "type",
+      "title": "GET /api/statistics/type",
+      "description": "Returns number of accidents by every type of accident.",
+      "url": "http://localhost:8081/open-data/api/statistics/type",
+      "info": [
+        "JSON",
+        "NO",
+        "NO"
+      ],
+      "params": [
+        {
+          "name": "/",
+          "req": "/",
+          "desc": "The is no parameter for the specific endpoint",
+          "example": "/",
+          "default": "/"
+        }
+      ],
+      "request": "http://localhost:8081/open-data/api/statistics/type",
+      "result": "[[{\"type\":\"Material accident\",\"numberOfAccidents\":9484},{\"type\":\"Injury accident\",\"numberOfAccidents\":3307},{\"type\":\"Fatal accident\",\"numberOfAccidents\":80}]"
+    },
+    {
+      "id": "weather",
+      "title": "GET /api/statistics/weather",
+      "description": "Returns accidents for the all precipitation.",
+      "url": "http://localhost:8081/open-data/api/statistics/weather",
+      "info": [
+        "JSON",
+        "NO",
+        "NO"
+      ],
+      "params": [
+        {
+          "name": "/",
+          "req": "/",
+          "desc": "The is no parameter for the specific endpoint",
+          "example": "/",
+          "default": "/"
+        }
+      ],
+      "request": "http://localhost:8081/open-data/api/statistics/weather",
+      "result": "[{\"precipitation\":\"rain\",\"numberOfAccidents\":5500},{\"precipitation\":\"snow\",\"numberOfAccidents\":1208},{\"precipitation\":\"sunny\",\"numberOfAccidents\":5131},{\"precipitation\":\"unknown\",\"numberOfAccidents\":1032}]"
+    },
+    {
+      "id": "summary",
+      "title": "GET /api/statistics/summary",
+      "description": "Returns number of accidents for every type od weather summary.",
+      "url": "http://localhost:8081/open-data/api/statistics/summary",
+      "info": [
+        "JSON",
+        "NO",
+        "NO"
+      ],
+      "params": [
+        {
+          "name": "/",
+          "req": "/",
+          "desc": "The is no parameter for the specific endpoint",
+          "example": "/",
+          "default": "/"
+        }
+      ],
+      "request": "http://localhost:8081/open-data/api/statistics/summary",
+      "result": "[{\"summary\":\"Clear\",\"numberOfAccidents\":5705},{\"summary\":\"Partly Cloudy\",\"numberOfAccidents\":3024},{\"summary\":\"Mostly Cloudy\",\"numberOfAccidents\":1392},{\"summary\":\"Overcast\",\"numberOfAccidents\":1072},{\"summary\":\"unknown\",\"numberOfAccidents\":1028},{\"summary\":\"Foggy\",\"numberOfAccidents\":428},{\"summary\":\"Breezy\",\"numberOfAccidents\":100},{\"summary\":\"Breezy and Overcast\",\"numberOfAccidents\":33},{\"summary\":\"Breezy and Mostly Cloudy\",\"numberOfAccidents\":26},{\"summary\":\"Dry and Partly Cloudy\",\"numberOfAccidents\":17},{\"summary\":\"Windy and Mostly Cloudy\",\"numberOfAccidents\":11},{\"summary\":\"Breezy and Partly Cloudy\",\"numberOfAccidents\":10},{\"summary\":\"Humid\",\"numberOfAccidents\":10},{\"summary\":\"Humid and Partly Cloudy\",\"numberOfAccidents\":6},{\"summary\":\"Windy\",\"numberOfAccidents\":4},{\"summary\":\"Dry\",\"numberOfAccidents\":3},{\"summary\":\"Humid and Mostly Cloudy\",\"numberOfAccidents\":2}]"
+    },
+    {
+      "id": "temperature",
+      "title": "GET /api/statistics/temperature",
+      "description": "Returns number of accidents for the given temperature interval.",
+      "url": "http://localhost:8081/open-data/api/statistics/temperature",
+      "info": [
+        "JSON",
+        "NO",
+        "NO"
+      ],
+      "params": [
+        {
+          "name": "tempStep",
+          "req": "optional",
+          "desc": "Represents the size of an interval to count accidents by.",
+          "example": "7",
+          "default": "5"
+        },
+        {
+          "name": "min",
+          "req": "optional",
+          "desc": "Represents the start temperature to group by.",
+          "example": "-27.0",
+          "default": "-20.0"
+        },
+        {
+          "name": "max",
+          "req": "optional",
+          "desc": "Represents the end temperature to group by.",
+          "example": "15.0",
+          "default": "45.0"
+        }
+      ],
+      "request": "http://localhost:8081/open-data/api/statistics/temperature?step=10&min=-15&max=20",
+      "result": "[{\"from\":-15.0,\"to\":-10.0,\"count\":91},{\"from\":-10.0,\"to\":-5.0,\"count\":246},{\"from\":-5.0,\"to\":0.0,\"count\":801},{\"from\":0.0,\"to\":5.0,\"count\":2401},{\"from\":5.0,\"to\":10.0,\"count\":1305},{\"from\":10.0,\"to\":15.0,\"count\":1133},{\"from\":15.0,\"to\":20.0,\"count\":2126}]"
+    },
+    {
+      "id": "all",
+      "title": "GET /api/statistics/all",
+      "description": "Returns combined statistics for year, month, day, hour, quarter, type, weather and summary statistics.",
+      "url": "http://localhost:8081/open-data/api/statistics/all",
+      "info": [
+        "JSON",
+        "NO",
+        "NO"
+      ],
+      "params": [
+        {
+          "name": "/",
+          "req": "/",
+          "desc": "The is no parameter for the specific endpoint",
+          "example": "/",
+          "default": "/"
+        }
+      ],
+      "request": "http://localhost:8081/open-data/api/statistics/all",
+      "result": "{\"yearStatistics\":[{\"year\":2013,\"numberOfAccidents\":1},{\"year\":2014,\"numberOfAccidents\":5},{\"year\":2015,\"numberOfAccidents\":12865}],\"quarterStatistics\":[{\"quarter\":1,\"numberOfAccidents\":3274},{\"quarter\":2,\"numberOfAccidents\":3466},{\"quarter\":3,\"numberOfAccidents\":3534},{\"quarter\":4,\"numberOfAccidents\":2597}],\"monthStatistics\":[{\"monthNumber\":1,\"monthName\":\"January\",\"numberOfAccidents\":1042},{\"monthNumber\":2,\"monthName\":\"February\",\"numberOfAccidents\":1064},{\"monthNumber\":3,\"monthName\":\"March\",\"numberOfAccidents\":1168},{\"monthNumber\":4,\"monthName\":\"April\",\"numberOfAccidents\":1101},{\"monthNumber\":5,\"monthName\":\"May\",\"numberOfAccidents\":1207},{\"monthNumber\":6,\"monthName\":\"June\",\"numberOfAccidents\":1158},{\"monthNumber\":7,\"monthName\":\"July\",\"numberOfAccidents\":1105},{\"monthNumber\":8,\"monthName\":\"August\",\"numberOfAccidents\":1120},{\"monthNumber\":9,\"monthName\":\"September\",\"numberOfAccidents\":1309},{\"monthNumber\":10,\"monthName\":\"October\",\"numberOfAccidents\":1418},{\"monthNumber\":11,\"monthName\":\"November\",\"numberOfAccidents\":1178},{\"monthNumber\":12,\"monthName\":\"December\",\"numberOfAccidents\":1}],\"dayStatistics\":[{\"dayOfWeekNumber\":1,\"dayOfWeek\":\"Monday\",\"numberOfAccidents\":1281},{\"dayOfWeekNumber\":2,\"dayOfWeek\":\"Tuesday\",\"numberOfAccidents\":1971},{\"dayOfWeekNumber\":3,\"dayOfWeek\":\"Wednesday\",\"numberOfAccidents\":1937},{\"dayOfWeekNumber\":4,\"dayOfWeek\":\"Thursday\",\"numberOfAccidents\":1884},{\"dayOfWeekNumber\":5,\"dayOfWeek\":\"Friday\",\"numberOfAccidents\":2028},{\"dayOfWeekNumber\":6,\"dayOfWeek\":\"Saturday\",\"numberOfAccidents\":2118},{\"dayOfWeekNumber\":7,\"dayOfWeek\":\"Sunday\",\"numberOfAccidents\":1652}],\"hourStatistics\":[{\"hour\":0,\"numberOfAccidents\":226},{\"hour\":1,\"numberOfAccidents\":156},{\"hour\":2,\"numberOfAccidents\":116},{\"hour\":3,\"numberOfAccidents\":94},{\"hour\":4,\"numberOfAccidents\":99},{\"hour\":5,\"numberOfAccidents\":102},{\"hour\":6,\"numberOfAccidents\":241},{\"hour\":7,\"numberOfAccidents\":609},{\"hour\":8,\"numberOfAccidents\":747},{\"hour\":9,\"numberOfAccidents\":686},{\"hour\":10,\"numberOfAccidents\":716},{\"hour\":11,\"numberOfAccidents\":830},{\"hour\":12,\"numberOfAccidents\":892},{\"hour\":13,\"numberOfAccidents\":871},{\"hour\":14,\"numberOfAccidents\":880},{\"hour\":15,\"numberOfAccidents\":851},{\"hour\":16,\"numberOfAccidents\":917},{\"hour\":17,\"numberOfAccidents\":854},{\"hour\":18,\"numberOfAccidents\":712},{\"hour\":19,\"numberOfAccidents\":662},{\"hour\":20,\"numberOfAccidents\":487},{\"hour\":21,\"numberOfAccidents\":448},{\"hour\":22,\"numberOfAccidents\":387},{\"hour\":23,\"numberOfAccidents\":288}],\"typeStatistics\":[{\"type\":\"Material accident\",\"numberOfAccidents\":9484},{\"type\":\"Injury accident\",\"numberOfAccidents\":3307},{\"type\":\"Fatal accident\",\"numberOfAccidents\":80}],\"weatherStatistics\":[{\"precipitation\":\"rain\",\"numberOfAccidents\":5500},{\"precipitation\":\"snow\",\"numberOfAccidents\":1208},{\"precipitation\":\"sunny\",\"numberOfAccidents\":5131},{\"precipitation\":\"unknown\",\"numberOfAccidents\":1032}],\"summaryTypeStatistics\":[{\"summary\":\"Clear\",\"numberOfAccidents\":5705},{\"summary\":\"Partly Cloudy\",\"numberOfAccidents\":3024},{\"summary\":\"Mostly Cloudy\",\"numberOfAccidents\":1392},{\"summary\":\"Overcast\",\"numberOfAccidents\":1072},{\"summary\":\"unknown\",\"numberOfAccidents\":1028},{\"summary\":\"Foggy\",\"numberOfAccidents\":428},{\"summary\":\"Breezy\",\"numberOfAccidents\":100},{\"summary\":\"Breezy and Overcast\",\"numberOfAccidents\":33},{\"summary\":\"Breezy and Mostly Cloudy\",\"numberOfAccidents\":26},{\"summary\":\"Dry and Partly Cloudy\",\"numberOfAccidents\":17},{\"summary\":\"Windy and Mostly Cloudy\",\"numberOfAccidents\":11},{\"summary\":\"Breezy and Partly Cloudy\",\"numberOfAccidents\":10},{\"summary\":\"Humid\",\"numberOfAccidents\":10},{\"summary\":\"Humid and Partly Cloudy\",\"numberOfAccidents\":6},{\"summary\":\"Windy\",\"numberOfAccidents\":4},{\"summary\":\"Dry\",\"numberOfAccidents\":3},{\"summary\":\"Humid and Mostly Cloudy\",\"numberOfAccidents\":2}]}"
+    }
+  ]
+}

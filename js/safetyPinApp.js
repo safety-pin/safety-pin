@@ -240,6 +240,7 @@ angular.module('safetyPinApp', [])
           "type": "serial",
           "theme": "light",
           "marginRight": 80,
+          "colors": ["#AC2023"],
           "autoMarginOffset": 20,
           "valueAxes": [{
               "id": "v1",

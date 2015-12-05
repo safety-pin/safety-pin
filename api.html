@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Open Parliament Data</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="dependencies/css/bootstrap.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    <link href="css/doc-styles.css" rel="stylesheet">
+
+    <!-- Core Angular-->
+    <script type="text/javascript" src="js/angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular/angular-resource.min.js"></script>
+    <script type="text/javascript" src="js/angular/angular-scroll.min.js"></script>
+
+</head>
+
+<body id="page-top" ng-app="app">
+
+<div ng-controller="DocsCtrl">
+    <div class="col-md-3 col-xs-4" id="sidebar">
+        <!-- sidebar -->
+        <ul class="nav nav-stacked col-sm-offset-2">
+            <li><a href="#page-top" du-smooth-scroll du-scrollspy><h3>Endpoints <i
+                    class="glyphicon glyphicon glyphicon-chevron-up pull-right"></i></h3></a></li>
+            <li><a href="#api" du-smooth-scroll du-scrollspy offset="30">GET /api</a></li>
+            <li><a href="#accidentId" du-smooth-scroll du-scrollspy offset="30">GET api/:id</a></li>
+            <li><a href="#circle" du-smooth-scroll du-scrollspy offset="30">GET /api/circle</a></li>
+            <li><a href="#path" du-smooth-scroll du-scrollspy offset="30">POST /api/path</a></li>
+            <li><a href="#year" du-smooth-scroll du-scrollspy offset="30">GET /api/statistics/year</a></li>
+            <li><a href="#quarter" du-smooth-scroll du-scrollspy offset="30">GET /api/statistics/quarter</a></li>
+            <li><a href="#month" du-smooth-scroll du-scrollspy offset="30">GET /api/statistics/month</a></li>
+            <li><a href="#day" du-smooth-scroll du-scrollspy offset="30">GET /api/statistics/day</a></li>
+            <li><a href="#hour" du-smooth-scroll du-scrollspy offset="30">GET /api/statistics/hour</a>
+            </li>
+            <li><a href="#type" du-smooth-scroll du-scrollspy offset="30">GET /api/statistics/type</a></li>
+            <li><a href="#weather" du-smooth-scroll du-scrollspy offset="30">GET /api/statistics/weather</a></li>
+            <li><a href="#summary" du-smooth-scroll du-scrollspy offset="30">GET /api/statistics/summary</a></li>
+            <li><a href="#all" du-smooth-scroll du-scrollspy offset="30">GET /api/statistics/all</a></li>
+        </ul>
+    </div>
+    <!-- /sidebar -->
+
+    <div class="col-md-8 col-md-offset-4 col-xs-offset-4 documentation">
+            <h2 class="heading"> <i>REST API</i> endpoints</h2>
+            <br>
+            <div class="col-md-8">
+                <p class="text-justify">The <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a>
+                    API za pristup podacima o saobraćajnim nezgodama Ministarstva Unutrašnjih Poslova Srbije.
+                    Pomoću ovog API-ja moguće je dobiti podatke o svim nezgodama na teritoriji grada Beograda, statistikama, planeru, predviđanjima...</p>
+                <p> Odgovori su u poznatom <a href="http://www.json.org/" target="_blank">JSON</a> formatu, i korišćenje API-ja je potpuno besplatno.</p>
+            </div>
+    </div>
+     <hr class="primary">
+    <!-- documentation -->
+    <div ng-include="'views/panelDocs.html'"></div>
+    <!-- /documentation -->
+</div>
+
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<script src="js/wow.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/creative.js"></script>
+
+<!-- Angular app module -->
+<script type="text/javascript" src="js/docApp.js"></script>
+
+
+</body>
+</html>

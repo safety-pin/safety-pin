@@ -1,0 +1,55 @@
+#sidebar {
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+}
+
+#sidebar, #sidebar a {
+    color: black;
+    background-color: #F05F40;
+}
+
+#member {
+    padding-top: 0px;
+    overflow-x: hidden;
+}
+
+#sidebar > .nav-stacked > li > a:hover,
+#sidebar > .nav-stacked > li > .active,
+#sidebar > .nav-stacked > li > .focus {
+    color: white;
+}
+
+#sidebar > .nav-stacked > li > a {
+    padding-bottom: 3px;
+    transition: all .1s linear;
+}
+
+#sidebar > .nav-stacked > li > a {
+    transform: scale(1.1);
+}
+
+.endpoint-doc {
+    padding-top: 30px;
+}
+
+h3 {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.values {
+    margin-bottom: 5px;
+}
+
+pre {
+    background-color: #FFD393;
+}
+
+.documentation {
+    padding-top: 50px;
+}
+
+body {
+    margin-top: -20px;
+}
