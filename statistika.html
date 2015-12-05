@@ -29,12 +29,10 @@
     <script src="js/safetyPinApp.js"></script>
 
     <script src="dependencies/js/map.js"></script>
-
-
 </head>
 
 
-<body>
+<body ng-controller="safetyPinCtrl">
 
   <section id="navigation">
       <nav class="navbar navbar-default navbar-fixed-top">
@@ -100,6 +98,9 @@
                   <div class="col-md-8" ng-show="isSet(8)">
                       <div id="chartSummaryType" style="width: 90%; height: 500px; margin:auto; "></div>
                   </div>
+                  <div class="col-md-8" ng-show="isSet(9)">
+                      <div id="chartTemperature" style="width: 70%; height: 500px; margin:auto; "></div>
+                  </div>
               </div>
           </div>
       </div>
@@ -133,6 +134,9 @@
                 </li>
                 <li ng-class="{active:isSet(8) }">
                   <a class="dashFormat" href ng-click="setTab(8)">Vremenski uslovi</a>
+                </li>
+                <li ng-class="{active:isSet(9) }">
+                  <a class="dashFormat" href ng-click="setTab(9)">Temperatura</a>
                 </li>
               </ul>
           </div>

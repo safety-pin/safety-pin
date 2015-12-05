@@ -1,37 +1,7 @@
 angular.module('safetyPinApp', [])
 
-// .config(['$routeProvider', function($routeProvider) {
-//     $routeProvider.
-//     when('/mapa', {
-//         templateUrl: 'pages/mapa.html',
-//         controller: 'safetyPinCtrl'
-//     }).
-//     when('/putanja', {
-//         templateUrl: 'pages/putanja.html',
-//         controller: 'safetyPinCtrl'
-//     }).
-//     when('/dodaj-nezgodu', {
-//         templateUrl: 'pages/dodaj-nezgodu.html',
-//         controller: 'safetyPinCtrl'
-//     }).
-//     when('/statistika', {
-//         templateUrl: 'pages/statistika.html',
-//         controller: 'safetyPinCtrl'
-//     }).
-//     when('/savetnik', {
-//         templateUrl: 'pages/savetnik.html',
-//         controller: 'safetyPinCtrl'
-//     }).
-//     otherwise({
-//         redirectTo: '/mapa'
-//     });
-// }])
 
 .controller('safetyPinCtrl', function($scope, $http) {
-
-  // $scope.isActivePage = function(route) {
-  //     return route === $location.path();
-  // };
 
   $scope.tab = 1;
 
@@ -52,7 +22,6 @@ angular.module('safetyPinApp', [])
       $scope.numberOfAccidentsPerYear2013 = $scope.newData.yearStatistics[0].numberOfAccidents;
       $scope.numberOfAccidentsPerYear2014 = $scope.newData.yearStatistics[1].numberOfAccidents;
       $scope.numberOfAccidentsPerYear2015 = $scope.newData.yearStatistics[2].numberOfAccidents;
-      console.log($scope.year2015);
 
       $scope.chartYear = AmCharts.makeChart("chartYear", {
         "type": "serial",
@@ -540,6 +509,70 @@ angular.module('safetyPinApp', [])
           }, {
             "day": "Nepoznato",
             "accidents": $scope.numberOfAccidentsPerSummaryType7
+          }],
+          "valueAxes": [ {
+            "gridColor": "#FFFFFF",
+            "gridAlpha": 0.2,
+            "dashLength": 0
+          } ],
+          "gridAboveGraphs": true,
+          "startDuration": 1,
+          "graphs": [ {
+            "balloonText": "[[day]]: <b>[[accidents]]</b>",
+            "fillAlphas": 0.8,
+            "lineAlpha": 0.2,
+            "type": "column",
+            "valueField": "accidents"
+          } ],
+          "chartCursor": {
+            "categoryBalloonEnabled": false,
+            "cursorAlpha": 0,
+            "zoomable": false
+          },
+          "categoryField": "day",
+          "categoryAxis": {
+            "gridPosition": "start",
+            "gridAlpha": 0,
+            "tickPosition": "start",
+            "tickLength": 20
+          },
+          "export": {
+            "enabled": true
+          }
+      });
+  });
+
+  $http.get("http://10.120.192.2:8081/open-data/api/statistics/temperature?tempStep=10&min=-20&max=40").success(function(response) {
+      $scope.newData = response;
+
+      $scope.numberOfAccidentsPerTemperature1 = $scope.newData[0].count;
+      $scope.numberOfAccidentsPerTemperature2 = $scope.newData[1].count;
+      $scope.numberOfAccidentsPerTemperature3 = $scope.newData[2].count;
+      $scope.numberOfAccidentsPerTemperature4 = $scope.newData[3].count;
+      $scope.numberOfAccidentsPerTemperature5 = $scope.newData[4].count;
+      $scope.numberOfAccidentsPerTemperature6 = $scope.newData[5].count;
+
+      $scope.chartMonth = AmCharts.makeChart( "chartTemperature", {
+          "type": "serial",
+          "theme": "light",
+          "dataProvider": [{
+            "day": "-20 do -10",
+            "accidents": $scope.numberOfAccidentsPerTemperature1
+          }, {
+            "day": "-10 do 0",
+            "accidents": $scope.numberOfAccidentsPerTemperature2
+          }, {
+            "day": "0 do 10",
+            "accidents": $scope.numberOfAccidentsPerTemperature3
+          }, {
+            "day": "10 do 20",
+            "accidents": $scope.numberOfAccidentsPerTemperature4
+          }, {
+            "day": "20 do 30",
+            "accidents": $scope.numberOfAccidentsPerTemperature5
+          }, {
+            "day": "30 do 40",
+            "accidents": $scope.numberOfAccidentsPerTemperature6
           }],
           "valueAxes": [ {
             "gridColor": "#FFFFFF",
