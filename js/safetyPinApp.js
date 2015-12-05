@@ -13,21 +13,23 @@ angular.module('safetyPinApp', [])
     $scope.tab = setTab;
   };
 
+
+
   $http.get("http://10.120.192.2:8081/open-data/api/statistics/all").success(function(response) {
       $scope.newData = response;
 
       $scope.chartYear = AmCharts.makeChart("chartYear", {
         "type": "serial",
-        "theme": "light",
+        "theme": "amCustomTheme",
         "dataProvider": [ {
           "year": $scope.newData.yearStatistics[0].year,
-          "accidents": $scope.newData.yearStatistics[0].numberOfAccidents
+          "accidents": $scope.newData.yearStatistics[0].numberOfAccidents,
         }, {
           "year": $scope.newData.yearStatistics[1].year,
-          "accidents": $scope.newData.yearStatistics[1].numberOfAccidents
+          "accidents": $scope.newData.yearStatistics[1].numberOfAccidents,
         }, {
           "year": $scope.newData.yearStatistics[2].year,
-          "accidents": $scope.newData.yearStatistics[2].numberOfAccidents
+          "accidents": $scope.newData.yearStatistics[2].numberOfAccidents,
         }],
         "valueAxes": [ {
           "gridColor": "#FFFFFF",
@@ -62,7 +64,7 @@ angular.module('safetyPinApp', [])
 
       $scope.chartMonth = AmCharts.makeChart( "chartMonth", {
           "type": "serial",
-          "theme": "light",
+          "theme": "amCustomTheme",
           "dataProvider": [ {
             "month": "Jan",
             "accidents": $scope.newData.monthStatistics[0].numberOfAccidents
@@ -133,7 +135,7 @@ angular.module('safetyPinApp', [])
 
       $scope.chartMonth = AmCharts.makeChart( "chartQuartal", {
           "type": "serial",
-          "theme": "light",
+          "theme": "amCustomTheme",
           "dataProvider": [ {
             "quartal": "I kvartal",
             "accidents": $scope.newData.quarterStatistics[0].numberOfAccidents
@@ -180,7 +182,7 @@ angular.module('safetyPinApp', [])
 
       $scope.chartMonth = AmCharts.makeChart( "chartDay", {
           "type": "serial",
-          "theme": "light",
+          "theme": "amCustomTheme",
           "dataProvider": [{
             "day": "Ponedeljak",
             "accidents": $scope.newData.dayStatistics[0].numberOfAccidents
@@ -353,7 +355,7 @@ angular.module('safetyPinApp', [])
 
       $scope.chartMonth = AmCharts.makeChart( "chartType", {
         "type": "pie",
-        "theme": "light",
+        "theme": "none",
         "dataProvider": [ {
           "title": "Materijalna šteta",
           "value": $scope.newData.typeStatistics[0].numberOfAccidents
@@ -366,6 +368,7 @@ angular.module('safetyPinApp', [])
         }],
         "titleField": "title",
         "valueField": "value",
+        "colors": ["#292D71", "#AC2023", "#353131"],
         "labelRadius": 5,
 
         "radius": "42%",
@@ -378,7 +381,8 @@ angular.module('safetyPinApp', [])
 
       $scope.chartMonth = AmCharts.makeChart( "chartWeather", {
         "type": "pie",
-        "theme": "light",
+        "theme": "none",
+        "fieldColor": "blue",
         "dataProvider": [ {
           "title": "Kiša",
           "value": $scope.newData.weatherStatistics[0].numberOfAccidents
@@ -392,7 +396,7 @@ angular.module('safetyPinApp', [])
         "titleField": "title",
         "valueField": "value",
         "labelRadius": 5,
-
+        "colors": ["#778bab", "#ccc8c8", "#fffab1"],
         "radius": "42%",
         "innerRadius": "60%",
         "labelText": "[[title]]",
@@ -403,7 +407,7 @@ angular.module('safetyPinApp', [])
 
       $scope.chartMonth = AmCharts.makeChart( "chartSummaryType", {
           "type": "serial",
-          "theme": "light",
+          "theme": "amCustomTheme",
           "dataProvider": [{
             "day": "Vedro",
             "accidents": $scope.newData.summaryTypeStatistics[0].numberOfAccidents
@@ -463,7 +467,7 @@ angular.module('safetyPinApp', [])
 
       $scope.chartMonth = AmCharts.makeChart( "chartTemperature", {
           "type": "serial",
-          "theme": "light",
+          "theme": "amCustomTheme",
           "dataProvider": [{
             "day": "-20 do -10",
             "accidents": $scope.newData[0].count
