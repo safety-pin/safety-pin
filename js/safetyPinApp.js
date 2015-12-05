@@ -1,37 +1,37 @@
-angular.module('safetyPinApp', ['ngRoute'])
+angular.module('safetyPinApp', [])
 
-.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.
-    when('/mapa', {
-        templateUrl: 'pages/mapa.html',
-        controller: 'safetyPinCtrl'
-    }).
-    when('/putanja', {
-        templateUrl: 'pages/putanja.html',
-        controller: 'safetyPinCtrl'
-    }).
-    when('/dodaj-nezgodu', {
-        templateUrl: 'pages/dodaj-nezgodu.html',
-        controller: 'safetyPinCtrl'
-    }).
-    when('/statistika', {
-        templateUrl: 'pages/statistika.html',
-        controller: 'safetyPinCtrl'
-    }).
-    when('/savetnik', {
-        templateUrl: 'pages/savetnik.html',
-        controller: 'safetyPinCtrl'
-    }).
-    otherwise({
-        redirectTo: '/mapa'
-    });
-}])
+// .config(['$routeProvider', function($routeProvider) {
+//     $routeProvider.
+//     when('/mapa', {
+//         templateUrl: 'pages/mapa.html',
+//         controller: 'safetyPinCtrl'
+//     }).
+//     when('/putanja', {
+//         templateUrl: 'pages/putanja.html',
+//         controller: 'safetyPinCtrl'
+//     }).
+//     when('/dodaj-nezgodu', {
+//         templateUrl: 'pages/dodaj-nezgodu.html',
+//         controller: 'safetyPinCtrl'
+//     }).
+//     when('/statistika', {
+//         templateUrl: 'pages/statistika.html',
+//         controller: 'safetyPinCtrl'
+//     }).
+//     when('/savetnik', {
+//         templateUrl: 'pages/savetnik.html',
+//         controller: 'safetyPinCtrl'
+//     }).
+//     otherwise({
+//         redirectTo: '/mapa'
+//     });
+// }])
 
-.controller('safetyPinCtrl', function($scope, $location, $http) {
+.controller('safetyPinCtrl', function($scope, $http) {
 
-  $scope.isActivePage = function(route) {
-      return route === $location.path();
-  };
+  // $scope.isActivePage = function(route) {
+  //     return route === $location.path();
+  // };
 
   $scope.tab = 1;
 
@@ -43,7 +43,7 @@ angular.module('safetyPinApp', ['ngRoute'])
     $scope.tab = setTab;
   };
 
-  $http.get("http://10.120.194.78:8081/open-data/api/statistics/all").success(function(response) {
+  $http.get("http://10.120.192.2:8081/open-data/api/statistics/all").success(function(response) {
       $scope.newData = response;
 
       $scope.year2013 = $scope.newData.yearStatistics[0].year;
@@ -52,6 +52,7 @@ angular.module('safetyPinApp', ['ngRoute'])
       $scope.numberOfAccidentsPerYear2013 = $scope.newData.yearStatistics[0].numberOfAccidents;
       $scope.numberOfAccidentsPerYear2014 = $scope.newData.yearStatistics[1].numberOfAccidents;
       $scope.numberOfAccidentsPerYear2015 = $scope.newData.yearStatistics[2].numberOfAccidents;
+      console.log($scope.year2015);
 
       $scope.chartYear = AmCharts.makeChart("chartYear", {
         "type": "serial",
