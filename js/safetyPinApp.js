@@ -234,128 +234,121 @@ angular.module('safetyPinApp', [])
           }
       });
 
-      $scope.chartMonth = AmCharts.makeChart( "chartHour", {
-        "type": "serial",
-        "theme": "light",
-        "rotate": true,
-        "marginBottom": 50,
-        "dataProvider": [{
-          "age": "11",
-          "beforeNoon": -$scope.newData.hourStatistics[11].numberOfAccidents,
-          "afterNoon": $scope.newData.hourStatistics[23].numberOfAccidents
-        }, {
-          "age": "10",
-          "beforeNoon": -$scope.newData.hourStatistics[10].numberOfAccidents,
-          "afterNoon": $scope.newData.hourStatistics[22].numberOfAccidents
-        }, {
-          "age": "9",
-          "beforeNoon": -$scope.newData.hourStatistics[9].numberOfAccidents,
-          "afterNoon": $scope.newData.hourStatistics[21].numberOfAccidents
-        }, {
-          "age": "8",
-          "beforeNoon": -$scope.newData.hourStatistics[8].numberOfAccidents,
-          "afterNoon": $scope.newData.hourStatistics[20].numberOfAccidents
-        }, {
-          "age": "7",
-          "beforeNoon": -$scope.newData.hourStatistics[7].numberOfAccidents,
-          "afterNoon": $scope.newData.hourStatistics[19].numberOfAccidents
-        }, {
-          "age": "6",
-          "beforeNoon": -$scope.newData.hourStatistics[6].numberOfAccidents,
-          "afterNoon": $scope.newData.hourStatistics[18].numberOfAccidents
-        }, {
-          "age": "5",
-          "beforeNoon": -$scope.newData.hourStatistics[5].numberOfAccidents,
-          "afterNoon": $scope.newData.hourStatistics[17].numberOfAccidents
-        }, {
-          "age": "4",
-          "beforeNoon": -$scope.newData.hourStatistics[4].numberOfAccidents,
-          "afterNoon": $scope.newData.hourStatistics[16].numberOfAccidents
-        }, {
-          "age": "3",
-          "beforeNoon": -$scope.newData.hourStatistics[3].numberOfAccidents,
-          "afterNoon": $scope.newData.hourStatistics[15].numberOfAccidents
-        }, {
-          "age": "2",
-          "beforeNoon": -$scope.newData.hourStatistics[2].numberOfAccidents,
-          "afterNoon": $scope.newData.hourStatistics[14].numberOfAccidents
-        }, {
-          "age": "1",
-          "beforeNoon": -$scope.newData.hourStatistics[1].numberOfAccidents,
-          "afterNoon": $scope.newData.hourStatistics[13].numberOfAccidents
-        }, {
-          "age": "0",
-          "beforeNoon": -$scope.newData.hourStatistics[0].numberOfAccidents,
-          "afterNoon": $scope.newData.hourStatistics[12].numberOfAccidents
-        }],
-        "startDuration": 1,
-        "graphs": [{
-          "fillAlphas": 0.8,
-          "lineAlpha": 0.2,
-          "type": "column",
-          "valueField": "beforeNoon",
-          "title": "beforeNoon",
-          "labelText": "[[value]]",
-          "clustered": false,
-          "labelFunction": function(item) {
-            return Math.abs(item.values.value);
+      $scope.chart = AmCharts.makeChart("chartHour", {
+          "type": "serial",
+          "theme": "light",
+          "marginRight": 80,
+          "autoMarginOffset": 20,
+          "valueAxes": [{
+              "id": "v1",
+              "axisAlpha": 0,
+              "position": "left"
+          }],
+          "balloon": {
+              "borderThickness": 1,
+              "shadowAlpha": 0
           },
-          "balloonFunction": function(item) {
-            return item.category + ": " + Math.abs(item.values.value);
-          }
-        }, {
-          "fillAlphas": 0.8,
-          "lineAlpha": 0.2,
-          "type": "column",
-          "valueField": "afterNoon",
-          "title": "afterNoon",
-          "labelText": "[[value]]",
-          "clustered": false,
-          // "labelFunction": function(item) {
-          //   return Math.abs(item.values.value);
-          // },
-          "balloonFunction": function(item) {
-            return item.category + ": " + Math.abs(item.values.value);
-          }
-        }],
-        "categoryField": "age",
-        "categoryAxis": {
-          "gridPosition": "start",
-          "gridAlpha": 0.2,
-          "axisAlpha": 0
-        },
-        "valueAxes": [{
-          "gridAlpha": 0,
-          "ignoreAxisWidth": true,
-          "guides": [{
-            "value": 0,
-            "lineAlpha": 0.2
+          "graphs": [{
+              "id": "g1",
+              "bullet": "round",
+              "bulletBorderAlpha": 1,
+              "bulletColor": "#FFFFFF",
+              "bulletSize": 5,
+              "hideBulletsCount": 50,
+              "lineThickness": 2,
+              "title": "red line",
+              "useLineColorForBulletBorder": true,
+              "valueField": "value",
+              "balloonText": "<div style='margin:5px; font-size:19px;'><span style='font-size:13px;'>[[category]]</span><br>[[value]]</div>"
+          }],
+          "chartCursor": {
+              "pan": true,
+              "valueLineEnabled": true,
+              "valueLineBalloonEnabled": true,
+              "cursorAlpha":0,
+              "valueLineAlpha":0.2
+          },
+          "categoryField": "hour",
+          "categoryAxis": {
+              "dashLength": 1,
+              "minorGridEnabled": true
+          },
+          "export": {
+              "enabled": true
+          },
+          "dataProvider": [{
+              "hour": "00:00",
+              "value": $scope.newData.hourStatistics[0].numberOfAccidents
+          }, {
+              "hour": "01:00",
+              "value": $scope.newData.hourStatistics[1].numberOfAccidents
+          }, {
+              "hour": "02:00",
+              "value": $scope.newData.hourStatistics[2].numberOfAccidents
+          }, {
+              "hour": "03:00",
+              "value": $scope.newData.hourStatistics[3].numberOfAccidents
+          }, {
+              "hour": "04:00",
+              "value": $scope.newData.hourStatistics[4].numberOfAccidents
+          }, {
+              "hour": "05:00",
+              "value": $scope.newData.hourStatistics[5].numberOfAccidents
+          }, {
+              "hour": "06:00",
+              "value": $scope.newData.hourStatistics[6].numberOfAccidents
+          }, {
+              "hour": "07:00",
+              "value": $scope.newData.hourStatistics[7].numberOfAccidents
+          }, {
+              "hour": "08:00",
+              "value": $scope.newData.hourStatistics[8].numberOfAccidents
+          }, {
+              "hour": "09:00",
+              "value": $scope.newData.hourStatistics[9].numberOfAccidents
+          }, {
+              "hour": "10:00",
+              "value": $scope.newData.hourStatistics[10].numberOfAccidents
+          }, {
+              "hour": "11:00",
+              "value": $scope.newData.hourStatistics[11].numberOfAccidents
+          }, {
+              "hour": "12:00",
+              "value": $scope.newData.hourStatistics[12].numberOfAccidents
+          }, {
+              "hour": "13:00",
+              "value": $scope.newData.hourStatistics[13].numberOfAccidents
+          }, {
+              "hour": "14:00",
+              "value": $scope.newData.hourStatistics[14].numberOfAccidents
+          }, {
+              "hour": "15:00",
+              "value": $scope.newData.hourStatistics[15].numberOfAccidents
+          }, {
+              "hour": "16:00",
+              "value": $scope.newData.hourStatistics[16].numberOfAccidents
+          }, {
+              "hour": "17:00",
+              "value": $scope.newData.hourStatistics[17].numberOfAccidents
+          }, {
+              "hour": "18:00",
+              "value": $scope.newData.hourStatistics[18].numberOfAccidents
+          }, {
+              "hour": "19:00",
+              "value": $scope.newData.hourStatistics[19].numberOfAccidents
+          }, {
+              "hour": "20:00",
+              "value": $scope.newData.hourStatistics[20].numberOfAccidents
+          }, {
+              "hour": "21:00",
+              "value": $scope.newData.hourStatistics[21].numberOfAccidents
+          }, {
+              "hour": "22:00",
+              "value": $scope.newData.hourStatistics[22].numberOfAccidents
+          }, {
+              "hour": "23:00",
+              "value": $scope.newData.hourStatistics[23].numberOfAccidents
           }]
-        }],
-        "balloon": {
-          "fixedPosition": true
-        },
-        "chartCursor": {
-          "valueBalloonsEnabled": false,
-          "cursorAlpha": 0.05,
-          "fullWidth": true
-        },
-        "allLabels": [{
-          "text": "Pre podne",
-          "x": "28%",
-          "y": "97%",
-          "bold": true,
-          "align": "middle"
-        }, {
-          "text": "Posle podne",
-          "x": "75%",
-          "y": "97%",
-          "bold": true,
-          "align": "middle"
-        }],
-        "export": {
-          "enabled": true
-        }
       });
 
       $scope.chartMonth = AmCharts.makeChart( "chartType", {
