@@ -78,9 +78,10 @@ height: 100%;
   padding-bottom: 1%
 }
 
-ul#results{
-  list-style: none;
-  padding-left: 0px;
-}
 
-ul#results li {}
+
+
+
+#inlajn{
+  display:inline;
+}
