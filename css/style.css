@@ -84,8 +84,12 @@ height: 100%;
 
 
 
-#inlajn{
+.inlajn{
   display:inline;
+}
+
+#adresa{
+  float: right;
 }
 
 ul#results li {}
