@@ -43,7 +43,7 @@
 					map: map,
 					title: String(currentValue.id)
 				});
-				markerClusterer.addMarker(marker);
+				markerClusterer.addMarker(marker)
 			});
 
 		});
