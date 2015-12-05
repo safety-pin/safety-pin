@@ -31,6 +31,8 @@
 
 body, html {
 height: 100%;
+margin: 0;
+padding: 0;
 }
 
 #container{
@@ -80,20 +82,37 @@ height: 100%;
 }
 
 
-
+#streetview{
+  margin-top: 10px;
+  width:100%;
+}
 
 
 
 .inlajn{
   display:inline;
+  font-weight: bold;
+  padding-left: 10px;
+  margin-bottom: 10px;
 }
 
 #adresa{
   float: right;
+  
 }
 
 ul#results li {}
 
 label {
   color: white;
+}
+
+#vrh{
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: 20px;
+}
+
+html{
+  margin: 0;
 }
