@@ -10,15 +10,13 @@
     <title>Safety pin</title>
 
     <!-- CSS -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <link href="dependencies/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <!-- JavaScript -->
-    <script src="dependencies/js/jquery-1.11.3.min.js"></script>
     <script src="dependencies/js/bootstrap.min.js"></script>
 
-    <script src="dependencies/js/map.js"></script>
 
 
 </head>
@@ -61,7 +59,22 @@
 
 	</section>
 
+	<section id="container">
+		<form id="locationForm">
+			<input type="text" id="location" name="location">
+			<ul id="results">
+				
+			</ul>
+		</form>
+		<div id="map"></div>
+		
 
+	</section>
+
+
+	<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBcg8PCP5Oo3iBwndK8FTqG0vXlXffAgEs"></script>
+		<script type="text/javascript" src="dependencies/js/script.js"></script>
+  		<script type="text/javascript" src="dependencies/js/baki.js"></script>
 </body>
 
 </html>
