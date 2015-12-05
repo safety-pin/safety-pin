@@ -18,3 +18,4 @@
 	map = new google.maps.Map(element, options);
 	
 }(window, google));
+

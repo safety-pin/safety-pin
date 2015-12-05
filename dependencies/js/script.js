@@ -133,6 +133,10 @@ function initService(){
 				$('.result').html("");
 			}
 		});
+		$('#selectable').change(function(){
+			var value = $('.ui-selected').val();
+			$('#location').val(value);
+		});
 	});
 	
 }
