@@ -31,12 +31,18 @@ function parseMapsJson(data){
 	allPaths = JSON.stringify(allPaths);
 	console.log(allPaths);
 	// allPaths = JSON.parse(allPaths);
+	if (typeof routeMarkers != "undefined" && routeMarkers!=[]){
+		for (i = 0; i< routeMarkers.length; i++ ){
+			routeMarkers[i].setMap(null);
+		}
+	}
 
-
+	routeMarkers = [];
 	$.ajax({
 		url: "http://10.120.192.2:8081/open-data/api/path", 
 		data: allPaths, 
 		success: function(response){
+
 			console.log(JSON.stringify(response));
 			response.forEach(function(currentValue){
 
@@ -45,6 +51,7 @@ function parseMapsJson(data){
 					map: map,
 					title: String(currentValue.id)
 				});
+				routeMarkers.push(marker);
 			});
 		},
 		method: "POST",
