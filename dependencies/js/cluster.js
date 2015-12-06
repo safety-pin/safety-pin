@@ -84,7 +84,7 @@
     var marker2 = new MarkerClusterer(map, [], MCoptions2);
     var marker3 = new MarkerClusterer(map, [], MCoptions3);
 
-    $.getJSON("http://10.120.192.2:8081/open-data/api?limit=13000",
+    $.getJSON("http://10.120.192.2:8081/open-data/api?limit=1300",
     	function (json) {
     		json.forEach(function (currentValue) {
 
