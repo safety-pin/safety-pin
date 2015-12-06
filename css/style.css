@@ -98,6 +98,7 @@ label {
   padding-right: 0;
   padding-left: 0;
   padding-top: 20px;
+  background-color: #F2F2F2;
 }
 
 html{
@@ -107,23 +108,28 @@ html{
 #tip{
   width:100%;
   height:100px;
-  background-color:blue;
+  background-color:#F2F2F2;
 }
 
 #date{
   width:100%;
   display: inline-block;
   height:20%;
-  background-color:red;
+  background-color:#F2F2F2;
   padding: 15px;
+  text-align: center;
 }
 
 #temp{
   width:100%;
   height:100px;
-  background-color:blue;
+  background-color:#F2F2F2;
 }
 
+.vreme-nesrece{
+  font-weight: bold;
+  padding-top: 10px;
+}
 
 #selectable .ui-selecting { background: #FECA40; }
 #selectable .ui-selected { background: #F39814; color: white; }
