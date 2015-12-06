@@ -103,8 +103,6 @@ label {
 }
 
 #vreme{
-  width:100%;
-  height:100px;
   background-color:#F2F2F2;
   padding-top: 20%;
   padding-bottom: 45%;
@@ -163,7 +161,7 @@ label {
 #oblacic{
   width:94px;
   height:75px;
-  padding-left: 10px;
+  float: left;
 
 }
 
@@ -183,6 +181,7 @@ label {
 #padavina{
   padding-top: 20px;
   font-size: 18px;
+  margin: 0 auto;
 }
 
 #temp-br{
@@ -193,7 +192,6 @@ label {
 #temp-cel{
   font-size: 18px;
   font-weight: bold;
-  margin-left: -10px;
 }
 
 #toplomer{

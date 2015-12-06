@@ -75,11 +75,11 @@ left:0px;top:0px;right:0px;bottom:0px;"></div>
                  src="https://maps.googleapis.com/maps/api/streetview?size=400x250&location=Belgrade,Serbia8&heading=151.78&pitch=-0.76">
 
             <div id="date">
-                <h1 class="vreme-nesrece">11:52</h1>
+                <h1 class="vreme-nesrece" id="time">*****</h1>
 
-                <p class="inlajn" id="dayOfWeek">Ponedeljak, </p>
+                <p class="inlajn" id="dayOfWeek">********</p>
 
-                <p class="inlajn">01/07/2014</p>
+                <p class="inlajn" id="date1">*******</p>
             </div>
 
             <div id="ikonica-nesrece">
@@ -88,22 +88,18 @@ left:0px;top:0px;right:0px;bottom:0px;"></div>
                 <p id="tip-nesrece">Sa povredama</p>
             </div>
 
-            <div id="vreme">
-                <div id="oblaci">
+            <div id="vreme" class="col-md-8 col-md-offset-2">
+                <div id="oblaci" class="col-md-5">
                     <img id="oblacic" src="images/Humid and Mostly Cloudy.png">
+                    <p id="padavina" class="text-center">Kiša</p>
                 </div>
-
-                <div id="temperatura">
+                <div class="col-md-1"></div>
+                <div id="temperatura" class="col-md-6">
                     <img id="toplomer" src="images/temperatura.png">
-
-                    <p id="temp-br" class="inlajn">17</p>
-
-                    <p id="temp-cel" class="inlajn">°C</p>
+                    <p id="temp-cel" class="inlajn"><span id="temp-br"></span>°C</p>
                 </div>
 
-                <div id="padavine">
-                    <p id="padavina">Kiša</p>
-                </div>
+
             </div>
         </div>
     </div>
