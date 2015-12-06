@@ -33,7 +33,7 @@ padding: 0;
 }
 
 #map{
-
+  min-height: 1000px;
 	height:100%;
 }
 
