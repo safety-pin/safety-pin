@@ -216,20 +216,35 @@ blockquote {
 }
 
 #putanja-ikonice {
-  background: red;
   margin: 250px auto;
   height: 100%;
 }
 
 .image-putanja {
-    width: 150px;
-    height: 150px;
+    width: 75px;
+    height: 75px;
     float: left;
+    margin-left: 50px;
 }
 
 .text-putanja {
     float: left;
-    background: blue;
-    height: 50px;
-    width: 50%
+    height: 100px;
+    width: 50%;
+    margin-top: 10px;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.p-gornji {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.p-donji {
+    text-align: center;
 }
