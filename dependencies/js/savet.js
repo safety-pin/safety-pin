@@ -16,6 +16,15 @@
 	element = document.getElementById('map');
 	//map
 	map = new google.maps.Map(element, options);
+
+	var circle = new google.maps.Circle({
+		map:map,
+		center: new google.maps.LatLng (44.802487, 20.466336),
+		radius:100,
+		strokeColor:"#cc2800",
+		fillColor: "#ff471a",
+		fillOpacity: 0.3,
+	});
 	
 }(window, google));
 
