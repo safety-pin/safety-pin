@@ -19,22 +19,31 @@
 
 	map = new google.maps.Map(element, options);
 	
-	// MCoptions = {
-	// 	styles: [{
-	// 		url: "",
-	// 		height: '',
-	// 		width: ''
-	// 	},
-	// 	{
+	MCoptions1 = {
+		styles: [{
+			url: "images/Safty-PIN-icon-set-26.png",
+			height: '25px',
+			width: '25px'
+		}]
+	}
+	MCoptions2 = {
+		styles: [{
+			url: "images/Safty-PIN-icon-set-27.png",
+			height: '25px',
+			width: '25px'
+		}]
+	}
+	MCoptions3 = {
+		styles: [{
+			url: "images/Safty-PIN-icon-set-28.png",
+			height: '25px',
+			width: '25px'
+		}]
+	}
 
-	// 	},
-	// 	{
-
-	// 	}]
-	// }
-	var marker1 = new MarkerClusterer(map, []);
-	var marker2 = new MarkerClusterer(map, []);
-	var marker3 = new MarkerClusterer(map, []);
+	var marker1 = new MarkerClusterer(map, [], MCoptions1);
+	var marker2 = new MarkerClusterer(map, [], MCoptions2);
+	var marker3 = new MarkerClusterer(map, [], MCoptions3);
 	
 	$.getJSON("http://10.120.192.2:8081/open-data/api?limit=1300", 
 		function(json){
