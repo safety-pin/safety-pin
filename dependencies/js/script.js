@@ -59,6 +59,7 @@ function displayRoute1(map) {
     	if (status == google.maps.DirectionsStatus.OK) {
     		directionsDisplay.setDirections(response);
             // console.log(JSON.stringify(response));
+            
             parseMapsJson(response);
         }
     });

@@ -95,7 +95,7 @@
 					icon: 'images/small_pin.png'
 				});
 				marker.addListener('click', function() {
-					map.setCenter(marker.getPosition());
+					//map.setCenter(marker.getPosition());
 					//prikazati podatke o markeru kod vujketa, ovo je iznad je sranje
 				});
 				if(currentValue.type==1){
