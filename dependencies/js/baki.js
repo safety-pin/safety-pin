@@ -9,7 +9,7 @@ function parseMapsJson(data){
 		end_adress: data.routes[0].legs[0].start_address
 	}
 	// console.log(JSON.stringify(data));
-	
+
 
 	var steps = data.routes[0].legs[0].steps;
 	var allPaths = [];
@@ -18,7 +18,7 @@ function parseMapsJson(data){
 		var current = steps[i].path;
 		allPaths = allPaths.concat(current);
 
-	} 
+	}
 	// console.log(JSON.stringify(allPaths));
 	// var postData = {
 	// 	bounds : bounds,
@@ -39,8 +39,8 @@ function parseMapsJson(data){
 
 	routeMarkers = [];
 	$.ajax({
-		url: "http://10.120.192.2:8081/open-data/api/path", 
-		data: allPaths, 
+		url: "http://10.120.192.2:8081/open-data/api/path",
+		data: allPaths,
 		success: function(response){
 			var brMat = 0;
 			var brPov = 0;
@@ -67,8 +67,8 @@ function parseMapsJson(data){
 				});
 				routeMarkers.push(marker);
 			});
-			$('#putanja-info').text('Put koji prelazite je: '+ distance+ '.Na vasoj ruti nalazi se: '
-				+brMat+'nesreca prvog stepena i '+ brPov+ ' i '+ brSmr); 
+			$('#putanja-info').text('Put koji prelazite je: '+ distance+ 'm. Na vasoj ruti nalazi se: '
+				+brMat+' nesreca prvog stepena i '+ brPov+ ' i '+ brSmr); 
 		},
 		method: "POST",
 		dataType: "json",
@@ -76,7 +76,7 @@ function parseMapsJson(data){
 		contentType: "application/json"
 	});
 
-	// for (i = 0; i < allPaths.length; i=i+1) { 
+	// for (i = 0; i < allPaths.length; i=i+1) {
 	// 	$.get("http://10.120.192.2:8081/open-data/api/path",  function(json) {
 	// 		console.log(i);
 	// 		json.forEach(function(currentValue){
@@ -106,7 +106,7 @@ function parseMapsJson(data){
 	//   });
  //  	});
 
-		// $.post("http://10.120.194.78:8081/open-data/api/", postData, 
+		// $.post("http://10.120.194.78:8081/open-data/api/", postData,
 		// 	function(pins){
 		// 	//poslao sam bakiju legove, rute, distance i sl
 		// 	//ocekujem pinove koje cu da prikazem
