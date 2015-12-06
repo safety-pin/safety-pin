@@ -53,3 +53,7 @@ pre {
 body {
     margin-top: -20px;
 }
+
+#sidebar {
+    font-size: 0.5em;
+}
