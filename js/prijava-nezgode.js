@@ -2,32 +2,38 @@ var email;
 var adresa;
 var problem;
 var resenje;
+var lat;
+var lng;
+var json;
 
 
-function salji(){
+$("#prijaviForma").submit(function(){
 
-email = (document.getElementById('mejl').value);
+		email = (document.getElementById('mail').value);
 
-adresa = (document.getElementById('adr').value);
+		adresa = (document.getElementById('adr').value);
 
-problem = (document.getElementById('problem').value);
+		problem = (document.getElementById('problem').value);
 
-resenje = (document.getElementById('resenje').value);
-console.log(resenje);
+		resenje = (document.getElementById('resenje').value);
 
-$.post("http://10.120.192.2:8081/open-data/api",
-	{
-	"email":email,
-	"latitude":lat.
-	"longitude":lng,
-	"problem":problem,
-	"solution": resenje,
-	"status" : false;
-	}
-	
-};
 
-console.log(email);
-console.log(adresa);
-console.log(problem);
-console.log(resenje);
+	$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address="+adresa+",Belgrade", function(data) {
+			lat = data.results[0].geometry.location.lat;
+			lng = data.results[0].geometry.location.lng;
+	});
+
+	json = {"email":email, "latitude":lat, "longitude":lng, "problem":problem, "solution": resenje, "status" : false};
+
+	$.post({
+			type: 'POST',
+			url: 'http://10.120.192.2:8081/open-data/api/reports/add',
+			data: JSON.stringify(json),
+			success: function(data) { alert(data) },
+			contentType: "application/json",
+			dataType: 'json'
+	});
+
+
+
+});
