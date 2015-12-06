@@ -30,9 +30,9 @@
                 //infoWindow.setOptions({
                 //	position: new google.maps.LatLng(currentValue.lat, currentValue.lng)
                 //});
-				icon = 'images/50/green-pin.png';
+				icon = 'images/50/green-pin1.png';
 				if(i%3==0){
-					icon = 'images/50/yellow-pin.png';
+					icon = 'images/50/yellow-pin1.png';
 				}
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(currentValue.x, currentValue.y),

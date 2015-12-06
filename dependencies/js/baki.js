@@ -52,13 +52,13 @@ function parseMapsJson(data){
 				var icon = "";
 				if(currentValue.type==1){
 					brMat++;
-					icon = 'images/50/blue-pin.png';
+					icon = 'images/50/blue-pin1.png';
 				} else if (currentValue.type==2){
 					brPov++;
-					icon = 'images/50/red-pin.png';
+					icon = 'images/50/red-pin1.png';
 				}else {
 					brSmr++;
-					icon = 'images/50/black-pin.png';
+					icon = 'images/50/black-pin1.png';
 				}
 				var marker = new google.maps.Marker({
 					position: new google.maps.LatLng(currentValue.x,currentValue.y),
