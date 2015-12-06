@@ -6,7 +6,7 @@
 			lat: 44.802487,
 			lng: 20.466336
 		},
-		zoom: 15,
+		zoom: 14,
 		disabledDefaultUI: true,
 		draggable: true,
 		// maxZoom: 11,
@@ -35,6 +35,17 @@
 	},{
 		lat:44.791260, 
 		lng:20.467371
+	},
+	{
+		lat:44.785641, 
+		lng:20.482237
+	},{
+		lat:44.815178, 
+		lng:20.491651
+	},
+	{
+		lat:44.813312, 
+		lng:20.418219
 	}];
 
 
@@ -50,7 +61,7 @@
 	};
 
 	var limit = '200';
-	var r = '200';
+	var r = '180';
 	var analyze = 'true';
 	var dayOfWeek = '6';
 	var from = "0";
