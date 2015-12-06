@@ -65,6 +65,7 @@ padding: 0;
   padding-left: 2%;
   background-color: #f2f2f2;
   padding-top: 2%;
+  text-align: center;
 }
 
 
@@ -212,4 +213,23 @@ blockquote {
 .chartPlot{
   padding-top: 8%;
   padding-bottom: 50px;
+}
+
+#putanja-ikonice {
+  background: red;
+  margin: 250px auto;
+  height: 100%;
+}
+
+.image-putanja {
+    width: 150px;
+    height: 150px;
+    float: left;
+}
+
+.text-putanja {
+    float: left;
+    background: blue;
+    height: 50px;
+    width: 50%
 }
