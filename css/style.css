@@ -33,7 +33,7 @@ padding: 0;
 }
 
 #map{
-  min-height: 1000px;
+  min-height: 930px;
 	height:100%;
 }
 
@@ -64,11 +64,10 @@ padding: 0;
 
 #form-putanja{
   padding-left: 2%;
-  padding-top: 1%;
   background-color: #f2f2f2;
   padding-bottom: 1%;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 2%;
+  padding-bottom: 8%;
 }
 
 
@@ -129,3 +128,13 @@ html{
 #selectable .ui-selecting { background: #FECA40; }
 #selectable .ui-selected { background: #F39814; color: white; }
 
+#blocks_first {
+  padding-bottom:2em;
+  /*width: 300px;
+  margin-left: 150px;*/
+  border: none;
+}
+
+blockquote {
+    padding: 0;
+}

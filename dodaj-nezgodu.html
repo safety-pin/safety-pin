@@ -19,7 +19,7 @@
     <script src="dependencies/js/bootstrap.min.js"></script>
 
     <script src="dependencies/js/map.js"></script>
-	<script src="js/prijava-nezgode.js"></script>
+
 
 </head>
 
@@ -66,58 +66,67 @@
   <section id="container">
 
 		<div class="row">
+        <div id="wrapper">
+
+          <div class="col-md-9" id="map" style="padding-bottom:17.5%;">
+
+          </div>
+
+
+
+        </div>
+
+		<div class="col-md-3" id="form-putanja">
+
       <div class="row">
-      <div class="col-md-9" id="map">
-          <div class="row">
+          <div class="col-md-5" style="text-align:center;">
+              <blockquote id="blocks_first">
+                  <p style="padding-bottom:20px;color:black;font-size:16px;text-align:center;"> Ukupno prijavljenih nezgoda</p>
+                  <h3 style="padding-left:0.5em;"><span class="label label-success" style="font-size:30px;border-radius:100%;">5</span></h3>
+              </blockquote>
+          </div>
 
-              <div class="col-md-6" style="padding-top:25%; text-align:center;">
-                  <blockquote style="padding-bottom:1em;">
-                      <p style="padding-bottom:20px;"> Ukupno prijavljenih nezgoda:</p>
-                      <h3 style="padding-left:0.5em;"><span class="label label-success" style="zoom:3.5;">55</span></h3>
-                  </blockquote>
-              </div>
+          <div class="col-md-5" style="text-align:center;margin-left:30px">
+              <blockquote id="blocks_first">
+                  <p style="padding-bottom:20px;color:black;font-size:16px;text-align:center;"> Ukupno obrađenih zahteva</p>
+                  <h3 style="padding-left:0.5em;"><span class="label label-success" style="font-size:30px;border-radius:100%;">2</span></h3>
 
-              <div class="col-md-6" style="padding-top:25%; text-align:center;">
-                  <blockquote style="padding-bottom:1em;">
-                      <p style="padding-bottom:20px;"> Ukupno prijavljenih nezgoda:</p>
-                          <h3 style="padding-left:0.5em;"><span class="label label-success" style="zoom:3.5;">2</span></h3>
-
-                  </blockquote>
-              </div>
-
-
+              </blockquote>
           </div>
       </div>
 
-		<div class="col-md-3" id="form-putanja">
-		<form role="form">
+      <form role="form">
 
 		    <div class="form-group">
 		      <label for="email">Email:</label>
-		      <input type="email" style="width:60%" class="form-control" id="mejl" name="mejl" placeholder="Email">
+		      <input type="text" style="width:90%" class="form-control" id="location" name="location" placeholder="Email">
 		    </div>
 
 		    <div class="form-group">
 		      <label for="pwd">Adresa:</label>
-		      <input type="text" style="width:60%" class="form-control" id="adr" name="adresa" placeholder="Adresa">
+		      <input type="text" style="width:90%" class="form-control" id="location" name="location" placeholder="Adresa">
 		    </div>
 
         <div class="form-group">
 		      <label for="pwd">Problem:</label>
-		      <textarea type="text" style="width:60%; height:150px;" class="form-control" id="problem" name="problem" placeholder="Problem"></textarea>
+		      <textarea type="text" style="width:90%; height:150px;" class="form-control" id="location" name="location" placeholder="Problem"></textarea>
 		    </div>
 
         <div class="form-group">
 		      <label for="pwd">Rešenje:</label>
-		      <textarea type="text" style="width:60%; height:150px;" class="form-control" id="resenje" name="resenje" placeholder="Rešenje"></textarea>
+		      <textarea type="text" style="width:90%; height:150px;" class="form-control" id="location" name="location" placeholder="Rešenje"></textarea>
 		    </div>
 
-		    <button class="btn btn-success" onclick="salji()">Potvrdi </button>
+		    <button type="submit" class="btn btn-success">Potvrdi</button>
   		</form>
 		</div>
-
+  </div>
 	</section>
 
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBcg8PCP5Oo3iBwndK8FTqG0vXlXffAgEs"></script>
+	<script type="text/javascript" src="dependencies/js/markerclusterer.js"></script>
+  <script type="text/javascript" src="dependencies/js/cluster.js"></script>
+  <script type="text/javascript" src="dependencies/js/baki.js"></script>
 </body>
 
 </html>
