@@ -16,7 +16,7 @@
 	element = document.getElementById('map');
 	//map
 	map = new google.maps.Map(element, options);
-	initService();
+	// initService();
 	
 	// displayRoute(map);
 }(window, google));
