@@ -48,17 +48,22 @@ function parseMapsJson(data){
 
 			// console.log(JSON.stringify(response));
 			response.forEach(function(currentValue){
+				var icon = "";
 				if(currentValue.type==1){
 					brMat++;
-				} else if (currentValue.type==1){
+					icon = 'images/50/blue-pin.png';
+				} else if (currentValue.type==2){
 					brPov++;
+					icon = 'images/50/red-pin.png';
 				}else {
 					brSmr++;
+					icon = 'images/50/black-pin.png';
 				}
 				var marker = new google.maps.Marker({
 					position: new google.maps.LatLng(currentValue.x,currentValue.y),
 					map: map,
-					title: String(currentValue.id)
+					title: String(currentValue.id),
+					icon: icon
 				});
 				routeMarkers.push(marker);
 			});
