@@ -203,6 +203,6 @@ blockquote {
     border: none;
 }
 
-.col-md-9 {
+.col-md-9, .col-md-12 {
     min-height: 100%;
 }
