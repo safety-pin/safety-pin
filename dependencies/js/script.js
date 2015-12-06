@@ -16,7 +16,7 @@
 	element = document.getElementById('map');
 	//map
 	map = new google.maps.Map(element, options);
-	initService();
+	// initService();
 	
 	// displayRoute(map);
 }(window, google));
@@ -77,7 +77,7 @@ google.maps.event.addListener(map, "rightclick", function(event) {
 			position: new google.maps.LatLng(lat, lng),
 			map: map,
 			title: "Kraj",
-			icon: 'images/50/yellow-pin.png',
+			icon: 'images/50/yellow-pin1.png',
 		});
 		markers.push(endMarker);
 
@@ -100,7 +100,7 @@ google.maps.event.addListener(map, "rightclick", function(event) {
     		position: new google.maps.LatLng(lat, lng),
     		map: map,
     		title: "Start",
-			icon: 'images/50/green-pin.png',
+			icon: 'images/50/green-pin1.png',
     	});
     	userClicked = true;
     	markers.push(startMarker);

@@ -197,13 +197,13 @@
                 });
                 if (currentValue.type == 1) {
                     marker1.addMarker(marker);
-                    marker.setIcon('images/50/blue-pin.png');
+                    marker.setIcon('images/50/blue-pin1.png');
                 } else if (currentValue.type == 2) {
                     marker2.addMarker(marker);
-                    marker.setIcon('images/50/red-pin.png');
+                    marker.setIcon('images/50/red-pin1.png');
                 } else {
                     marker3.addMarker(marker);
-                    marker.setIcon('images/50/black-pin.png');
+                    marker.setIcon('images/50/black-pin1.png');
                 }
             });
 
