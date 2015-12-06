@@ -236,3 +236,7 @@ blockquote {
     height: 50px;
     width: 50%
 }
+
+#chartType > div > div > a {
+  display: none !important;
+}
