@@ -84,14 +84,14 @@
     var marker2 = new MarkerClusterer(map, [], MCoptions2);
     var marker3 = new MarkerClusterer(map, [], MCoptions3);
 
-    $.getJSON("http://10.120.192.2:8081/open-data/api?limit=13000",
+    $.getJSON("http://10.120.192.2:8081/open-data/api?limit=130",
     	function (json) {
     		json.forEach(function (currentValue) {
 
-    			var infoWindow = new google.maps.InfoWindow();
-    			infoWindow.setOptions({
-    				position: new google.maps.LatLng(currentValue.lat, currentValue.lng)
-    			});
+    			//var infoWindow = new google.maps.InfoWindow();
+    			//infoWindow.setOptions({
+    			//	position: new google.maps.LatLng(currentValue.lat, currentValue.lng)
+    			//});
 
     			var marker = new google.maps.Marker({
     				position: new google.maps.LatLng(currentValue.x, currentValue.y),
@@ -106,10 +106,12 @@
     			});
     			marker.addListener('click', function () {
                     //map.setCenter(marker.getPosition());
-                    var value = "" + currentValue.dayOfWeek + currentValue.temperature + currentValue.precipitation + currentValue.summary + currentValue.type + currentValue.date + currentValue.id;
-                    console.log(value);
-                    infoWindow.setContent(value);
-                    infoWindow.open(map, marker);
+                   // var value = "" + currentValue.dayOfWeek + currentValue.temperature + currentValue.precipitation + currentValue.summary + currentValue.type + currentValue.date + currentValue.id;
+                    //console.log(value);
+                   // infoWindow.setContent(value);
+                   // infoWindow.open(map, marker);
+					console.log('Clicked!');
+					$('#dayOfWeek p').html(marker.dayOfWeek);
                     //prikazati podatke o markeru kod vujketa, ovo je iznad je sranje
                 });
     			if (currentValue.type == 1) {
