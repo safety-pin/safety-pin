@@ -2,13 +2,14 @@ function parseMapsJson(data){
 	data = JSON.stringify(data);
 	data = JSON.parse(data);
 	var bounds = data.routes[0].bounds;
-	var distance = data.routes[0].legs[0].distance.value;
+	var distance = data.routes[0].legs[0].distance.text;
 	var steps = data.routes[0].legs[0].steps;
-	var adress = {
-		start_adress : data.routes[0].legs[0].end_address,
-		end_adress: data.routes[0].legs[0].start_address
+	adress = {
+		start_adress : data.routes[0].legs[0].start_address,
+		end_adress: data.routes[0].legs[0].end_address
 	}
-	// console.log(JSON.stringify(data));
+	JSON.stringify(adress);
+	// console.log(adress.start_adress);
 
 
 	var steps = data.routes[0].legs[0].steps;
@@ -67,8 +68,13 @@ function parseMapsJson(data){
 				});
 				routeMarkers.push(marker);
 			});
-			$('#putanja-info').text('Put koji prelazite je: '+ distance+ 'm. Na vasoj ruti nalazi se: '
-				+brMat+' nesreca prvog stepena i '+ brPov+ ' i '+ brSmr); 
+			$('#routeDistance').text(distance);
+			$('#routeDistance1').text("Distanca");
+			$('#route1').text(brMat);
+			$('#route2').text(brPov);
+			$('#route3').text(brSmr);
+			$('#location').val(adress.start_adress);
+			$('#cilj').val(adress.end_adress);
 		},
 		method: "POST",
 		dataType: "json",
