@@ -29,7 +29,7 @@ function parseMapsJson(data){
 
 
 	allPaths = JSON.stringify(allPaths);
-	console.log(allPaths);
+	// console.log(allPaths);
 	// allPaths = JSON.parse(allPaths);
 	if (typeof routeMarkers != "undefined" && routeMarkers!=[]){
 		for (i = 0; i< routeMarkers.length; i++ ){
@@ -42,10 +42,19 @@ function parseMapsJson(data){
 		url: "http://10.120.192.2:8081/open-data/api/path", 
 		data: allPaths, 
 		success: function(response){
+			var brMat = 0;
+			var brPov = 0;
+			var brSmr = 0;
 
-			console.log(JSON.stringify(response));
+			// console.log(JSON.stringify(response));
 			response.forEach(function(currentValue){
-
+				if(currentValue.type==1){
+					brMat++;
+				} else if (currentValue.type==1){
+					brPov++;
+				}else {
+					brSmr++;
+				}
 				var marker = new google.maps.Marker({
 					position: new google.maps.LatLng(currentValue.x,currentValue.y),
 					map: map,
@@ -53,6 +62,8 @@ function parseMapsJson(data){
 				});
 				routeMarkers.push(marker);
 			});
+			$('#putanja-info').text('Put koji prelazite je: '+ distance+ '.Na vasoj ruti nalazi se: '
+				+brMat+'nesreca prvog stepena i '+ brPov+ ' i '+ brSmr); 
 		},
 		method: "POST",
 		dataType: "json",

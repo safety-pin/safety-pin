@@ -8,12 +8,12 @@
         },
         zoom: 13,
         disabledDefaultUI: true,
-        draggable: true,
+        draggable: true
         // maxZoom: 11,
         // minZoom: 9
 
     };
-    element = document.getElementById('map');
+    var element = document.getElementById('map');
     //map
 
 
@@ -38,7 +38,7 @@
                 height: '50',
                 width: '50'
             }]
-    }
+    };
     var MCoptions2 = {
         styles: [{
             textColor: 'white',
@@ -58,7 +58,7 @@
                 height: '50',
                 width: '50'
             }]
-    }
+    };
     var MCoptions3 = {
         styles: [{
             textColor: 'white',
@@ -78,7 +78,7 @@
                 height: '50',
                 width: '50'
             }]
-    }
+    };
 
     var marker1 = new MarkerClusterer(map, [], MCoptions1);
     var marker2 = new MarkerClusterer(map, [], MCoptions2);
@@ -90,7 +90,7 @@
 
                 var infoWindow = new google.maps.InfoWindow();
                 infoWindow.setOptions({
-                    position: new google.maps.LatLng(currentValue.lat, currentValue.lng )
+                    position: new google.maps.LatLng(currentValue.lat, currentValue.lng)
                 });
 
                 var marker = new google.maps.Marker({
@@ -123,7 +123,6 @@
             });
 
         });
-
 }(window, google));
 
 

@@ -15,14 +15,16 @@ problem = (document.getElementById('problem').value);
 resenje = (document.getElementById('resenje').value);
 console.log(resenje);
 
-/*$.post("http://10.120.192.2:8081/open-data/api",
+$.post("http://10.120.192.2:8081/open-data/api",
 	{
 	"email":email,
-	"adresa":adresa.
-	"problem":problem.
-	"resenje":resenje
+	"latitude":lat.
+	"longitude":lng,
+	"problem":problem,
+	"solution": resenje,
+	"status" : false;
 	}
-	)*/
+	
 };
 
 console.log(email);
