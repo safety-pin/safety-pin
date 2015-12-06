@@ -17,6 +17,7 @@
 	//map
 	map = new google.maps.Map(element, options);
 	initService();
+	
 	// displayRoute(map);
 }(window, google));
 

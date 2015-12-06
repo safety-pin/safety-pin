@@ -98,6 +98,7 @@ label {
   background-color: #F2F2F2;
     height: 100%;
     overflow-y:auto;
+  padding-bottom: 0px;
 }
 
 #vreme{
@@ -205,6 +206,10 @@ blockquote {
     border: none;
 }
 
-.col-md-9 {
+.col-md-9, .col-md-12 {
     min-height: 100%;
+}
+.chartPlot{
+  padding-top: 8%;
+  padding-bottom: 50px;
 }
