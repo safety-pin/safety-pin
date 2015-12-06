@@ -213,3 +213,6 @@ blockquote {
   padding-top: 8%;
   padding-bottom: 50px;
 }
+#solved{
+  background-color: #ECC200;
+}

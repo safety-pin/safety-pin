@@ -18,7 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="dependencies/js/bootstrap.min.js"></script>
 
-    <script src="js/prijava-nezgode.js"></script>
+    <!-- // <script src="js/prijava-nezgode.js"></script> -->
 
 </head>
 
@@ -78,8 +78,8 @@ left:0px;top:0px;right:0px;bottom:0px;"></div>
                             <p style="padding-bottom:20px;color:black;font-size:16px;text-align:center;"> Ukupno
                                 prijavljenih nezgoda</p>
 
-                            <h3 style="padding-left:0.5em;"><span class="label label-success"
-                                                                  style="font-size:30px;border-radius:100%;">5</span>
+                            <h3 style="padding-left:0.5em;"><span id="total" class="label label-success"
+                                                                  style="font-size:30px;border-radius:100%;"></span>
                             </h3>
                         </blockquote>
                     </div>
@@ -90,8 +90,8 @@ left:0px;top:0px;right:0px;bottom:0px;"></div>
                                 obrađenih
                                 zahteva</p>
 
-                            <h3 style="padding-left:0.5em;"><span class="label label-success"
-                                                                  style="font-size:30px;border-radius:100%;">2</span>
+                            <h3 style="padding-left:0.5em;"><span id="solved" class="label"
+                                                                  style="font-size:30px;border-radius:100%;"></span>
                             </h3>
 
                         </blockquote>
@@ -118,7 +118,7 @@ left:0px;top:0px;right:0px;bottom:0px;"></div>
                     <div class="form-group">
                         <label>Problem:</label>
                     <textarea type="text" class="form-control"
-                    
+
                               name="location" placeholder="Problem"></textarea>
                     </div>
 
@@ -138,7 +138,7 @@ left:0px;top:0px;right:0px;bottom:0px;"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBcg8PCP5Oo3iBwndK8FTqG0vXlXffAgEs"></script>
 <script type="text/javascript" src="dependencies/js/markerclusterer.js"></script>
-<script type="text/javascript" src="dependencies/js/cluster.js"></script>
+<script type="text/javascript" src="dependencies/js/addAccident.js"></script>
 <script type="text/javascript" src="dependencies/js/baki.js"></script>
 
 </body>
