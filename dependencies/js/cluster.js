@@ -94,6 +94,10 @@
 					title: String(currentValue.id),
 					icon: 'images/small_pin.png'
 				});
+				marker.addListener('click', function() {
+					map.setCenter(marker.getPosition());
+					//prikazati podatke o markeru kod vujketa, ovo je iznad je sranje
+				});
 				if(currentValue.type==1){
 					marker1.addMarker(marker);
 				}else if(currentValue.type==2){
