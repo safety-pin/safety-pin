@@ -21,73 +21,78 @@
 
 <body>
 
-	<section id="navigation">
-			<nav class="navbar navbar-default navbar-fixed-top">
-					<div class="container">
+<section id="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
 
-							<div class="navbar-header">
-									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-											<span class="sr-only">Toggle navigation</span>
-											<span class="icon-bar"></span>
-											<span class="icon-bar"></span>
-											<span class="icon-bar"></span>
-											<span class="icon-bar"></span>
-											<span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-									</button>
-									<a class="navbar-brand" href="#">
-											<img id="logo" src="images/logo.png" alt="SafetyPin" height="85" width="230">
-									</a>
-							</div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img id="logo" src="images/logo.png" alt="SafetyPin" height="85" width="230">
+                </a>
+            </div>
 
-							<div id="navbar" class="collapse navbar-collapse">
-									<ul class="nav navbar-nav">
-											<li><a href="mapa.html">Mapa</a>
-											</li>
-											<li><a href="putanja.html">Putanja</a>
-											</li>
-											<li><a href="dodaj-nezgodu.html">Dodaj nezgodu</a>
-											</li>
-											<li><a href="statistika.html">Statistika</a>
-											</li>
-											<li><a href="savetnik.html">Savetnik</a>
-                      </li>
-                      <li><a href="api.html">API</a></li>
-									</ul>
-							</div>
-					</div>
-			</nav>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="mapa.html">Mapa</a>
+                    </li>
+                    <li><a href="putanja.html">Putanja</a>
+                    </li>
+                    <li><a href="dodaj-nezgodu.html">Dodaj nezgodu</a>
+                    </li>
+                    <li><a href="statistika.html">Statistika</a>
+                    </li>
+                    <li><a href="savetnik.html">Savetnik</a>
+                    </li>
+                    <li><a href="api.html">API</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-	</section>
+</section>
 
-	<section id="container">
-		<div class="row">
-	  		<div class="col-md-9" id="map"></div>
-	  		<div class="col-md-3" id="vrh">
-	  			<p class="inlajn">Beograd, </p>
-	  			<p class="inlajn">Limska 21</p>
-	  			<img id="streetview" src="https://maps.googleapis.com/maps/api/streetview?size=400x250&location=Belgrade,Serbia8&heading=151.78&pitch=-0.76">
-	  			<div id="date">
-	  				<h1 class="vreme-nesrece">11:52</h2>
-	  				<p class="inlajn">Ponedeljak, </p>
-	  				<p class="inlajn">01/07/2014</p>
-	  			</div>
+<section id="container">
+    <div class="row">
+        <div class="col-md-9" id="map"></div>
+        <div class="col-md-3" id="vrh">
+            <p class="inlajn">Beograd, </p>
 
-	  			<div id="temp">
-	  				asd
-	  			</div>
+            <p class="inlajn">Limska 21</p>
+            <img id="streetview"
+                 src="https://maps.googleapis.com/maps/api/streetview?size=400x250&location=Belgrade,Serbia8&heading=151.78&pitch=-0.76">
 
-	  			<div id="tip">
-	  				asd
-	  			</div>
-	  		</div>
-	  </div>
+            <div id="date">
+                <h1 class="vreme-nesrece">11:52</h2>
+                    <p class="inlajn">Ponedeljak, </p>
 
-	</section>
-	<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBcg8PCP5Oo3iBwndK8FTqG0vXlXffAgEs"></script>
-	<script type="text/javascript" src="dependencies/js/markerclusterer.js"></script>
-  	<script type="text/javascript" src="dependencies/js/cluster.js"></script>
-  	<script type="text/javascript" src="dependencies/js/baki.js"></script>
+                    <p class="inlajn">01/07/2014</p>
+            </div>
+
+            <div id="temp">
+                asd
+            </div>
+
+            <div id="tip">
+                asd
+            </div>
+        </div>
+    </div>
+
+</section>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBcg8PCP5Oo3iBwndK8FTqG0vXlXffAgEs"></script>
+<script type="text/javascript" src="dependencies/js/markerclusterer.js"></script>
+<script type="text/javascript" src="dependencies/js/cluster.js"></script>
+<script type="text/javascript" src="dependencies/js/baki.js"></script>
 
 
 </body>
