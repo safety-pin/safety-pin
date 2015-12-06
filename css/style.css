@@ -199,16 +199,10 @@ label {
   height: 75px;
 }
 
-#blocks_first{
-  padding-bottom:2em;
-  /*width: 300px;
-  margin-left: 150px;*/
-  border: none;
-}
-
 blockquote {
     padding: 0;
-
+    padding-bottom:2em;
+    border: none;
 }
 
 .col-md-9 {

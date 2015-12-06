@@ -48,6 +48,7 @@ function displayRoute1(map) {
 
     // also, constructor can get "DirectionsRendererOptions" object
     directionsDisplay.setMap(map); // map should be already initialized.
+    directionsDisplay.setOptions( { suppressMarkers: true } );
     
     var request = {
     	origin : markers[0].getPosition(),
@@ -59,7 +60,7 @@ function displayRoute1(map) {
     	if (status == google.maps.DirectionsStatus.OK) {
     		directionsDisplay.setDirections(response);
             // console.log(JSON.stringify(response));
-            
+
             parseMapsJson(response);
         }
     });
@@ -74,7 +75,8 @@ google.maps.event.addListener(map, "rightclick", function(event) {
 		var endMarker = new google.maps.Marker({
 			position: new google.maps.LatLng(lat, lng),
 			map: map,
-			title: "End"
+			title: "Kraj",
+			icon: 'images/50/yellow-pin.png',
 		});
 		markers.push(endMarker);
 
@@ -84,16 +86,20 @@ google.maps.event.addListener(map, "rightclick", function(event) {
     	// console.log(markers[1].getPosition().lng());
     	
     	displayRoute1(map);
-    	markers[0].setMap(null);
-    	markers[1].setMap(null);
-
-    	markers = [];
+    	
     	userClicked = false;
     } else if(userClicked==false){
+    	if(markers.length>0){
+    		markers[0].setMap(null);
+    		markers[1].setMap(null);
+
+    		markers = [];
+    	}
     	var startMarker = new google.maps.Marker({
     		position: new google.maps.LatLng(lat, lng),
     		map: map,
-    		title: "Start"
+    		title: "Start",
+			icon: 'images/50/green-pin.png',
     	});
     	userClicked = true;
     	markers.push(startMarker);
