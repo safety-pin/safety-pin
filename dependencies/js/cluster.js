@@ -32,9 +32,11 @@
 
 	// 	}]
 	// }
-	var markerClusterer = new MarkerClusterer(map, []);
+	var marker1 = new MarkerClusterer(map, []);
+	var marker2 = new MarkerClusterer(map, []);
+	var marker3 = new MarkerClusterer(map, []);
 	
-	$.getJSON("http://10.120.192.2:8081/open-data/api?limit=130", 
+	$.getJSON("http://10.120.192.2:8081/open-data/api?limit=1300", 
 		function(json){
 			json.forEach(function(currentValue){
 
@@ -43,7 +45,13 @@
 					map: map,
 					title: String(currentValue.id)
 				});
-				markerClusterer.addMarker(marker)
+				if(currentValue.type==1){
+					marker1.addMarker(marker);
+				}else if(currentValue.type==2){
+					marker2.addMarker(marker);
+				}else{
+					marker3.addMarker(marker);
+				}
 			});
 
 		});
