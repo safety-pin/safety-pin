@@ -124,19 +124,21 @@ label {
    width:100%;
   display: inline-block;
   height:20%;
-}
+  padding-top: 20px;
+  }
 
 .vreme-nesrece{
   font-weight: bold;
-  padding-top: 10px;
   text-align: center;
+  font-size: 52px;
+  margin-top: 10px;
 }
 
 #selectable .ui-selecting { background: #FECA40; }
 #selectable .ui-selected { background: #F39814; color: white; }
 
 #centriraj-sliku{
-  padding-top: 20px;
+  padding-top: 0;
   height: 150px;
   width:150px;
   margin:auto;
@@ -165,8 +167,7 @@ label {
 
 #temperatura{
   float: left;
-
-  margin-left: 10px;
+  margin-left: 15px;
   width: 33%;
 }
 
@@ -174,6 +175,7 @@ label {
   float: left;
   text-align: center;
   width: 30%;
+  margin-left: -5 px;
 }
 
 #padavina{
