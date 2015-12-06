@@ -18,26 +18,65 @@
 
 
 	map = new google.maps.Map(element, options);
-	
-	MCoptions1 = {
+
+	var MCoptions1 = {
 		styles: [{
-			url: "images/Safty-PIN-icon-set-26.png",
-			height: '25px',
-			width: '25px'
+			textColor: 'white',
+			url: 'images/Big_Pin_blue.png',
+			height: '50',
+			width: '50'
+		},
+		{
+			textColor: 'white',
+			url: 'images/Big_Pin_blue.png',
+			height: '50',
+			width: '50'
+		},
+		{
+			textColor: 'white',
+			url: 'images/Big_Pin_blue.png',
+			height: '50',
+			width: '50'
 		}]
 	}
-	MCoptions2 = {
+	var MCoptions2 = {
 		styles: [{
-			url: "images/Safty-PIN-icon-set-27.png",
-			height: '25px',
-			width: '25px'
+			textColor: 'white',
+			url: 'images/Big_Pin.png',
+			height: '50',
+			width: '50'
+		},
+		{
+			textColor: 'white',
+			url: 'images/Big_Pin.png',
+			height: '50',
+			width: '50'
+		},
+		{
+			textColor: 'white',
+			url: 'images/Big_Pin.png',
+			height: '50',
+			width: '50'
 		}]
 	}
-	MCoptions3 = {
+	var MCoptions3 = {
 		styles: [{
-			url: "images/Safty-PIN-icon-set-28.png",
-			height: '25px',
-			width: '25px'
+			textColor: 'white',
+			url: 'images/Big_Pin_black.png',
+			height: '50',
+			width: '50'
+		},
+		{
+			textColor: 'white',
+			url: 'images/Big_Pin_black.png',
+			height: '50',
+			width: '50'
+		},
+		{
+			textColor: 'white',
+			url: 'images/Big_Pin_black.png',
+			height: '50',
+			width: '50'
 		}]
 	}
 
@@ -52,7 +91,8 @@
 				var marker = new google.maps.Marker({
 					position: new google.maps.LatLng(currentValue.x,currentValue.y),
 					map: map,
-					title: String(currentValue.id)
+					title: String(currentValue.id),
+					icon: 'images/small_pin.png'
 				});
 				if(currentValue.type==1){
 					marker1.addMarker(marker);
