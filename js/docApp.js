@@ -16,7 +16,6 @@ app1.controller('DocsCtrl', ['$scope', '$http', function ($scope, $http) {
     });
 
     $scope.formatJson = function (text1) {
-        console.log(JSON.stringify(JSON.parse(text1), null, 2));
         return JSON.stringify(JSON.parse(text1), null, 2);
     }
 

@@ -6,7 +6,7 @@
 			lat: 44.802435,
 			lng: 20.466390
 		},
-		zoom: 10,
+		zoom: 13,
 		disabledDefaultUI: true,
 		draggable: true,
 		// maxZoom: 11,

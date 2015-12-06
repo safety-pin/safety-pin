@@ -21,7 +21,7 @@
 
     
 
-    $.getJSON("http://10.120.192.2:8081/open-data/api?limit=78",
+    $.getJSON("http://localhost:8081/open-data/api?limit=78",
         function (json) {
         	i = 0;
             json.forEach(function (currentValue) {

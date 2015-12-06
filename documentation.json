@@ -316,7 +316,7 @@
         }
       ],
       "request": "http://localhost:8081/open-data/api/statistics/type",
-      "result": "[[{\"type\":\"Material accident\",\"numberOfAccidents\":9484},{\"type\":\"Injury accident\",\"numberOfAccidents\":3307},{\"type\":\"Fatal accident\",\"numberOfAccidents\":80}]"
+      "result": "[{\"type\":\"Material accident\",\"numberOfAccidents\":9484},{\"type\":\"Injury accident\",\"numberOfAccidents\":3307},{\"type\":\"Fatal accident\",\"numberOfAccidents\":80}]"
     },
     {
       "id": "weather",
