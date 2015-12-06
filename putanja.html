@@ -66,24 +66,29 @@
 	<section id="container">
 
 		<div class="row">
-			<div class="col-md-9" id="map"></div>
+			<div class="col-md-9">
+				<div id="map" style="position:absolute;
+left:0px;top:0px;right:0px;bottom:0px;"></div>
+			</div>
 
-			<div class="col-md-3" id="form-putanja">
+			<div class="col-md-3" id="vrh">
+				<div id="form-putanja" class="col-md-10 col-md-offset-1">
 				<form role="form" >
 					<div class="form-group">
-						<label for="email">Start:</label>
-						<input type="text" style="width:60%" class="form-control" id="location" name="location" placeholder="Polazna adresa">
+						<label>Start:</label>
+						<input type="text" class="form-control" id="location" name="location" placeholder="Polazna adresa">
 						<ul id="selectable" class="result">
 
 						</ul>
 					</div>
 					<div class="form-group">
-						<label for="pwd">Cilj:</label>
-						<input type="text" style="width:60%" class="form-control" id="cilj" placeholder="Odredišna adresa">
+						<label>Cilj:</label>
+						<input type="text" class="form-control" id="cilj" placeholder="Odredišna adresa">
 						<p id="putanja-info"></p>
 					</div>
 					<button type="submit" class="btn btn-success">Potvrdi</button>
 				</form>
+				</div>
 			</div>
 
 
