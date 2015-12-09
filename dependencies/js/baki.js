@@ -15,7 +15,7 @@ function parseMapsJson(data){
 	var steps = data.routes[0].legs[0].steps;
 	var allPaths = [];
 
-	for (i = 0; i < steps.length; i++) {
+	for (i = 0; var max = steps.length; i < max; i++) {
 		var current = steps[i].path;
 		allPaths = allPaths.concat(current);
 
