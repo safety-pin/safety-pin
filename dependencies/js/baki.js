@@ -40,7 +40,7 @@ function parseMapsJson(data){
 
 	routeMarkers = [];
 	$.ajax({
-		url: "http://localhost:8081/open-data/api/path",
+		url: config.ip+":"+config.port+"/open-data/api/path",
 		data: allPaths,
 		success: function(response){
 			var brMat = 0;
