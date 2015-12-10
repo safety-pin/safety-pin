@@ -25,10 +25,9 @@
             height: '44',
             width: '44'
         };
-        var MCoptions = {
+        return {
             styles: [style, style, style]
         };
-        return MCoptions;
     }
 
     var marker1 = new MarkerClusterer(map, [], clusterOptions('images/50/blue-cluster.png'));
@@ -61,96 +60,78 @@
                             $('#dayOfWeek').text(pinData.dayOfWeek);
                             $('#time').text(timeTrim);
                             $('#date1').text(dateTrim);
-                            switch (pinData.type) {
-                                case 1:
+                            if (pinData.type === 1) {
                                 $("#centriraj-sliku").attr("src", "images/Safty-PIN-icon-set-26.png");
                                 $('#tip-nesrece').text('Materijalna steta');
-                                break;
-                                case 2:
+                            } else if (pinData.type === 2) {
                                 $("#centriraj-sliku").attr("src", "images/povrede.png");
                                 $('#tip-nesrece').text('Sa povredama');
-                                break;
-                                case 3:
+                            } else if (pinData.type === 3) {
                                 $("#centriraj-sliku").attr("src", "images/smrt.png");
                                 $('#tip-nesrece').text('Smrtni ishod');
-                                break;
                             }
 
-                            switch (pinData.summary) {
-                                case 'Clear':
+                            if (pinData.summary === 'Clear') {
                                 $("#oblacic").attr("src", "images/Clear.png");
                                 $('#padavina').text('suncano');
-                                break;
-                                case 'Breezy and Mostly Cloudy':
+                            } else if (pinData.summary === 'Breezy and Mostly Cloudy') {
                                 $("#oblacic").attr("src", "images/Breezy and Mostly Cloudy.png");
                                 $('#padavina').text('hladno i oblacno');
-                                break;
-                                case 'Partly Cloudy':
+                            } else if (pinData.summary === 'Partly Cloudy') {
                                 $("#oblacic").attr("src", "images/Partly Cloudy.png");
                                 $('#padavina').text('mestimicno oblacno');
-                                break;
-                                case 'Mostly Cloudy':
+                            } else if (pinData.summary === 'Mostly Cloudy') {
                                 $("#oblacic").attr("src", "images/Mostly Cloudy.png");
                                 $('#padavina').text('pretezno oblacno');
-                                break;
-                                case 'Overcast':
+                            } else if (pinData.summary === 'Overcast') {
                                 $("#oblacic").attr("src", "images/Overcast.png");
                                 $('#padavina').text('oblacno');
-                                break;
-                                case 'unknown':
+                            } else if (pinData.summary === 'unknown') {
                                 $("#oblacic").attr("src", "images/unknown.png");
                                 $('#padavina').text('nepoznatno');
-                                break;
-                                case 'Foggy':
+                            } else if (pinData.summary === 'Foggy') {
                                 $("#oblacic").attr("src", "images/Foggy.png");
                                 $('#padavina').text('maglovito');
-                                break;
-                                case 'Breezy':
+                            } else if (pinData.summary === 'Breezy') {
                                 $("#oblacic").attr("src", "images/Breezy.png");
                                 $('#padavina').text('prohladno');
-                                break;
-                                case 'Breezy and Overcast':
+                            } else if (pinData.summary === 'Breezy and Overcast') {
                                 $("#oblacic").attr("src", "images/Breezy and Overcast.png");
                                 $('#padavina').text('prohladno i oblacno');
-                                break;
-                                case 'Dry and Partly Cloudy':
+                            } else if (pinData.summary === 'Dry and Partly Cloudy') {
                                 $("#oblacic").attr("src", "images/Dry and Partly Cloudy.png");
                                 $('#padavina').text('suvo i oblacno');
-                                break;
-                                case 'Windy and Mostly Cloudy':
+                            } else if (pinData.summary === 'Windy and Mostly Cloudy') {
                                 $("#oblacic").attr("src", "images/Windy and Mostly Cloudy.png");
                                 $('#padavina').text('vetrovito i oblacno');
-                                break;
-                                case 'Breezy and Partly Cloudy':
+                            } else if (pinData.summary === 'Breezy and Partly Cloudy') {
                                 $("#oblacic").attr("src", "images/Breezy and Partly Cloudy.png");
                                 $('#padavina').text('hladno i vedro');
-                                break;
-                                case 'Humid':
+                            } else if (pinData.summary === 'Humid') {
                                 $("#oblacic").attr("src", "images/Humid.png");
                                 $('#padavina').text('velika vlaznost');
-                                break;
                             }
 
                             $('#temp-br').text(pinData.temperature | 0);
 
                             var adresa = 'https://maps.googleapis.com/maps/api/streetview?size=400x250&location=' + pinData.x + ',' + pinData.y + '&heading=151.78&pitch=-0.76';
-                                // console.log(adresa);
-                                $('#streetview').attr("src", adresa);
-                            });
-});
-if (currentValue.type == 1) {
-    marker1.addMarker(marker);
-    marker.setIcon('images/50/blue-pin1.png');
-} else if (currentValue.type == 2) {
-    marker2.addMarker(marker);
-    marker.setIcon('images/50/red-pin1.png');
-} else {
-    marker3.addMarker(marker);
-    marker.setIcon('images/50/black-pin1.png');
-}
-});
+                            // console.log(adresa);
+                            $('#streetview').attr("src", adresa);
+                        });
+                });
+                if (currentValue.type == 1) {
+                    marker1.addMarker(marker);
+                    marker.setIcon('images/50/blue-pin1.png');
+                } else if (currentValue.type == 2) {
+                    marker2.addMarker(marker);
+                    marker.setIcon('images/50/red-pin1.png');
+                } else {
+                    marker3.addMarker(marker);
+                    marker.setIcon('images/50/black-pin1.png');
+                }
+            });
 
-});
+        });
 }(window, google));
 
 
