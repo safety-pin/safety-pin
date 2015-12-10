@@ -76,15 +76,6 @@ label {
     color: #000000;
 }
 
-#date {
-    width: 100%;
-    display: inline-block;
-    height: 20%;
-    background-color: #F2F2F2;
-    padding: 15px;
-    text-align: center;
-}
-
 #selectable .ui-selecting {
     background: #FECA40;
 }
