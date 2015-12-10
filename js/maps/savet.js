@@ -67,7 +67,7 @@
 	var from = "0";
 	var to = "23";
 	for (var i = 0; i < circles.length; i++) {
-		var url = 'http://localhost:8081/open-data/api/circle?limit='+limit+'&r='+r+'&lat='+circles[i].lat+'&lng='+circles[i].lng+'&analyze=true&summary=Clear&d='+dayOfWeek+'&fromh='+from+'&toh='+to+'';
+		var url = config.ip + 'accidents/circle?limit='+limit+'&r='+r+'&lat='+circles[i].lat+'&lng='+circles[i].lng+'&analyze=true&summary=Clear&d='+dayOfWeek+'&fromh='+from+'&toh='+to+'';
 		console.log(url);
 		$.getJSON(url, function(data){
 			data = JSON.stringify(data);
