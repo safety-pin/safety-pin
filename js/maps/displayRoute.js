@@ -42,11 +42,12 @@ function displayRoute1(map) {
 			directionsDisplay.setDirections(response);
 			// console.log(JSON.stringify(response));
 
-			parseMapsJson(response);
+			parseMapsJson(response, routeMarkers);
 		}
 	});
 }
 var markers = [];
+var routeMarkers = [];
 var userClicked = false;
 google.maps.event.addListener(map, "rightclick", function(event) {
 	var lat = event.latLng.lat();
@@ -66,7 +67,7 @@ google.maps.event.addListener(map, "rightclick", function(event) {
 		// console.log(markers[1].getPosition().lat());
 		// console.log(markers[1].getPosition().lng());
 
-		displayRoute1(map);
+		displayRoute1(map, routeMarkers);
 
 		userClicked = false;
 	} else if(userClicked==false){

@@ -1,4 +1,4 @@
-function parseMapsJson(data) {
+function parseMapsJson(data, routeMarkers) {
     data = JSON.stringify(data);
     data = JSON.parse(data);
     //var bounds = data.routes[0].bounds;
@@ -31,13 +31,13 @@ function parseMapsJson(data) {
     allPaths = JSON.stringify(allPaths);
     // console.log(allPaths);
     // allPaths = JSON.parse(allPaths);
-    if (typeof routeMarkers != "undefined" && routeMarkers != []) {
+    if (typeof routeMarkers != "undefined" && routeMarkers.length>0) {
         for (i = 0; i < routeMarkers.length; i++) {
             routeMarkers[i].setMap(null);
+            console.log("Brisem markere!");
         }
     }
 
-    var routeMarkers = [];
     $.ajax({
         url: config.ip + "accidents/path",
         data: allPaths,
