@@ -26,7 +26,6 @@
         var position = new google.maps.LatLng(lat, lng);
 
         if(markers.length==1){
-            console.log("Jedan marker");
             markers[0].setMap(null);
             markers = [];
         }
@@ -40,18 +39,19 @@
         $("#reportLat").val(lat);
         $("#reportLng").val(lng);
         function geocodePosition(position) {
-            geocoder.geocode({
+            var geocoder = new google.maps.Geocoder;
+            geocoder.geocode({ //OVO NE RADI, NADJI GDE JE GEOCODER!!!!
                 latLng: position
             }, function(responses) {
                 if (responses && responses.length > 0) {
-                    console.log(responses);
-                    $('#reportAddress').val();
+                    $('#reportAddress').text(responses[0].formatted_address);
                 } else {
                     console.log(responses);
-                    $('#reportAddress').val();
+                    $('#reportAddress').text("Adresa ne može biti pronađena!");
                 }
             });
         }
+        geocodePosition(position);
     });
     //ispis rezultata sa servera
     $.getJSON(config.ip+"reports",
