@@ -39,7 +39,7 @@ function parseMapsJson(data) {
 
     var routeMarkers = [];
     $.ajax({
-        url: config.ip +"accidents/path",
+        url: config.ip + "accidents/path",
         data: allPaths,
         success: function (response) {
             var brMat = 0;
@@ -80,7 +80,7 @@ function parseMapsJson(data) {
         processData: false,
         contentType: "application/json"
     });
-
+}
     // for (i = 0; i < allPaths.length; i=i+1) {
     // 	$.get("http://10.120.192.2:8081/open-data/api/path",  function(json) {
     // 		console.log(i);
@@ -102,7 +102,7 @@ function parseMapsJson(data) {
 
     // }
 
-}
+
 
 // paths.forEach(function(currentValue){
 //  		var marker = new google.maps.Marker({

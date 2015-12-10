@@ -20,12 +20,12 @@
     map = new google.maps.Map(element, options);
 
     
-
-    $.getJSON(config.ip+":"+config.port+"/open-data/api?limit=78",
+    //config.ip+"reports"
+    $.getJSON(config.ip+"accidents?limit=78",
         function (json) {
-        	i = 0;
+        	var i = 0;
             json.forEach(function (currentValue) {
-            	i++;
+            	i=i+1;
                 //var infoWindow = new google.maps.InfoWindow();
                 //infoWindow.setOptions({
                 //	position: new google.maps.LatLng(currentValue.lat, currentValue.lng)
@@ -61,17 +61,7 @@
 			$("#solved").text(i/3);
 			$("#total").text(i);
         });
-		$('#prijaviForma').submit(function(e){
-				e.preventDefault();
 
-				var br = $("#total").text();
-				br = parseInt(br);
-				br++;
-				$("#total").text(br);
-
-				return false;
-
-			});
 }(window, google));
 
 

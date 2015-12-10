@@ -1,4 +1,4 @@
 var config = {
-	ip: "https://pinsly.info/safety-pin/api/",
-	port: "8081",
-}
+	ip: "http://localhost:8081/open-data/api/",
+	port: "8081"
+};
