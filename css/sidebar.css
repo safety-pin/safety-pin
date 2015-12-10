@@ -1,4 +1,4 @@
-.row div {
+.row #sidebar-info {
     -webkit-transition: width 0.3s ease, margin 0.3s ease;
     -moz-transition: width 0.3s ease, margin 0.3s ease;
     -o-transition: width 0.3s ease, margin 0.3s ease;
@@ -9,8 +9,9 @@
     padding-right: 0;
     padding-left: 0;
     padding-top: 20px;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-bottom: 0px;
+    height: 100%;
 }
 
 #streetview {
@@ -18,11 +19,7 @@
 }
 
 #accident-icon-area {
-    width: 100%;
     background-color: #F2F2F2;
-    display: inline-block;
-    height: 20%;
-    padding-top: 20px;
 }
 
 #img-accident-type {
@@ -42,4 +39,8 @@
 
 #padavina, #temp-br {
     font-size: 18px;
+}
+
+#tempImg {
+    height: 165px;
 }

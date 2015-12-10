@@ -68,7 +68,7 @@
     <div class="row">
         <div class="col-md-9" id="map-section">
             <div id="map" style="position:absolute;
-left:0px;top:0px;right:0px;bottom:0px;"></div>
+left:0px;top:0px;right:0px;bottom:0px;max-width: none;"></div>
         </div>
         <div class="col-md-3" id="sidebar-info">
             <img id="streetview"
@@ -78,23 +78,21 @@ left:0px;top:0px;right:0px;bottom:0px;"></div>
                 <h1 class="col-md-12 text-center" id="time">*****</h1>
             </div>
             <div class="col-md-12">
-                <h1 id="dayOfWeek" class="col-md-6 pull-left text-center">********</h1>
+                <h3 id="dayOfWeek" class="col-md-6 pull-left text-center">********</h3>
 
-                <h1 id="date1" class="col-md-6 pull-right text-center">*******</h1>
+                <h3 id="date1" class="col-md-6 pull-right text-center">*******</h3>
             </div>
-            <div id="accident-icon-area">
-                <div class="col-md-12">
-                    <img id="img-accident-type" src="images/povrede.png" class="img-responsive">
-                </div>
-                <div class="col-md-12">
-                    <p id="tip-nesrece">Sa povredama</p>
-                </div>
+            <div class="col-md-12" id="accident-icon-area">
+                <img id="img-accident-type" src="images/povrede.png" class="img-responsive">
+            </div>
+            <div class="col-md-12">
+                <p id="tip-nesrece">Sa povredama</p>
             </div>
             <div class="col-md-12">
                 <div class="col-md-12">
                     <img id="oblacic" class="col-md-6" src="images/Humid and Mostly Cloudy.png">
 
-                    <img src="images/temperatura.png" class="col-md-6 img-responsive">
+                    <img src="images/temperatura.png" class="col-md-6 img-responsive" id="tempImg">
                 </div>
                 <p id="padavina" class="col-md-6 text-center">Kiša</p>
 

@@ -3,5 +3,6 @@
  */
 $('#trig').on('click', function () {
     $('#map-section').toggleClass('col-md-9 col-md-12');
-    $('#vrh').toggleClass('col-md-3 col-md-0');
+    $('#sidebar-info').toggleClass('col-md-3 col-md-0');
+    google.maps.event.trigger(map, 'resize');
 });
