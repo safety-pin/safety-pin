@@ -35,7 +35,7 @@
     var marker2 = new MarkerClusterer(map, [], clusterOptions('images/50/red-cluster.png'));
     var marker3 = new MarkerClusterer(map, [], clusterOptions('images/50/black-cluster.png'));
 
-    $.getJSON(config.ip+":"+config.port+"/open-data/api/all",
+    $.getJSON("https://pinsly.info/safety-pin/api/accidents/all",
         function (json) {
             json.forEach(function (currentValue) {
 
@@ -53,7 +53,7 @@
                     // infoWindow.setContent(value);
                     // infoWindow.open(map, marker);
 
-                    $.getJSON(config.ip+":"+config.port+"/open-data/api/" + currentValue.id,
+                    $.getJSON("https://pinsly.info/safety-pin/api/accidents/" + currentValue.id,
                         function (pinData) {
                             var time = pinData.date;
                             var timeTrim = time.substring(11, 16);

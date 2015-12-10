@@ -13,6 +13,8 @@
     <link href="dependencies/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="css/sidebar.css">
+
     <!-- JavaScript -->
     <script src="dependencies/js/bootstrap.min.js"></script>
 
@@ -54,6 +56,7 @@
                     <li><a href="savetnik.html">Savetnik</a>
                     </li>
                     <li><a href="api.html">API</a></li>
+                    <li><a id="trig" class="btn btn-inverse">Sidebar</a></li>
                 </ul>
             </div>
         </div>
@@ -63,7 +66,7 @@
 
 <section id="container">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-9" id="map-section">
             <div id="map" style="position:absolute;
 left:0px;top:0px;right:0px;bottom:0px;"></div>
         </div>
@@ -107,7 +110,7 @@ left:0px;top:0px;right:0px;bottom:0px;"></div>
 <script type="text/javascript" src="dependencies/js/markerclusterer.js"></script>
 <script type="text/javascript" src="dependencies/js/cluster.js"></script>
 <script type="text/javascript" src="dependencies/js/baki.js"></script>
-
+<script type="text/javascript" src="js/sidebarAnimation.js"></script>
 
 </body>
 
