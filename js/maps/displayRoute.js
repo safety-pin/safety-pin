@@ -23,7 +23,6 @@
 
 
 var directionsDisplay = new google.maps.DirectionsRenderer();
-var firstTime = true;
 function displayRoute1(map) {
 
 

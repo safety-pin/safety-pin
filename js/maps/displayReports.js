@@ -23,21 +23,37 @@
     google.maps.event.addListener(map, "rightclick", function(event) {
         var lat = event.latLng.lat();
         var lng = event.latLng.lng();
+        var position = new google.maps.LatLng(lat, lng);
 
-        if(markers.length===1){
+        if(markers.length==1){
+            console.log("Jedan marker");
             markers[0].setMap(null);
             markers = [];
         }
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(lat, lng),
+            position: position,
             map: map,
             title: "Odabrana lokacija",
             icon: 'images/50/red-pin1.png'
         });
+        markers.push(marker);
         $("#reportLat").val(lat);
         $("#reportLng").val(lng);
+        function geocodePosition(position) {
+            geocoder.geocode({
+                latLng: position
+            }, function(responses) {
+                if (responses && responses.length > 0) {
+                    console.log(responses);
+                    $('#reportAddress').val();
+                } else {
+                    console.log(responses);
+                    $('#reportAddress').val();
+                }
+            });
+        }
     });
-    //config.ip+"reports"
+    //ispis rezultata sa servera
     $.getJSON(config.ip+"reports",
         function (json) {
             var solvedMarkers = 0;
