@@ -1,35 +1,30 @@
 $(document).ready(function(){
     $('#prijaviForma').submit(function(e){
+        console.log("JEBACE VAS SLOBA");
         e.preventDefault();
         var reportEmail = $("#reportEmail").val();
         var reportAddress = $("#reportAdress").val();
         var reportProblem = $("#reportProblem").val();
         var reportSolution = $().val("reportSolution");
+        var reportLat =  $("#reportLat").val();
+        var reportLng = $("#reportLng").val();
         var data = {
-            email : reportEmail,
-            latitude : '',
-            longitude : '',
-            problem : reportProblem,
-            solution: reportSolution,
+            email : String(reportEmail),
+            latitude : parseFloat(reportLat),
+            longitude : parseFloat(reportLng),
+            problem : String(reportProblem),
+            solution: String(reportSolution),
             status : false
         };
+        data = JSON.stringify(data);
         $.ajax({
-            url: config.ip + "posts/add",
-            data: allPaths,
+            url: config.ip + "reports/add",
+            data: data,
             success: function (response) {
-                var brMat = 0;
-                var brPov = 0;
-                var brSmr = 0;
+                console.log(response);
+                $('#total').text(response.sum);
+                $('#solved').text(response.solved);
 
-                // console.log(JSON.stringify(response));
-
-                $('#routeDistance').text(distance);
-                $('#routeDistance1').text("Distanca");
-                $('#route1').text(brMat);
-                $('#route2').text(brPov);
-                $('#route3').text(brSmr);
-                $('#location').val(address.start_address);
-                $('#cilj').val(address.end_address);
             },
             method: "POST",
             dataType: "json",

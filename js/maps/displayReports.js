@@ -17,49 +17,56 @@
     //map
 
 
-    map = new google.maps.Map(element, options);
+    var map = new google.maps.Map(element, options);
 
-    
+    var markers = [];
+    google.maps.event.addListener(map, "rightclick", function(event) {
+        var lat = event.latLng.lat();
+        var lng = event.latLng.lng();
+
+        if(markers.length===1){
+            markers[0].setMap(null);
+            markers = [];
+        }
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(lat, lng),
+            map: map,
+            title: "Odabrana lokacija",
+            icon: 'images/50/red-pin1.png'
+        });
+        $("#reportLat").val(lat);
+        $("#reportLng").val(lng);
+    });
     //config.ip+"reports"
-    $.getJSON(config.ip+"accidents?limit=78",
+    $.getJSON(config.ip+"reports",
         function (json) {
-        	var i = 0;
+            var solvedMarkers = 0;
+            var totalMarkers = 0;
             json.forEach(function (currentValue) {
-            	i=i+1;
+
                 //var infoWindow = new google.maps.InfoWindow();
                 //infoWindow.setOptions({
                 //	position: new google.maps.LatLng(currentValue.lat, currentValue.lng)
                 //});
-				icon = 'images/50/green-pin1.png';
-				if(i%3==0){
-					icon = 'images/50/yellow-pin1.png';
-				}
+                var icon = 'images/50/green-pin1.png';
+                totalMarkers+= 1;
+                if(currentValue.status===true){
+                    icon = 'images/50/yellow-pin1.png';
+                    solvedMarkers += 1;
+                }
                 var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(currentValue.x, currentValue.y),
+                    position: new google.maps.LatLng(currentValue.lat, currentValue.lng),
                     map: map,
                     title: String(currentValue.id),
-                    dayOfWeek: currentValue.dayofWeek,
-                    temp: currentValue.temperature,
-                    prec: currentValue.precipitation,
-                    summary: currentValue.summary,
-                    type: currentValue.type,
-                    date: currentValue.date,
                     icon: icon
                 });
-                marker.addListener('click', function () {
-                    //map.setCenter(marker.getPosition());
-                    // var value = "" + currentValue.dayOfWeek + currentValue.temperature + currentValue.precipitation + currentValue.summary + currentValue.type + currentValue.date + currentValue.id;
-                    //console.log(value);
-                    // infoWindow.setContent(value);
-                    // infoWindow.open(map, marker);
-                    console.log('Clicked!');
-                    
-                    //prikazati podatke o markeru kod vujketa, ovo je iznad je sranje
+                marker.addListener('click', function (event){
+                    //ispisi info o markeru, info window
                 });
-                
+
             });
-			$("#solved").text(i/3);
-			$("#total").text(i);
+            $('#total').text(totalMarkers);
+            $('#solved').text(solvedMarkers);
         });
 
 }(window, google));
