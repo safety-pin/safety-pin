@@ -8,7 +8,7 @@
 #sidebar-info {
     padding-right: 0;
     padding-left: 0;
-    padding-top: 20px;
+    padding-top: 63px;
     overflow-y: auto;
     padding-bottom: 0px;
     height: 100%;
@@ -16,10 +16,12 @@
 
 #streetview {
     width: 100%;
+    box-shadow: 1px 2px 2px #A9A5A5;
 }
 
 #accident-icon-area {
     background-color: #F2F2F2;
+    box-shadow: 2px 2px 2px 2px #A9A5A5;
 }
 
 #img-accident-type {
