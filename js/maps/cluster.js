@@ -42,7 +42,6 @@
 
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(currentValue.x, currentValue.y),
-                    map: map,
                     title: String(currentValue.id)
                 });
                 marker.addListener('click', function () {
