@@ -13,6 +13,7 @@
         // minZoom: 9
 
     };
+
     var element = document.getElementById('map');
     //map
 
