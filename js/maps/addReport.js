@@ -3,17 +3,18 @@ $(document).ready(function(){
         console.log("Submit forme");
         e.preventDefault();
         var reportEmail = $("#reportEmail").val();
-        var reportAddress = $("#reportAdress").val();
+        var reportAddress = $("#reportAddress");
         var reportProblem = $("#reportProblem").val();
         var reportSolution = $("#reportSolution").val();
         var reportLat =  $("#reportLat").val();
         var reportLng = $("#reportLng").val();
         if (reportLat == null || reportLng == null || reportLat == "" || reportLng==""){
-            $("reportAddress").addClass("label-border");
+            console.log("nema markera!");
+            reportAddress.addClass("labelBorder");
             return;
         }
         else {
-            $("reportAddress").removeClass("label-border");
+            reportAddress.removeClass("labelBorder");
         }
         var data = {
             email : String(reportEmail),
@@ -33,11 +34,15 @@ $(document).ready(function(){
                 $('#total').text(response.sum);
                 $('#solved').text(response.solved);
                 $("#reportEmail").val("");
-                $("#reportAdress").val("Odaberite adresu desnim klikom");
+                reportAddress.val("Odaberite adresu desnim klikom"); //ovo ne radi
                 $("#reportProblem").val("");
                 $("#reportSolution").val("");
                 $("#reportLat").val("");
                 $("#reportLng").val("");
+                markers[0].setIcon('images/50/green-pin1.png');
+                regularMarkers.push(markers[0]);
+                //markers[0].setMap(null);
+                markers = [];
 
             },
             method: "POST",

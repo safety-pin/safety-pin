@@ -105,25 +105,25 @@ left:0px;top:0px;right:0px;bottom:0px;max-width: none;"></div>
                         <input type="hidden" id="reportLat" name="latitude">
                         <input type="hidden" id="reportLng" name="longitude">
                         <input type="hidden" id="reportStatus" name="status" value="false">
-                        <label id="reportAddress">Odaberite adresu desnim klikom</label>
+                        <label id="reportAddress" class="">Odaberite adresu desnim klikom</label>
                     </div>
 
                     <div class="form-group">
                         <label>Email:</label>
-                        <input type="email" class="form-control" id="reportEmail" placeholder="Email" name="email">
+                        <input type="email" class="form-control" id="reportEmail" placeholder="Email" name="email" required>
                     </div>
 
 
                     <div class="form-group">
                         <label>Problem:</label>
                     <textarea class="form-control"
-                              id="reportProblem" placeholder="Problem" name="problem"></textarea>
+                              id="reportProblem" placeholder="Problem" name="problem" required></textarea>
                     </div>
 
                     <div class="form-group">
                         <label>Rešenje:</label>
                     <textarea class="form-control"
-                              id="reportSolution" placeholder="Rešenje" name="solution"></textarea>
+                              id="reportSolution" placeholder="Rešenje" name="solution" required></textarea>
                     </div>
 
                     <button type="submit" id="submitAccident" class="btn btn-success">Potvrdi</button>

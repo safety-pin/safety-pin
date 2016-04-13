@@ -138,6 +138,6 @@ p {
     display: none !important;
 }
 
-.label-border {
-    border: 1px solid #cd0200;
+.labelBorder {
+    outline: 1px solid #cd0200;
 }

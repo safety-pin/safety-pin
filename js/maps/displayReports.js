@@ -19,7 +19,7 @@
 
     var map = new google.maps.Map(element, options);
 
-    var markers = [];
+    markers = [];
     google.maps.event.addListener(map, "rightclick", function(event) {
         var lat = event.latLng.lat();
         var lng = event.latLng.lng();
@@ -54,6 +54,7 @@
         geocodePosition(position);
     });
     //ispis rezultata sa servera
+    regularMarkers = [];
     $.getJSON(config.ip+"reports",
         function (json) {
             var solvedMarkers = 0;
@@ -76,6 +77,7 @@
                     title: String(currentValue.id),
                     icon: icon
                 });
+                regularMarkers.push(marker);
                 marker.addListener('click', function (event){
                     //ispisi info o markeru, info window
                 });
