@@ -85,6 +85,8 @@
             $('#solved').text(solvedMarkers);
         });
 
+
+
 }(window, google));
 
 

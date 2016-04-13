@@ -1,4 +1,3 @@
 var config = {
-	ip: "http://localhost:8081/open-data/api/",
-	port: "8081"
+	ip: "http://147.91.128.71:9090/open/api/"
 };
