@@ -67,7 +67,7 @@
 	var from = "0";
 	var to = "23";
 	for (var i = 0; i < circles.length; i++) {
-		var url = 'http://10.120.192.2:8081/open-data/api/circle?limit='+limit+'&r='+r+'&lat='+circles[i].lat+'&lng='+circles[i].lng+'&analyze=true&summary=Clear&d='+dayOfWeek+'&fromh='+from+'&toh='+to+'';
+		var url = 'http://147.91.128.71:9090/open/api/accidents/circle?limit='+limit+'&r='+r+'&lat='+circles[i].lat+'&lng='+circles[i].lng+'&analyze=true&summary=Clear&d='+dayOfWeek+'&fromh='+from+'&toh='+to+'';
 		console.log(url);
 		$.getJSON(url, function(data){
 			data = JSON.stringify(data);
@@ -76,11 +76,11 @@
 			data.forEach(function(currentValue){
 				var icon = "";
 				if(currentValue.type==1){
-					icon = 'images/50/blue-pin.png';
+					icon = 'images/50/blue-pin1.png';
 				} else if (currentValue.type==2){
-					icon = 'images/50/red-pin.png';
+					icon = 'images/50/red-pin1.png';
 				}else {
-					icon = 'images/50/black-pin.png';
+					icon = 'images/50/black-pin1.png';
 				}
 				var marker = new google.maps.Marker({
 					position: new google.maps.LatLng(currentValue.x,currentValue.y),

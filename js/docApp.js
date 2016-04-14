@@ -2,15 +2,12 @@
  * Created by Branislav Vidojevic on 15/10/2015.
  */
 
-var host = "http://localhost:9090/api";
-
-var app = angular.module("app", ['duScroll', 'ngResource']);
-
+var app1 = angular.module("app1", ['duScroll']);
 
 //default scroll duration
-app.value('duScrollDuration', 850);
+app1.value('duScrollDuration', 850);
 
-app.controller('DocsCtrl', ['$scope', '$http', function ($scope, $http) {
+app1.controller('DocsCtrl', ['$scope', '$http', function ($scope, $http) {
 
     $http.get('documentation.json').success(function (data) {
         $scope.docs = data.docs;
@@ -18,8 +15,9 @@ app.controller('DocsCtrl', ['$scope', '$http', function ($scope, $http) {
         console.log('Error, GET documentation.json failed.');
     });
 
-    $scope.formatJson = function (text) {
-        return JSON.stringify(JSON.parse(text), null, 2);
+    $scope.formatJson = function (text1) {
+        console.log(JSON.stringify(JSON.parse(text1), null, 2));
+        return JSON.stringify(JSON.parse(text1), null, 2);
     }
 
 }]);

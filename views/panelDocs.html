@@ -1,20 +1,17 @@
-<section id="member" class="col-md-8 col-md-offset-4 col-xs-offset-4">
+<section id="member" class="col-md-6 col-md-offset-4 col-xs-offset-4">
     <div class="container" ng-repeat="d in docs">
         <div class="row">
             <div id="{{d.id}}" class="endpoint-doc">
 
                 <h1 class="heading">{{d.title}}</h1>
-                <br>
-
-                <h2><i>{{d.description}}</i></h2>
+                <h2><i>{{d.description}}</i></h2><br>
 
                 <div class="col-md-12">
-                    <h3 class="heading">Resource URL</h3>
-
+                    <br><h3 class="heading">Resource URL</h3>
                     <p>{{d.url}}</p>
                 </div>
-                <div class="">
-                    <h3 class="heading">Resource information</h3>
+                <div class="col-md-12">
+                    <h3>Resource information</h3>
 
                     <div class="table-responsive ">
                         <table class="table">
