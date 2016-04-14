@@ -61,13 +61,13 @@
                             $('#time').text(timeTrim);
                             $('#date1').text(dateTrim);
                             if (pinData.type === 1) {
-                                $("#img-accident-type").attr("src", "images/Safty-PIN-icon-set-26.png");
+                                $("#centriraj-sliku").attr("src", "images/Safty-PIN-icon-set-26.png");
                                 $('#tip-nesrece').text('Materijalna steta');
                             } else if (pinData.type === 2) {
-                                $("#img-accident-type").attr("src", "images/povrede.png");
+                                $("#centriraj-sliku").attr("src", "images/povrede.png");
                                 $('#tip-nesrece').text('Sa povredama');
                             } else if (pinData.type === 3) {
-                                $("#img-accident-type").attr("src", "images/smrt.png");
+                                $("#centriraj-sliku").attr("src", "images/smrt.png");
                                 $('#tip-nesrece').text('Smrtni ishod');
                             }
 

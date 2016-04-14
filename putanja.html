@@ -21,141 +21,143 @@
 
 <body>
 
-	<section>
-            <nav class="navbar navbar-default navbar-fixed-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                                aria-expanded="false" aria-controls="navbar">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">
-                            <img id="logo" src="images/logo.png" alt="SafetyPin" height="85" width="230">
-                        </a>
-                    </div>
+<section>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+						aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">
+					<img id="logo" src="images/logo.png" alt="SafetyPin" height="85" width="230">
+				</a>
+			</div>
 
-                    <div id="navbar" class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a href="index.html">Home</a>
-                            </li>
-                            <li><a href="mapa.html">Mapa</a>
-                            </li>
-                            <li><a href="putanja.html">Putanja</a>
-                            </li>
-                            <li><a href="dodaj-nezgodu.html">Dodaj nezgodu</a>
-                            </li>
-                            <li><a href="statistika.html">Statistika</a>
-                            </li>
-                            <li><a href="savetnik.html">Savetnik</a>
-                            </li>
-                            <li><a href="api.html">API</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </section>  <!-- Navbar -->
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="index.html">Home</a>
+					</li>
+					<li><a href="mapa.html">Mapa</a>
+					</li>
+					<li><a href="putanja.html">Putanja</a>
+					</li>
+					<li><a href="dodaj-nezgodu.html">Dodaj nezgodu</a>
+					</li>
+					<li><a href="statistika.html">Statistika</a>
+					</li>
+					<li><a href="savetnik.html">Savetnik</a>
+					</li>
+					<li><a href="api.html">API</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</section>  <!-- Navbar -->
 
-        <div class="container">
-        	
-        	<div class="row">
-        		
-        		<div class="col-md-9">
-        			<div id="map"></div>
-        		</div>
+<div class="container">
 
-        		<div class="col-md-3 direction-sidebar">
-    				
-        			<div class="row">
-        				<div id="form-putanja" class="col-md-10 col-md-offset-1">
-							<form role="form">
-								<div class="form-group">
-									<label>Start:</label>
-									<input type="text" class="form-control" id="location" name="location" placeholder="Polazna adresa" required>
-									<ul id="selectable" class="result"></ul>
-								</div>
-								<div class="form-group">
-									<label>Cilj:</label>
-									<input type="text" class="form-control" id="cilj" placeholder="Odredišna adresa">
-									<p id="putanja-info"></p>
-								</div>
-								<button type="submit" class="btn btn-success">Potvrdi</button>
-							</form>
+	<div class="row">
+
+		<div class="col-md-9">
+			<div id="map"></div>
+		</div>
+
+		<div class="col-md-3 direction-sidebar">
+
+			<div class="row">
+				<div id="form-putanja" class="col-md-10 col-md-offset-1">
+					<form role="form">
+						<div class="form-group">
+							<label>Start:</label>
+							<input type="text" class="form-control" id="location" name="location"
+								   placeholder="Polazna adresa" required>
+							<ul id="selectable" class="result"></ul>
 						</div>
-        			</div>
+						<div class="form-group">
+							<label>Cilj:</label>
+							<input type="text" class="form-control" id="cilj" placeholder="Odredišna adresa">
+							<p id="putanja-info"></p>
+						</div>
+						<button type="submit" class="btn btn-success">Potvrdi</button>
+					</form>
+				</div>
+			</div>
 
-        			<div class="row" id="red-distanca-putanja">
-        				<div class="col-md-4 col-md-offset-1">
-        					<div>
-								<img class="ikonica-putanja" src="images/putanja.png" alt="putanja" />
-							</div>
-        				</div>
-        				<div class="col-md-6">
-        					<div class="text-putanja" id="distanca">
-									<p id="routeDistance" class="p-gornji">Odaberite rutu</p>
-									<p id="routeDistance1" class="p-donji"></p>
-							</div>
-        				</div>
-        			</div>
+			<div class="row" id="red-distanca-putanja">
+				<div class="col-md-4 col-md-offset-1">
+					<div>
+						<img class="ikonica-putanja" src="images/putanja.png" alt="putanja"/>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="text-putanja" id="distanca">
+						<p id="routeDistance" class="p-gornji">Odaberite rutu</p>
+						<p id="routeDistance1" class="p-donji"></p>
+					</div>
+				</div>
+			</div>
 
-        			<div class="row redovi-distanca-putanja">
-        				<div class="col-md-4 col-md-offset-1">
-        					<div>
-								<img class="ikonica-putanja" src="images/Safty-PIN-icon-set-26.png" alt="" />
-							</div>
-        				</div>
-        				<div class="col-md-6">
-        					<div class="text-putanja" id="distanca">
-								<p id="route1" class="p-gornji">0</p>
-								<p class="p-donji">Mateterijalna šteta</p>	
-							</div>
-        				</div>
-        			</div>
+			<div class="row redovi-distanca-putanja">
+				<div class="col-md-4 col-md-offset-1">
+					<div>
+						<img class="ikonica-putanja" src="images/Safty-PIN-icon-set-26.png" alt=""/>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="text-putanja" id="distanca">
+						<p id="route1" class="p-gornji">0</p>
+						<p class="p-donji">Mateterijalna šteta</p>
+					</div>
+				</div>
+			</div>
 
-        			<div class="row redovi-distanca-putanja">
-        				<div class="col-md-4 col-md-offset-1">
-        					<div>
-								<img class="ikonica-putanja" src="images/povrede.png" alt="putanja" />
-							</div>
-        				</div>
-        				<div class="col-md-6">
-        					<div class="text-putanja" id="distanca">
-								<p id="route2" class="p-gornji">0</p>
-								<p class="p-donji">Sa povredama</p>
-							</div>
-        				</div>
-        			</div>
+			<div class="row redovi-distanca-putanja">
+				<div class="col-md-4 col-md-offset-1">
+					<div>
+						<img class="ikonica-putanja" src="images/povrede.png" alt="putanja"/>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="text-putanja" id="distanca">
+						<p id="route2" class="p-gornji">0</p>
+						<p class="p-donji">Sa povredama</p>
+					</div>
+				</div>
+			</div>
 
-        			<div class="row redovi-distanca-putanja">
-        				<div class="col-md-4 col-md-offset-1">
-        					<div>
-								<img class="ikonica-putanja" src="images/smrt.png" alt="putanja" />
-							</div>
-        				</div>
-        				<div class="col-md-6">
-        					<div class="text-putanja" id="distanca">
-								<p id="route3" class="p-gornji">0</p>
-								<p class="p-donji">Fatalne</p>
-							</div>
-        				</div>
-        			</div>
-    				
-        		</div>
+			<div class="row redovi-distanca-putanja">
+				<div class="col-md-4 col-md-offset-1">
+					<div>
+						<img class="ikonica-putanja" src="images/smrt.png" alt="putanja"/>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="text-putanja" id="distanca">
+						<p id="route3" class="p-gornji">0</p>
+						<p class="p-donji">Fatalne</p>
+					</div>
+				</div>
+			</div>
 
-        	</div>
+		</div>
 
-        </div>
+	</div>
+
+</div>
 
 
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBcg8PCP5Oo3iBwndK8FTqG0vXlXffAgEs"></script>
-	<script type="text/javascript" src="dependencies/js/script.js"></script>
-	<script type="text/javascript" src="dependencies/js/baki.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBcg8PCP5Oo3iBwndK8FTqG0vXlXffAgEs"></script>
+<script type="text/javascript" src="js/maps/config.js"></script>
+<script type="text/javascript" src="js/maps/displayRoute.js"></script>
+<script type="text/javascript" src="js/maps/parseRoute.js"></script>
 
 </body>
 </html>

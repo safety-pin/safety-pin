@@ -34,7 +34,7 @@ function parseMapsJson(data, routeMarkers) {
     if (typeof routeMarkers != "undefined" && routeMarkers.length>0) {
         for (i = 0; i < routeMarkers.length; i++) {
             routeMarkers[i].setMap(null);
-            console.log("Brisem markere!");
+            //console.log("Brisem markere!");
         }
     }
 

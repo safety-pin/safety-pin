@@ -16,38 +16,38 @@ var INSPIRO = {};
         $topbar = $('#topbar'),
         $header = $('#header'),
 
-        //Logo
+    //Logo
         logo = $('#logo').find('.logo'),
         logoImg = logo.find('img').attr('src'),
         logoDark = logo.attr('data-dark-logo'),
 
-        //Main menu
-        //mainmenuitems = $("#mainMenu > ul > li"),
+    //Main menu
+    //mainmenuitems = $("#mainMenu > ul > li"),
         mainmenu = $('#mainMenu'),
         mainmenuitems = mainmenu.find('li.dropdown > a'),
         mainsubmenuitems = mainmenu.find('li.dropdown-submenu > a, li.dropdown-submenu > span'),
 
-        //Vertical Dot Menu
+    //Vertical Dot Menu
         navigationItems = $('#vertical-dot-menu a'),
 
-        //Side panel
+    //Side panel
         sidePanel = $('#side-panel'),
         sidePanellogo = $('#panel-logo').find('.logo'),
         sidePanellogoImg = sidePanellogo.find('img').attr('src'),
         sidePanellogoDark = sidePanellogo.attr('data-dark-logo'),
 
-        //Fullscreen panel
+    //Fullscreen panel
         fullScreenPanel = $('#fullscreen-panel'),
 
         $topSearch = $('#top-search'),
         $parallax = $('.parallax'),
         $textRotator = $('.text-rotator'),
 
-        //Window size control
+    //Window size control
         $fullScreen = $('.fullscreen') || $('.section-fullscreen'),
         $halfScreen = $('.halfscreen'),
 
-        //Elements
+    //Elements
         dataAnimation = $("[data-animation]"),
         $counter = $('.counter:not(.counter-instant)'),
         $countdownTimer = $('.countdown'),
@@ -66,14 +66,13 @@ var INSPIRO = {};
         $lightbox_iframe = $('[data-lightbox-type="iframe"]'),
         $lightbox_ajax = $('[data-lightbox-type="ajax"]'),
 
-        //Widgets
+    //Widgets
         $flickr_widget = $('.flickr-widget'),
 
         $ytPlayer = $('.youtube-background'),
 
-        //Utilites
+    //Utilites
         classFinder = ".";
-
 
 
     //----------------------------------------------------/
@@ -121,24 +120,24 @@ var INSPIRO = {};
                 label: 'smallest',
                 enter: 0,
                 exit: 479
-                }, {
+            }, {
                 label: 'handheld',
                 enter: 480,
                 exit: 767
-                }, {
+            }, {
                 label: 'tablet',
                 enter: 768,
                 exit: 991
-                }, {
+            }, {
                 label: 'laptop',
                 enter: 992,
                 exit: 1199
-                }, {
+            }, {
                 label: 'desktop',
                 enter: 1200,
                 exit: 10000
-                }
-            ]);
+            }
+        ]);
         jRes.addFunc([
             {
                 breakpoint: 'desktop',
@@ -148,7 +147,7 @@ var INSPIRO = {};
                 exit: function () {
                     $body.removeClass('device-lg');
                 }
-                }, {
+            }, {
                 breakpoint: 'laptop',
                 enter: function () {
                     $body.addClass('device-md');
@@ -156,7 +155,7 @@ var INSPIRO = {};
                 exit: function () {
                     $body.removeClass('device-md');
                 }
-                }, {
+            }, {
                 breakpoint: 'tablet',
                 enter: function () {
                     $body.addClass('device-sm');
@@ -164,7 +163,7 @@ var INSPIRO = {};
                 exit: function () {
                     $body.removeClass('device-sm');
                 }
-                }, {
+            }, {
                 breakpoint: 'handheld',
                 enter: function () {
                     $body.addClass('device-xs');
@@ -172,7 +171,7 @@ var INSPIRO = {};
                 exit: function () {
                     $body.removeClass('device-xs');
                 }
-                }, {
+            }, {
                 breakpoint: 'smallest',
                 enter: function () {
                     $body.addClass('device-xxs');
@@ -180,7 +179,7 @@ var INSPIRO = {};
                 exit: function () {
                     $body.removeClass('device-xxs');
                 }
-                }
+            }
         ]);
     };
 
@@ -257,7 +256,7 @@ var INSPIRO = {};
                         margin: Number($sliderCarouselMargins),
                         nav: $sliderCarouseNav,
                         navText: ['<i class="fa fa-arrow-left icon-white"></i>',
-                              '<i class="fa fa-arrow-right icon-white"></i>'],
+                            '<i class="fa fa-arrow-right icon-white"></i>'],
                         autoplay: $sliderCarouseAutoPlay,
                         autoplayHoverPause: true,
                         dots: $sliderCarouseDots,
@@ -274,7 +273,7 @@ var INSPIRO = {};
                         margin: Number($sliderCarouselMargins),
                         nav: $sliderCarouseNav,
                         navText: ['<i class="fa fa-arrow-left icon-white"></i>',
-                              '<i class="fa fa-arrow-right icon-white"></i>'],
+                            '<i class="fa fa-arrow-right icon-white"></i>'],
                         autoplay: $sliderCarouseAutoPlay,
                         autoplayHoverPause: true,
                         dots: $sliderCarouseDots,
@@ -322,7 +321,7 @@ var INSPIRO = {};
                     loop: true,
                     nav: true,
                     navText: ['<i class="fa fa-arrow-left icon-white"></i>',
-                              '<i class="fa fa-arrow-right icon-white"></i>'],
+                        '<i class="fa fa-arrow-right icon-white"></i>'],
                     autoplay: true,
                     dots: false,
                     autoplayHoverPause: true,
@@ -357,9 +356,6 @@ var INSPIRO = {};
                 });
 
 
-
-
-
             });
         }
         // News ticker
@@ -385,7 +381,7 @@ var INSPIRO = {};
             if ($('.tab-carousel').parent().hasClass('active')) {
                 $('.tab-carousel').owlCarousel({
                     navText: ['<i class="fa fa-arrow-left icon-white"></i>',
-                              '<i class="fa fa-arrow-right icon-white"></i>'],
+                        '<i class="fa fa-arrow-right icon-white"></i>'],
                     margin: 0,
                     nav: true,
                     dots: false,
@@ -395,7 +391,7 @@ var INSPIRO = {};
                 $('.tabs-navigation li a').click(function () {
                     $('.tab-carousel').owlCarousel({
                         navText: ['<i class="fa fa-arrow-left icon-white"></i>',
-                              '<i class="fa fa-arrow-right icon-white"></i>'],
+                            '<i class="fa fa-arrow-right icon-white"></i>'],
                         margin: 0,
                         nav: true,
                         dots: false,
@@ -520,14 +516,14 @@ var INSPIRO = {};
                 $elem.css('height', elemHeight);
 
                 /*if ($body.hasClass('device-lg') || $body.hasClass('device-md')) {
-                	$elem.css('height', elemHeight);
-                }else {
-                	if ($topbar) {
-                		$elem.css('height', elemHeight - (headerHeight + topbarHeight));
-                	} else {
-                		$elem.css('height', elemHeight - (headerHeight));
-                	}
-                }*/
+                 $elem.css('height', elemHeight);
+                 }else {
+                 if ($topbar) {
+                 $elem.css('height', elemHeight - (headerHeight + topbarHeight));
+                 } else {
+                 $elem.css('height', elemHeight - (headerHeight));
+                 }
+                 }*/
 
             });
         }
@@ -548,7 +544,7 @@ var INSPIRO = {};
 
     INSPIRO.topBar = function () {
         if ($topbar.exists()) {
-            $("#topbar .topbar-dropdown .topbar-form").each(function (index, element) {                
+            $("#topbar .topbar-dropdown .topbar-form").each(function (index, element) {
                 if ($window.width() - ($(element).width() + $(element).offset().left) < 0) {
                     $(element).addClass('dropdown-invert');
                 }
@@ -592,7 +588,6 @@ var INSPIRO = {};
             });
         }
     };
-
 
 
     //----------------------------------------------------/
@@ -710,7 +705,7 @@ var INSPIRO = {};
 
             $item.hasClass(itemActive) ? $acc.hasClass(toogleType) ? ($item.removeClass(itemActive), $link.next(classFinder + itemContent).slideUp("fast")) : ($acc.find(classFinder + accordionItem).removeClass(itemActive), $acc.find(classFinder + itemContent).slideUp("fast")) : ($acc.hasClass(toogleType) || ($acc.find(classFinder + accordionItem).removeClass(itemActive), $acc.find(classFinder + itemContent).slideUp("fast")), $item.addClass(itemActive),
                     $link.next(classFinder + itemContent).slideToggle("fast")
-                ),
+            ),
                 e.preventDefault();
             return false;
         }));
@@ -885,9 +880,6 @@ var INSPIRO = {};
                 }
 
 
-
-
-
             });
 
 
@@ -957,7 +949,7 @@ var INSPIRO = {};
                         iconsize: [40, 63],
                         iconanchor: [18, 60],
                     },
-                    }];
+                }];
 
                 $elem.gMap({
 
@@ -977,9 +969,6 @@ var INSPIRO = {};
 
                 });
             });
-
-
-
 
 
         }
@@ -1004,18 +993,18 @@ var INSPIRO = {};
 
 
             $elem.isotope({
-                    filter: defaultFilter,
-                    itemSelector: itemElement,
-                    layoutMode: mode,
-                    transitionDuration: '0.6s',
-                    resizesContainer: true,
-                    resizable: true,
-                    animationOptions: {
-                        duration: 400,
-                        queue: !1
-                    }
+                filter: defaultFilter,
+                itemSelector: itemElement,
+                layoutMode: mode,
+                transitionDuration: '0.6s',
+                resizesContainer: true,
+                resizable: true,
+                animationOptions: {
+                    duration: 400,
+                    queue: !1
+                }
 
-                }),
+            }),
 
                 $window.resize(function () {
 
@@ -1038,8 +1027,6 @@ var INSPIRO = {};
                         $elem.isotope("layout");
                     }, 300);
                 });
-
-
 
 
             var $menu = $('[data-isotope-nav="' + id + '"]');
@@ -1107,9 +1094,7 @@ var INSPIRO = {};
         }
 
 
-
     };
-
 
 
     /* ---------------------------------------------------------------------------
@@ -1266,8 +1251,6 @@ var INSPIRO = {};
                 });
 
 
-
-
                 if (!ytPlayerAutoPlay) {
                     elem.find("#youtube-background-controls").addClass("video-is-playing");
                 }
@@ -1299,8 +1282,6 @@ var INSPIRO = {};
                     }
 
                 });
-
-
 
 
             });
@@ -1369,7 +1350,6 @@ var INSPIRO = {};
         INSPIRO.flickr_widget(),
         INSPIRO.goToTop(),
         INSPIRO.topBar()
-
     );
 
     //Document resize functions

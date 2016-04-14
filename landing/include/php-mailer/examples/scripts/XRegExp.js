@@ -43,8 +43,12 @@ if (XRegExp) {
         context = { // `this` object for custom tokens
             hasNamedCapture: false,
             captureNames: [],
-            hasFlag: function (flag) {return flags.indexOf(flag) > -1;},
-            setFlag: function (flag) {flags += flag;}
+            hasFlag: function (flag) {
+                return flags.indexOf(flag) > -1;
+            },
+            setFlag: function (flag) {
+                flags += flag;
+            }
         };
 
         while (pos < pattern.length) {
@@ -102,7 +106,7 @@ if (XRegExp) {
         quantifier = /^(?:[?*+]|{\d+(?:,\d*)?})\??/,
         isInsideConstructor = false,
         tokens = [],
-        // Copy native globals for reference ("native" is an ES3 reserved keyword)
+    // Copy native globals for reference ("native" is an ES3 reserved keyword)
         nativ = {
             exec: RegExp.prototype.exec,
             test: RegExp.prototype.test,
@@ -225,7 +229,7 @@ if (XRegExp) {
     //     /[^\/]+$/ // filenames (strip directory paths)
     // ]);
     XRegExp.matchChain = function (str, chain) {
-        return function recurseChain (values, level) {
+        return function recurseChain(values, level) {
             var item = chain[level].regex ? chain[level] : {regex: chain[level]},
                 regex = clone(item.regex, "g"),
                 matches = [], i;
@@ -291,7 +295,7 @@ if (XRegExp) {
                 for (var i = 1; i < match.length; i++) {
                     name = this._xregexp.captureNames[i - 1];
                     if (name)
-                       match[name] = match[i];
+                        match[name] = match[i];
                 }
             }
             // Fix browsers that increment `lastIndex` after zero-length matches
@@ -379,10 +383,14 @@ if (XRegExp) {
                     // Numbered backreference (without delimiters) or special variable
                     if ($1) {
                         switch ($1) {
-                            case "$": return "$";
-                            case "&": return args[0];
-                            case "`": return args[args.length - 1].slice(0, args[args.length - 2]);
-                            case "'": return args[args.length - 1].slice(args[args.length - 2] + args[0].length);
+                            case "$":
+                                return "$";
+                            case "&":
+                                return args[0];
+                            case "`":
+                                return args[args.length - 1].slice(0, args[args.length - 2]);
+                            case "'":
+                                return args[args.length - 1].slice(args[args.length - 2] + args[0].length);
                             // Numbered backreference
                             default:
                                 // What does "$10" mean?
@@ -403,7 +411,7 @@ if (XRegExp) {
                                 }
                                 return ($1 ? args[$1] || "" : "$") + literalNumbers;
                         }
-                    // Named backreference or delimited numbered backreference
+                        // Named backreference or delimited numbered backreference
                     } else {
                         // What does "${n}" mean?
                         // - Backreference to numbered capture n. Two differences from "$n":
@@ -496,7 +504,7 @@ if (XRegExp) {
     // Supporting function for `XRegExp`, `XRegExp.copyAsGlobal`, etc. Returns a copy of a `RegExp`
     // instance with a fresh `lastIndex` (set to zero), preserving properties required for named
     // capture. Also allows adding new flags in the process of copying the regex
-    function clone (regex, additionalFlags) {
+    function clone(regex, additionalFlags) {
         if (!XRegExp.isRegExp(regex))
             throw TypeError("type RegExp expected");
         var x = regex._xregexp;
@@ -510,15 +518,15 @@ if (XRegExp) {
         return regex;
     }
 
-    function getNativeFlags (regex) {
-        return (regex.global     ? "g" : "") +
-               (regex.ignoreCase ? "i" : "") +
-               (regex.multiline  ? "m" : "") +
-               (regex.extended   ? "x" : "") + // Proposed for ES4; included in AS3
-               (regex.sticky     ? "y" : "");
+    function getNativeFlags(regex) {
+        return (regex.global ? "g" : "") +
+            (regex.ignoreCase ? "i" : "") +
+            (regex.multiline ? "m" : "") +
+            (regex.extended ? "x" : "") + // Proposed for ES4; included in AS3
+            (regex.sticky ? "y" : "");
     }
 
-    function runTokens (pattern, index, scope, context) {
+    function runTokens(pattern, index, scope, context) {
         var i = tokens.length,
             result, match, t;
         // Protect against constructing XRegExps within token handler and trigger functions
@@ -547,7 +555,7 @@ if (XRegExp) {
         return result;
     }
 
-    function indexOf (array, item, from) {
+    function indexOf(array, item, from) {
         if (Array.prototype.indexOf) // Use the native array method if available
             return array.indexOf(item, from);
         for (var i = from || 0; i < array.length; i++) {
@@ -602,7 +610,7 @@ if (XRegExp) {
             // Keep backreferences separate from subsequent literal numbers. Preserve back-
             // references to named groups that are undefined at this point as literal strings
             return index > -1 ?
-                "\\" + (index + 1) + (isNaN(match.input.charAt(match.index + match[0].length)) ? "" : "(?:)") :
+            "\\" + (index + 1) + (isNaN(match.input.charAt(match.index + match[0].length)) ? "" : "(?:)") :
                 match[0];
         }
     );
@@ -635,15 +643,21 @@ if (XRegExp) {
             return nativ.test.call(quantifier, match.input.slice(match.index + match[0].length)) ? "" : "(?:)";
         },
         XRegExp.OUTSIDE_CLASS,
-        function () {return this.hasFlag("x");}
+        function () {
+            return this.hasFlag("x");
+        }
     );
 
     // Dot, in dotall (aka singleline) mode only
     XRegExp.addToken(
         /\./,
-        function () {return "[\\s\\S]";},
+        function () {
+            return "[\\s\\S]";
+        },
         XRegExp.OUTSIDE_CLASS,
-        function () {return this.hasFlag("s");}
+        function () {
+            return this.hasFlag("s");
+        }
     );
 
 
@@ -653,12 +667,12 @@ if (XRegExp) {
 
     // Uncomment the following block for compatibility with XRegExp 1.0-1.2:
     /*
-    XRegExp.matchWithinChain = XRegExp.matchChain;
-    RegExp.prototype.addFlags = function (s) {return clone(this, s);};
-    RegExp.prototype.execAll = function (s) {var r = []; XRegExp.iterate(s, this, function (m) {r.push(m);}); return r;};
-    RegExp.prototype.forEachExec = function (s, f, c) {return XRegExp.iterate(s, this, f, c);};
-    RegExp.prototype.validate = function (s) {var r = RegExp("^(?:" + this.source + ")$(?!\\s)", getNativeFlags(this)); if (this.global) this.lastIndex = 0; return s.search(r) === 0;};
-    */
+     XRegExp.matchWithinChain = XRegExp.matchChain;
+     RegExp.prototype.addFlags = function (s) {return clone(this, s);};
+     RegExp.prototype.execAll = function (s) {var r = []; XRegExp.iterate(s, this, function (m) {r.push(m);}); return r;};
+     RegExp.prototype.forEachExec = function (s, f, c) {return XRegExp.iterate(s, this, f, c);};
+     RegExp.prototype.validate = function (s) {var r = RegExp("^(?:" + this.source + ")$(?!\\s)", getNativeFlags(this)); if (this.global) this.lastIndex = 0; return s.search(r) === 0;};
+     */
 
 })();
 
