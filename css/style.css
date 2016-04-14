@@ -1,122 +1,177 @@
-.nav-pills > li {
-    width: 100%;
-}
-
-.cmd4-right {
-    float: right;
-    background: #f2f2f2;
-}
-
-.dashFormat {
-    font-family: Open Sans;
-    font-size: 20px;
-    text-align: center;
-}
-
 body, html {
-    margin: 0;
-    padding: 0;
+margin: 0;
+padding: 0;
     height: 100%;
     width: 100%;
-}
-
-#container {
-    height: 100%;
-}
-
-.text-muted {
-    color: #DDD;
-    text-align: center;
-}
-
-#logo {
-    height: 60px;
-}
-
-.navbar {
-    box-shadow: 1px 2px 2px #A9A5A5;
-    background: #fff;
-}
-
-.nav {
-    font-size: 20px;
-}
-
-.row {
-    height: 100%;
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-#form-putanja {
-    padding-left: 2%;
-    padding-top: 2%;
-    text-align: center;
-}
-
-#adresa {
-    float: right;
-
-}
-
-ul#results li {
-}
-
-label {
-    color: #000000;
-}
-
-#selectable .ui-selecting {
-    background: #FECA40;
-}
-
-#selectable .ui-selected {
-    background: #F39814;
-    color: white;
-}
-
-.container {
-    height: 110px;
-}
-
-#padavine {
-    float: left;
-    text-align: center;
-    width: 30%;
-    margin-left: -5px;
 }
 
 blockquote {
-    padding: 0;
-    padding-bottom: 2em;
-    border: none;
+  padding: 0;
+  padding-bottom:2em;
+  border: none;
 }
 
-#map-section {
-    min-height: 100%;
+
+/*NAVBAR*/
+
+#logo{
+  margin-top: -7px;
 }
 
-.chartPlot {
-    padding-top: 8%;
-    padding-bottom: 50px;
+#navbar{
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
-#solved {
-    background-color: #ECC200;
+.navbar {
+  box-shadow: 1px 2px 2px #A9A5A5;
+  background: #fff;
 }
 
-.image-putanja {
+.nav{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.safety-pin-nav {
+  padding-left: 30px;
+}
+
+.nav-pills>li {
+  width: 100%;
+}
+
+/*MAPA*/
+
+#map {
+  width: 100%;
+  height: 100%;
+  position: fixed !important;
+  left: 0;
+  padding-top: 102px;
+}
+
+#map-direction {
+  width: 100%;
+  height: 100%;
+  position: fixed !important;
+  left: 0;
+  padding-top: 102px;
+}
+
+
+/*MAPA*/
+
+#map-sidebar {
+  padding-top: 120px;
+  background-color: #F2F2F2;
+  height: 100%;
+  position: fixed;
+  left: 75%;
+  overflow: scroll;
+  box-shadow: -3px 2px 2px #CBCBD0;
+}
+
+.top-padding-map {
+  padding-top: 40px;
+}
+
+#streetview {
+  width:100%;
+}
+
+.time-map {
+  font-weight: bold;
+  text-align: center;
+  font-size: 52px;
+  margin-top: 10px;
+}
+
+#date-time-row-map {
+  text-align: center;
+}
+
+.day-map {
+  display:inline;
+  font-weight: bold;
+}
+
+.date-map {
+  display:inline;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+#centriraj-sliku {
+  height: 150px;
+  width:150px;
+  margin:auto;
+  display: block;
+}
+
+#tip-nesrece{
+  font-size: 16px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.weather-padding-map {
+  padding-bottom: 5px;
+}
+
+#oblacic {
+  width:94px;
+  height:75px;
+}
+
+#toplomer {
+  width:46px;
+  height: 75px;
+}
+
+#padavina {
+  font-size: 18px;
+  margin: 0 auto;
+/*  padding-left: 10px;*/
+}
+
+#temp-cel{
+  font-size: 18px;
+}
+
+
+/*PUTANJA*/
+
+.direction-sidebar {
+  padding-top: 125px;
+  background-color: #F2F2F2;
+  height: 100%;
+  position: fixed;
+  left: 75%;
+  overflow: scroll;
+  box-shadow: -3px 2px 2px #CBCBD0;
+}
+
+#red-distanca-putanja {
+  padding-top: 50px;
+}
+
+.redovi-distanca-putanja {
+  padding-top: 15px;
+}
+
+.ikonica-putanja {
     width: 75px;
     height: 75px;
-    float: left;
-    margin-left: 50px;
 }
 
 .text-putanja {
-    float: left;
-    height: 100px;
-    width: 50%;
-    margin-top: 10px;
+    padding-top: 6px;
+}
+
+#form-putanja{
+  background-color: #f2f2f2;
+  text-align: center;
 }
 
 p {
@@ -124,20 +179,147 @@ p {
 }
 
 .p-gornji {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     text-align: center;
-
 }
 
 .p-donji {
     text-align: center;
 }
 
-#chartType > div > div > a {
-    display: none !important;
+
+/*PRIJAVI NEZGODU*/
+
+.pn-sidebar {
+  padding-top: 125px;
+  background-color: #F2F2F2;
+  height: 100%;
+  position: fixed;
+  left: 75%;
+  overflow: scroll;
+  box-shadow: -3px 2px 2px #CBCBD0;
 }
 
-.labelBorder {
-    outline: 1px solid #cd0200;
+.pn-krug {
+  padding-top: 15px;
 }
+
+.pn-krug-brojac {
+  font-size:30px;
+  border-radius:100%;
+}
+
+
+#solved{
+  background-color: #ECC200;
+}
+
+
+/*STATISTIKA*/
+
+.statistika-sidebar{
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: 125px;
+  background-color: #F2F2F2;
+  height: 100%;
+  overflow-y:auto;
+  padding-bottom: 0px;
+  position: fixed;
+  left: 75%;
+  box-shadow: -3px 2px 2px #CBCBD0;
+}
+
+.chartPlot{
+  padding-top: 15%;
+  padding-bottom: 50px;
+}
+
+.dashFormat {
+  font-family: Open Sans;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+/*UNKNOWN*/
+
+/*
+
+ul#results li {}
+
+label {
+  color: #000000;
+}
+
+
+#selectable .ui-selecting { background: #FECA40; }
+#selectable .ui-selected { background: #F39814; color: white; }
+
+
+
+
+#oblaci{
+  float: left;
+
+  width:33%;
+}
+
+
+
+#temperatura{
+  float: left;
+  margin-left: 15px;
+  width: 33%;
+}
+
+#padavine{
+  float: left;
+  text-align: center;
+  width: 30%;
+  margin-left: -5 px;
+}
+
+#vreme{
+  background-color:#F2F2F2;
+  padding-top: 20%;
+  padding-bottom: 45%;
+}
+
+#date{
+  width:100%;
+  display: inline-block;
+  height:20%;
+  background-color:#F2F2F2;
+  padding: 15px;
+  text-align: center;
+}
+
+#ikonica-nesrece{
+  width:100%;
+  height:100px;
+  background-color:#F2F2F2;
+   width:100%;
+  display: inline-block;
+  height:20%;
+  padding-top: 20px;
+}
+
+.text-muted{
+  color:#DDD;
+  text-align: center;
+}
+
+#adresa{
+  float: right;
+
+}
+
+
+.cmd4-right {
+    float: right;
+    background: #f2f2f2;
+}
+
+  */

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="safetyPinApp">
-
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,136 +9,132 @@
     <title>Safety pin</title>
 
     <!-- CSS -->
-
     <link href="dependencies/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/sidebar.css">
 
     <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="dependencies/js/bootstrap.min.js"></script>
-
-
+    <!-- // <script src="js/prijava-nezgode.js"></script> -->
 </head>
-
 <body>
 
-<section id="navigation">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="mapa.html">
-                    <img id="logo" src="images/logo.png" alt="SafetyPin" height="85" width="230">
-                </a>
-            </div>
-
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="mapa.html">Mapa</a>
-                    </li>
-                    <li><a href="putanja.html">Putanja</a>
-                    </li>
-                    <li><a href="dodaj-nezgodu.html">Dodaj nezgodu</a>
-                    </li>
-                    <li><a href="statistika.html">Statistika</a>
-                    </li>
-                    <li><a href="savetnik.html">Savetnik</a></li>
-                    <li><a href="api.html">API</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</section>
-
-<section id="container">
-
-    <div class="row">
-        <div class="col-md-9" id="map-section">
-            <div id="map" style="position:absolute;
-left:0px;top:0px;right:0px;bottom:0px;max-width: none;"></div>
-        </div>
-        <div class="col-md-3" id="sidebar-info">
-            <div>
-                <div class="row" id="form-putanja">
-                    <div class="col-md-5" style="text-align:center;">
-                        <blockquote>
-                            <p style="padding-bottom:20px;color:black;font-size:16px;text-align:center;"> Ukupno
-                                prijavljenih nezgoda</p>
-
-                            <h3 style="padding-left:0.5em;"><span id="total" class="label label-success"
-                                                                  style="font-size:30px;border-radius:100%;">0</span>
-                            </h3>
-                        </blockquote>
+    <section>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                                aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img id="logo" src="images/logo.png" alt="SafetyPin" height="85" width="230">
+                        </a>
                     </div>
 
-                    <div class="col-md-5" style="text-align:center;margin-left:30px">
-                        <blockquote>
-                            <p style="padding-bottom:20px;color:black;font-size:16px;text-align:center;"> Ukupno
-                                obrađenih
-                                zahteva</p>
-
-                            <h3 style="padding-left:0.5em;"><span id="solved" class="label"
-                                                                  style="font-size:30px;border-radius:100%;">0</span>
-                            </h3>
-
-                        </blockquote>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">Home</a>
+                            </li>
+                            <li><a href="mapa.html">Mapa</a>
+                            </li>
+                            <li><a href="putanja.html">Putanja</a>
+                            </li>
+                            <li><a href="dodaj-nezgodu.html">Dodaj nezgodu</a>
+                            </li>
+                            <li><a href="statistika.html">Statistika</a>
+                            </li>
+                            <li><a href="savetnik.html">Savetnik</a>
+                            </li>
+                            <li><a href="api.html">API</a></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
+            </nav>
+        </section>  <!-- Navbar -->
 
-            <div class="col-md-10 col-md-offset-1">
-                <form role="form" id="prijaviForma" method="POST">
-                    <div class="form-group">
-                        <input type="hidden" id="reportLat" name="latitude">
-                        <input type="hidden" id="reportLng" name="longitude">
-                        <input type="hidden" id="reportStatus" name="status" value="false">
-                        <label id="reportAddress" class="">Odaberite adresu desnim klikom</label>
+        
+        <div class="container">
+            
+            <div class="row">
+                
+                <div class="col-md-9">
+                    <div id="map"></div>
+                </div>
+                <div class="col-md-3 pn-sidebar">
+                    
+                    <div class="row" id="form-putanja">
+                        
+                        <div class="col-md-5 col-md-offset-1">
+                            <blockquote>
+                                <p>Ukupno prijavljenih nezgoda</p>
+                                <h3 class="pn-krug"><span id="total" class="label label-success pn-krug-brojac"></span>
+                                </h3>
+                            </blockquote>
+                        </div>
+                        <div class="col-md-5">
+                            <blockquote>
+                                <p> Ukupno obrađenih zahteva</p>
+                                <h3 class="pn-krug"><span id="solved" class="label pn-krug-brojac"></span>
+                                </h3>
+                            </blockquote>
+                        </div>
+
                     </div>
 
-                    <div class="form-group">
-                        <label>Email:</label>
-                        <input type="email" class="form-control" id="reportEmail" placeholder="Email" name="email" required>
-                    </div>
+                    <div class="row">
+                        
+                        <div class="col-md-10 col-md-offset-1">
 
+                            <form role="form" id="prijaviForma" method="POST">
 
-                    <div class="form-group">
-                        <label>Problem:</label>
-                    <textarea class="form-control"
-                              id="reportProblem" placeholder="Problem" name="problem" required></textarea>
-                    </div>
+                                <div class="form-group">
+                                    <label>Email:</label>
+                                    <input type="email" class="form-control" name="location"
+                                           placeholder="Email" required>
+                                </div>
 
-                    <div class="form-group">
-                        <label>Rešenje:</label>
-                    <textarea class="form-control"
-                              id="reportSolution" placeholder="Rešenje" name="solution" required></textarea>
-                    </div>
+                                <div class="form-group">
+                                    <label>Adresa:</label>
+                                    <input type="text" class="form-control" name="location"
+                                           placeholder="Adresa" required>
+                                </div>
 
-                    <button type="submit" id="submitAccident" class="btn btn-success">Potvrdi</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
+                                <div class="form-group">
+                                    <label>Problem:</label>
+                                <textarea type="text" class="form-control"
+                                          name="location" placeholder="Problem" required></textarea>
+                                </div>
 
+                                <div class="form-group">
+                                    <label>Rešenje:</label>
+                                <textarea type="text" class="form-control"
+                                          name="location" placeholder="Rešenje" required></textarea>
+                                </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBcg8PCP5Oo3iBwndK8FTqG0vXlXffAgEs"></script>
-<script type="text/javascript" src="js/maps/config.js"></script>
-<script type="text/javascript" src="js/maps/displayReports.js"></script>
-<script type="text/javascript" src="js/maps/addReport.js"></script>
+                                <button type="submit" class="btn btn-success">Potvrdi</button>
+                            </form>
+                        </div>
 
+                    </div> <!-- Form Row -->
+
+                </div> <!-- Sidebar Column -->
+
+            </div> <!-- Row -->
+
+        </div> <!-- Container -->
+
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBcg8PCP5Oo3iBwndK8FTqG0vXlXffAgEs"></script>
+    <script type="text/javascript" src="dependencies/js/markerclusterer.js"></script>
+    <script type="text/javascript" src="dependencies/js/addAccident.js"></script>
+    <script type="text/javascript" src="dependencies/js/baki.js"></script>
 
 </body>
-
 </html>

@@ -15,7 +15,7 @@ angular.module('safetyPinApp', [])
 
 
 
-  $http.get("https://pinsly.info/safety-pin/api/statistics/all").success(function(response) {
+  $http.get("http://147.91.128.71:9090/open/api/statistics/all").success(function(response) {
       $scope.newData = response;
 
       $scope.chartYear = AmCharts.makeChart("chartYear", {
@@ -24,12 +24,6 @@ angular.module('safetyPinApp', [])
         "dataProvider": [ {
           "year": $scope.newData.yearStatistics[0].year,
           "accidents": $scope.newData.yearStatistics[0].numberOfAccidents,
-        }, {
-          "year": $scope.newData.yearStatistics[1].year,
-          "accidents": $scope.newData.yearStatistics[1].numberOfAccidents,
-        }, {
-          "year": $scope.newData.yearStatistics[2].year,
-          "accidents": $scope.newData.yearStatistics[2].numberOfAccidents,
         }],
         "valueAxes": [ {
           "gridColor": "#FFFFFF",
@@ -463,7 +457,7 @@ angular.module('safetyPinApp', [])
       });
   });
 
-  $http.get("https://pinsly.info/safety-pin/api/statistics/temperature?tempStep=10&min=-20&max=40").success(function(response) {
+  $http.get("http://147.91.128.71:9090/open/api/statistics/temperature?tempStep=10&min=-20&max=40").success(function(response) {
       $scope.newData = response;
 
       $scope.chartMonth = AmCharts.makeChart( "chartTemperature", {

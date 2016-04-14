@@ -1,89 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" href="images/favicon.jpg">
 
     <title>Safety pin</title>
-
+    
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="dependencies/css/bootstrap.min.css" type="text/css">
-
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="css/animate.min.css" type="text/css">
-
-
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/doc-styles.css" rel="stylesheet">
     <!-- Core Angular-->
     <script type="text/javascript" src="js/angular/angular.min.js"></script>
     <script type="text/javascript" src="js/angular/angular-scroll.min.js"></script>
-
     <script src="dependencies/js/jquery-1.11.3.min.js"></script>
     <script src="dependencies/js/bootstrap.min.js"></script>
-
 </head>
 
 <body id="page-top" ng-app="app1">
 
-<section id="navigation">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+    <section>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                                aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img id="logo" src="images/logo.png" alt="SafetyPin" height="85" width="230">
+                        </a>
+                    </div>
 
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="mapa.html">
-                    <img id="logo" src="images/logo.png" alt="SafetyPin" height="85" width="230">
-                </a>
-            </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">Home</a>
+                            </li>
+                            <li><a href="mapa.html">Mapa</a>
+                            </li>
+                            <li><a href="putanja.html">Putanja</a>
+                            </li>
+                            <li><a href="dodaj-nezgodu.html">Dodaj nezgodu</a>
+                            </li>
+                            <li><a href="statistika.html">Statistika</a>
+                            </li>
+                            <li><a href="savetnik.html">Savetnik</a>
+                            </li>
+                            <li><a href="api.html">API</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section>  <!-- Navbar -->
 
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="mapa.html">Mapa</a>
-                    </li>
-                    <li><a href="putanja.html">Putanja</a>
-                    </li>
-                    <li><a href="dodaj-nezgodu.html">Dodaj nezgodu</a>
-                    </li>
-                    <li><a href="statistika.html">Statistika</a>
-                    </li>
-                    <li><a href="savetnik.html">Savetnik</a>
-                    </li>
-                    <li><a href="api.html">API</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-</section>
-
-  </section>
-
-    <div ng-controller="DocsCtrl">
-
-        <section id="container">
-
-
-        </section>
-        <div class="col-md-3 col-xs-4" id="sidebar">
-            <!-- sidebar -->
-            <ul class="nav nav-stacked col-sm-offset-2">
-                <li><a href="#page-top" du-smooth-scroll du-scrollspy><h3>Endpoints <i
-                        class="glyphicon glyphicon glyphicon-chevron-up pull-right"></i></h3></a></li>
+    <section ng-controller="DocsCtrl">
+        <div class="col-md-3 col-xs-4" id="sidebar" >
+            <ul class="nav nav-stacked col-sm-offset-1">
+                <li><a href="#page-top" du-smooth-scroll du-scrollspy><h3>Endpoints
+                    <i class="glyphicon glyphicon glyphicon-chevron-up pull-right"></i></h3></a></li>
                 <li><a href="#api" du-smooth-scroll du-scrollspy offset="30">GET /api</a></li>
                 <li><a href="#accidentId" du-smooth-scroll du-scrollspy offset="30">GET api/:id</a></li>
                 <li><a href="#circle" du-smooth-scroll du-scrollspy offset="30">GET /api/circle</a></li>
@@ -100,42 +88,33 @@
                 <li><a href="#all" du-smooth-scroll du-scrollspy offset="30">GET /api/statistics/all</a></li>
             </ul>
         </div>
-        <!-- /sidebar -->
 
-        <div class="col-md-8 col-md-offset-4 col-xs-offset-4 documentation">
-                <h2 class="heading"> <i>REST API</i> endpoints</h2>
-                <br>
-                <div class="col-md-8">
-                    <p class="text-justify">The <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a>
-                        API za pristup podacima o saobraćajnim nezgodama Ministarstva Unutrašnjih Poslova Srbije.
-                        Pomoću ovog API-ja moguće je dobiti podatke o svim nezgodama na teritoriji grada Beograda, statistikama, planeru, predviđanjima...</p>
-                    <p> Odgovori su u poznatom <a href="http://www.json.org/" target="_blank">JSON</a> formatu, i korišćenje API-ja je potpuno besplatno.</p>
-                </div>
+        <div class="col-md-8 col-xs-offset-4 documentation">
+            <h2 class="heading"> <i>REST API</i> endpoints</h2><br>
+            <div class="col-md-8">
+                <p class="text-justify">The <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a>
+                    API za pristup podacima o saobraćajnim nezgodama Ministarstva Unutrašnjih Poslova Srbije.
+                    Pomoću ovog API-ja moguće je dobiti podatke o svim nezgodama na teritoriji grada Beograda, statistikama, planeru, predviđanjima...</p>
+                <p> Odgovori su u poznatom <a href="http://www.json.org/" target="_blank">JSON</a> formatu, i korišćenje API-ja je potpuno besplatno.</p>
+            </div>
         </div>
-         <hr class="primary">
-        <!-- documentation -->
+        <hr class="primary">    
         <div ng-include="'views/panelDocs.html'"></div>
-    <!-- /documentation -->
-</div>
+    </section>
 
 
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="js/jquery.easing.min.js"></script>
-<script src="js/jquery.fittext.js"></script>
-<script src="js/wow.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="js/creative.js"></script>
-
-<!-- Angular app module -->
-<script type="text/javascript" src="js/docApp.js"></script>
-
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+    <!-- Angular app module -->
+    <script type="text/javascript" src="js/docApp.js"></script>
 
 </body>
 </html>
