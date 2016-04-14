@@ -43,6 +43,7 @@ $(document).ready(function(){
                 regularMarkers.push(markers[0]);
                 //markers[0].setMap(null);
                 markers = [];
+                $('#myModal').modal();
 
             },
             method: "POST",

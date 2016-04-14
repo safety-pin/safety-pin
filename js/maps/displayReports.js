@@ -38,6 +38,7 @@
         markers.push(marker);
         $("#reportLat").val(lat);
         $("#reportLng").val(lng);
+        $("#reportAddress").removeClass("labelBorder");
         function geocodePosition(position) {
             var geocoder = new google.maps.Geocoder;
             geocoder.geocode({ //OVO NE RADI, NADJI GDE JE GEOCODER!!!!
