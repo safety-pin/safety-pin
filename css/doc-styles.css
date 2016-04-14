@@ -20,7 +20,7 @@
 #sidebar > .nav-stacked > li > a:hover,
 #sidebar > .nav-stacked > li > .active,
 #sidebar > .nav-stacked > li > .focus {
-    color: white;
+    color: #43B749;
 }
 
 #sidebar > .nav-stacked > li > a {

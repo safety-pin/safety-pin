@@ -40,7 +40,7 @@
             </div>
 
             <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav safety-pin-nav">
                     <li><a href="index.html">Home</a>
                     </li>
                     <li><a href="mapa.html">Mapa</a>
@@ -75,14 +75,14 @@
                 <div class="col-md-5 col-md-offset-1">
                     <blockquote>
                         <p>Ukupno prijavljenih nezgoda</p>
-                        <h3 class="pn-krug"><span id="total" class="label label-success pn-krug-brojac"></span>
+                        <h3 id="pn-krug-prvi"><span id="total"></span>
                         </h3>
                     </blockquote>
                 </div>
                 <div class="col-md-5">
                     <blockquote>
                         <p> Ukupno obrađenih zahteva</p>
-                        <h3 class="pn-krug"><span id="solved" class="label pn-krug-brojac"></span>
+                        <h3 id="pn-krug-drugi"><span id="solved"></span>
                         </h3>
                     </blockquote>
                 </div>
@@ -120,8 +120,9 @@
                               id="reportSolution" placeholder="Rešenje" name="solution" required></textarea>
                         </div>
 
-                        <button type="submit" id="submitAccident" class="btn btn-success">Potvrdi</button>
+                        <button type="submit" id="submitAccident" class="btn btn-success" data-toggle="modal" data-target="#myModal">Potvrdi</button>
                     </form>
+
                 </div>
 
             </div> <!-- Form Row -->
@@ -129,6 +130,23 @@
         </div> <!-- Sidebar Column -->
 
     </div> <!-- Row -->
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">SafetyPIN</h4>
+                </div>
+                <div class="modal-body">
+                    Primili smo vašu prijavu! Hvala što koristite našu aplikaciju!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Zatvori</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div> <!-- Container -->
 

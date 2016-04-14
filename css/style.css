@@ -197,8 +197,24 @@ p {
     box-shadow: -3px 2px 2px #CBCBD0;
 }
 
-.pn-krug {
-    padding-top: 15px;
+#pn-krug-prvi {
+    padding-top: 18px;
+    border-radius: 50px;
+    border: 1px solid #43B749;
+    height: 75px;
+    width: 75px;
+    background: #43B749;
+    margin-left: 19%;
+}
+
+#pn-krug-drugi {
+    padding-top: 18px;
+    border-radius: 50px;
+    border: 1px solid #ECC200;
+    height: 75px;
+    width: 75px;
+    background: #ECC200;
+    margin-left: 19%;
 }
 
 .pn-krug-brojac {
@@ -207,7 +223,15 @@ p {
 }
 
 #solved {
-    background-color: #ECC200;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+#total {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 30px;
 }
 
 /*STATISTIKA*/
