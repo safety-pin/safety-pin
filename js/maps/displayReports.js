@@ -33,7 +33,7 @@
             position: position,
             map: map,
             title: "Odabrana lokacija",
-            icon: 'images/50/red-pin1.png'
+            icon: 'resources/images/50/red-pin1.png'
         });
         markers.push(marker);
         $("#reportLat").val(lat);
@@ -66,10 +66,10 @@
                 //infoWindow.setOptions({
                 //	position: new google.maps.LatLng(currentValue.lat, currentValue.lng)
                 //});
-                var icon = 'images/50/green-pin1.png';
+                var icon = 'resources/images/50/green-pin1.png';
                 totalMarkers+= 1;
                 if(currentValue.status===true){
-                    icon = 'images/50/yellow-pin1.png';
+                    icon = 'resources/images/50/yellow-pin1.png';
                     solvedMarkers += 1;
                 }
                 var marker = new google.maps.Marker({

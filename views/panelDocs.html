@@ -14,21 +14,21 @@
                 <div class="col-md-12">
                     <h3>Resource information</h3>
 
-                    <div class="table-responsive ">
+                    <div class="table-responsive col-md-4">
                         <table class="table">
                             <tbody>
-                            <tr>
-                                <td>Response Formats</td>
-                                <td>{{d.info[0]}}</td>
-                            </tr>
-                            <tr style="padding-top:50px">
-                                <td>Requires authentication</td>
-                                <td>{{d.info[1]}}</td>
-                            </tr>
-                            <tr>
-                                <td>Rate limited</td>
-                                <td>{{d.info[2]}}</td>
-                            </tr>
+                                <tr>
+                                    <td>Response Formats</td>
+                                    <td>{{d.info[0]}}</td>
+                                </tr>
+                                <tr style="padding-top:50px">
+                                    <td>Requires authentication</td>
+                                    <td>{{d.info[1]}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Rate limited</td>
+                                    <td>{{d.info[2]}}</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -39,21 +39,21 @@
                     <div class="table-responsive table-condensed col-md-7 col-xs-12">
                         <table class="table">
                             <tbody>
-                            <tr ng-repeat="p in d.params">
-                                <td class="col-md-2">
-                                    <h3 class="heading"><b>{{p.name}}</b></h3>
+                                <tr ng-repeat="p in d.params">
+                                    <td class="col-md-2">
+                                        <h3 class="heading"><b>{{p.name}}</b></h3>
 
-                                    <p><i>{{p.req}}</i></p>
-                                </td>
-                                <td>
-                                    <p class="text-justify">{{p.desc}}</p>
-                                    <br>
+                                        <p><i>{{p.req}}</i></p>
+                                    </td>
+                                    <td>
+                                        <p class="text-justify">{{p.desc}}</p>
+                                        <br>
 
-                                    <p class="values"><b>Example Value:</b> {{p.example}}</p>
+                                        <p class="values"><b>Example Value:</b> {{p.example}}</p>
 
-                                    <p class="values"><b>Default Value:</b> {{p.default}}</p>
-                                </td>
-                            </tr>
+                                        <p class="values"><b>Default Value:</b> {{p.default}}</p>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -61,11 +61,13 @@
                 <div class="col-md-12">
                     <h3 class="heading">Example Request</h3>
 
-                    <p>{{d.request}}</p>
+                    <a href="{{d.request}}" target="_blank">{{d.request}}</a>
                 </div>
                 <div class="col-sm-10 col-xs-12">
                     <h3 class="heading">Example Result</h3>
-                    <pre><p>{{formatJson(d.result)}}</p></pre>
+                    <pre>
+                        <p>{{formatJson(d.result)}}</p>
+                    </pre>
                 </div>
             </div>
         </div>

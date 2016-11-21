@@ -76,11 +76,11 @@
 			data.forEach(function(currentValue){
 				var icon = "";
 				if(currentValue.type==1){
-					icon = 'images/50/blue-pin1.png';
+					icon = 'resources/images/50/blue-pin1.png';
 				} else if (currentValue.type==2){
-					icon = 'images/50/red-pin1.png';
+					icon = 'resources/images/50/red-pin1.png';
 				}else {
-					icon = 'images/50/black-pin1.png';
+					icon = 'resources/images/50/black-pin1.png';
 				}
 				var marker = new google.maps.Marker({
 					position: new google.maps.LatLng(currentValue.x,currentValue.y),

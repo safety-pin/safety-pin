@@ -192,7 +192,7 @@ var INSPIRO = {};
 
             var pageInAnimation = $body.attr('data-animation-in') || "fadeIn",
                 pageOutAnimation = $body.attr('data-animation-out') || "fadeOut",
-                pageLoaderStyle = $body.attr('data-animation-icon') || "spin.svg",
+                pageLoaderStyle = $body.attr('data-animation-icon') || "puff.svg",
                 pageInDuration = $body.attr('data-speed-in') || 1000,
                 pageOutDuration = $body.attr('data-speed-out') || 500;
 
@@ -205,7 +205,7 @@ var INSPIRO = {};
                 loading: true,
                 loadingParentElement: 'body', //animsition wrapper element
                 loadingClass: 'animsition-loading',
-                loadingInner: '<img src="images/svg-loaders/' + pageLoaderStyle + '">', // e.g '<img src="loading.svg" />'
+                loadingInner: '<img src="landing/images/svg-loaders/' + pageLoaderStyle + '">', // e.g '<img src="loading.svg" />'
                 timeout: false,
                 timeoutCountdown: 5000,
                 onLoadEvent: true,
@@ -939,7 +939,7 @@ var INSPIRO = {};
                     mapAddress = $elem.attr('data-map-address') ? $elem.attr('data-map-address') : "Melbourne, Australia",
                     mapType = $elem.attr('data-map-type') ? $elem.attr('data-map-type') : "ROADMAP",
                     mapZoom = $elem.attr('data-map-zoom') ? $elem.attr('data-map-zoom') : "14",
-                    mapIcon = $elem.attr('data-map-icon') ? $elem.attr('data-map-icon') : "images/markers/marker2.png";
+                    mapIcon = $elem.attr('data-map-icon') ? $elem.attr('data-map-icon') : "landing/images/markers/marker2.png";
 
                 var markers = [{
                     address: mapAddress,

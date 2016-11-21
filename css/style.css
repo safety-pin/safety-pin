@@ -11,6 +11,7 @@ blockquote {
     border: none;
 }
 
+
 /*NAVBAR*/
 
 #logo {
@@ -40,6 +41,7 @@ blockquote {
     width: 100%;
 }
 
+
 /*MAPA*/
 
 #map {
@@ -58,6 +60,7 @@ blockquote {
     padding-top: 102px;
 }
 
+
 /*MAPA*/
 
 #map-sidebar {
@@ -65,13 +68,8 @@ blockquote {
     background-color: #F2F2F2;
     height: 100%;
     position: fixed;
-    left: 75%;
-    overflow: scroll;
     box-shadow: -3px 2px 2px #CBCBD0;
-}
-
-.top-padding-map {
-    padding-top: 40px;
+    overflow: hidden;
 }
 
 #streetview {
@@ -98,13 +96,6 @@ blockquote {
     display: inline;
     font-weight: bold;
     padding-left: 10px;
-}
-
-#centriraj-sliku {
-    height: 150px;
-    width: 150px;
-    margin: auto;
-    display: block;
 }
 
 #tip-nesrece {
@@ -137,17 +128,8 @@ blockquote {
     font-size: 18px;
 }
 
-/*PUTANJA*/
 
-.direction-sidebar {
-    padding-top: 125px;
-    background-color: #F2F2F2;
-    height: 100%;
-    position: fixed;
-    left: 75%;
-    overflow: scroll;
-    box-shadow: -3px 2px 2px #CBCBD0;
-}
+/*PUTANJA*/
 
 #red-distanca-putanja {
     padding-top: 50px;
@@ -185,36 +167,17 @@ p {
     text-align: center;
 }
 
+
 /*PRIJAVI NEZGODU*/
 
-.pn-sidebar {
-    padding-top: 125px;
-    background-color: #F2F2F2;
-    height: 100%;
-    position: fixed;
-    left: 75%;
-    overflow: scroll;
-    box-shadow: -3px 2px 2px #CBCBD0;
-}
-
-#pn-krug-prvi {
+#pn-krug {
     padding-top: 18px;
     border-radius: 50px;
     border: 1px solid #43B749;
     height: 75px;
     width: 75px;
     background: #43B749;
-    margin-left: 19%;
-}
-
-#pn-krug-drugi {
-    padding-top: 18px;
-    border-radius: 50px;
-    border: 1px solid #ECC200;
-    height: 75px;
-    width: 75px;
-    background: #ECC200;
-    margin-left: 19%;
+    margin: 0 auto;
 }
 
 .pn-krug-brojac {
@@ -234,20 +197,8 @@ p {
     font-size: 30px;
 }
 
-/*STATISTIKA*/
 
-.statistika-sidebar {
-    padding-right: 0;
-    padding-left: 0;
-    padding-top: 125px;
-    background-color: #F2F2F2;
-    height: 100%;
-    overflow-y: auto;
-    padding-bottom: 0;
-    position: fixed;
-    left: 75%;
-    box-shadow: -3px 2px 2px #CBCBD0;
-}
+/*STATISTIKA*/
 
 .chartPlot {
     padding-top: 15%;
@@ -267,7 +218,13 @@ p {
     box-shadow: 0 0 0 2px red
 }
 
+.img-responsive {
+    margin: 0 auto;
+}
+
+
 /*UNKNOWN*/
+
 
 /*
 

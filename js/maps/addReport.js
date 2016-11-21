@@ -39,7 +39,7 @@ $(document).ready(function(){
                 $("#reportSolution").val("");
                 $("#reportLat").val("");
                 $("#reportLng").val("");
-                markers[0].setIcon('images/50/green-pin1.png');
+                markers[0].setIcon('resources/images/50/green-pin1.png');
                 regularMarkers.push(markers[0]);
                 //markers[0].setMap(null);
                 markers = [];

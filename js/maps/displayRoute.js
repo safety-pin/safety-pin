@@ -57,7 +57,7 @@ google.maps.event.addListener(map, "rightclick", function(event) {
 			position: new google.maps.LatLng(lat, lng),
 			map: map,
 			title: "Kraj",
-			icon: 'images/50/yellow-pin1.png'
+			icon: 'resources/images/50/yellow-pin1.png'
 		});
 		markers.push(endMarker);
 
@@ -80,7 +80,7 @@ google.maps.event.addListener(map, "rightclick", function(event) {
 			position: new google.maps.LatLng(lat, lng),
 			map: map,
 			title: "Start",
-			icon: 'images/50/green-pin1.png'
+			icon: 'resources/images/50/green-pin1.png'
 		});
 		userClicked = true;
 		markers.push(startMarker);
