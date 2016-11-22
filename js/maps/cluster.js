@@ -112,7 +112,7 @@
 
                             $('#temp-br').text(pinData.temperature | 0);
 
-                            var adresa = 'https://maps.googleapis.com/maps/api/streetview?size=400x250&location=' + pinData.x + ',' + pinData.y + '&heading=151.78&pitch=-0.76';
+                            var adresa = 'https://maps.googleapis.com/maps/api/streetview?key=AIzaSyB_tGRF1PqLt_My3LqCwfk3BB2dXUUJNqc&size=400x250&location=' + pinData.x + ',' + pinData.y + '&heading=151.78&pitch=-0.76';
                             // console.log(adresa);
                             $('#streetview').attr("src", adresa);
                         });
